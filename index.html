@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="ratanrsur" ng-controller="htmlCtrl">
+<head>
+    <title>Ratan Rai Sur</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="bower_components/angular.js"></script>
+<!--     <script src="bower_components/jquery/src/jquery.js"></script> -->
+    <script src="js/controllers.js"></script>
+</head>
+<body>
+
+<!--     <button ng-class="{red: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = true">width is:{{window_width}}</button> -->
+
+    <table>
+        <tr ng-repeat="i in getNumber(vertDivs) track by $index">
+            <td ng-class="{orange: hover}"
+                ng-mouseenter="hover = true"
+                ng-mouseleave="hover = false"
+
+                ng-style="{ 'width' : cellSide+'px','height' : cellSide+'px' }"
+                ng-repeat="i in getNumber(horizDivs) track by $index">
+            </td>
+        </tr>
+    </table>
+
+
+</body>
+</html>
