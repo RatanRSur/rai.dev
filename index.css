@@ -1,19 +1,15 @@
 html{
-  background-color: black;
+  background-color:#151515;
 }
 
 
-.orange{
+.alive{
   background-color: #FF8C00;
 }
 
-.horizDiv{
-    background-color: orange;
+.dead{
 }
 
-.orangeDiv{
-    background-color: orange;
-}
 
 table{
     border-collapse: collapse;
