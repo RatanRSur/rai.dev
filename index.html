@@ -8,20 +8,17 @@
     <script src="js/controllers.js"></script>
 </head>
 <body>
-
-<!--     <button ng-class="{red: hover}" ng-mouseenter="hover = true" ng-mouseleave="hover = true">width is:{{window_width}}</button> -->
-
     <table ng-controller="tableCtrl">
         <tr ng-repeat="i in getNumber(vertDivs) track by $index">
-            <td class="r{{$parent.$index}}c{{$index}}"
-                ng-class="{alive: isAlive[1][$parent.$index][$index]}"
-                ng-mouseenter="isAlive[1][$parent.$index][$index] = true"
+            <td ng-class="{alive: isAlive[1-gridIndex][$parent.$index][$index]}"
+                ng-mouseenter="isAlive[1-gridIndex][$parent.$index][$index] = true"
                 ng-style="{ 'width' : cellSide+'px','height' : cellSide+'px' }"
                 ng-repeat="i in getNumber(horizDivs) track by $index">
             </td>
         </tr>
     </table>
+    <div>
 
-
+    </div>
 </body>
 </html>
