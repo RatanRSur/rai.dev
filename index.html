@@ -14,8 +14,8 @@
     <table ng-controller="tableCtrl">
         <tr ng-repeat="i in getNumber(vertDivs) track by $index">
             <td class="r{{$parent.$index}}c{{$index}}"
-                ng-class="{alive: {{isAlive[gridIndex][][]}}}"
-                ng-mouseenter="isAlive = true"
+                ng-class="{alive: isAlive[1][$parent.$index][$index]}"
+                ng-mouseenter="isAlive[1][$parent.$index][$index] = true"
                 ng-style="{ 'width' : cellSide+'px','height' : cellSide+'px' }"
                 ng-repeat="i in getNumber(horizDivs) track by $index">
             </td>

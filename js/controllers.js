@@ -31,20 +31,24 @@ ratanrsur.controller('tableCtrl', function ($scope) {
         $scope.$apply();
     };
     //LIFE
-
     //runs once, setting off the iterate function that updates the board
-    $scope.$watch($scope.horizDivs, function(newValue,oldValue){
+//     $scope.$watch($scope.horizDivs, function(newValue,oldValue){
 //         console.log(newValue,oldValue);
         setInterval($scope.iterate,1000);
-    });
+//     });
 
-    var isAlive= [[],[]];
+    $scope.isAlive= [[],[]];
 
     $scope.gridIndex=1;
     $scope.iterate=function(){
-        for(r=5;r<$scope.vertDivs-5;r++){
-            for(c=5;c<$scope.horizDivs-5;c++){
+        for($scope.r=0;$scope.r<$scope.vertDivs-5;$scope.r++){
+            for($scope.c=0;$scope.c<$scope.horizDivs-5;$scope.c++){
                 for(n=0;n<8;n++){
+//                     console.log($scope.r,$scope.c);
+                    $scope.isAlive[$scope.gridIndex][$scope.r]=[];
+                    $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=true;
+//                     console.log($scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]);
+//                     $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=true;
 //                     if(grid[gridIndex][r+neighbor[n][1]][c+neighbor[n][2]]){};
                 }
             }
