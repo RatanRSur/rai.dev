@@ -7,9 +7,16 @@ html{
   background-color: #FF8C00;
 }
 
-.dead{
+.name{
+    font-size: 100px;
+    font-family: Wendy;
+    color: #FF8C00
 }
 
+@font-face {
+    font-family: Wendy;
+    src: wendy.ttf
+}
 
 table{
     border-collapse: collapse;

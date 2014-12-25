@@ -7,7 +7,7 @@ var neighbors=0;
 
 ratanrsur.controller('tableCtrl', function ($scope) {
     //WINDOW GENERATION
-    $scope.horizDivs=100;
+    $scope.horizDivs=90;
     $scope.getNumber = function(num) {
         return new Array(num);
     }
@@ -29,13 +29,13 @@ ratanrsur.controller('tableCtrl', function ($scope) {
     window.onresize = function(){
         $scope.cellSide=$scope.getWidth()/$scope.horizDivs;
         $scope.vertDivs=Math.floor($scope.getHeight()/$scope.cellSide*3/4);
-//         $scope.isAlive[$scope.gridIndex][$scope.r]=new Array($scope.c);
-//         $scope.isAlive[1-$scope.gridIndex][$scope.r]=new Array($scope.c);
-//         for(i=0;i<2;i++){
-//             for(j=0;j<$scope.vertDivs;j++){
-//                 $scope.isAlive[i][j]=new Array($scope.horizDivs)
-//             }
-//         }
+        $scope.isAlive[$scope.gridIndex][$scope.r]=new Array($scope.c);
+        $scope.isAlive[1-$scope.gridIndex][$scope.r]=new Array($scope.c);
+        for(i=0;i<2;i++){
+            for(j=0;j<$scope.vertDivs;j++){
+                $scope.isAlive[i][j]=new Array($scope.horizDivs)
+            }
+        }
         $scope.$apply();
     };
     //LIFE
@@ -52,7 +52,7 @@ ratanrsur.controller('tableCtrl', function ($scope) {
                 $scope.isAlive[i][j]=new Array($scope.horizDivs);
             }
         }
-        setInterval($scope.iterate,900);
+        setInterval($scope.iterate,500);
     });
 
 
