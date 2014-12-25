@@ -7,7 +7,7 @@ var neighbors=0;
 
 ratanrsur.controller('tableCtrl', function ($scope) {
     //WINDOW GENERATION
-    $scope.horizDivs=40;
+    $scope.horizDivs=100;
     $scope.getNumber = function(num) {
         return new Array(num);
     }
@@ -29,49 +29,56 @@ ratanrsur.controller('tableCtrl', function ($scope) {
     window.onresize = function(){
         $scope.cellSide=$scope.getWidth()/$scope.horizDivs;
         $scope.vertDivs=Math.floor($scope.getHeight()/$scope.cellSide*3/4);
-        $scope.isAlive[$scope.gridIndex][$scope.r]=new Array($scope.c);
-        $scope.isAlive[1-$scope.gridIndex][$scope.r]=new Array($scope.c);
-        for(i=0;i<2;i++){
-            for(j=0;j<$scope.vertDivs;j++){
-                $scope.isAlive[i][j]=new Array($scope.horizDivs)
-            }
-        }
+//         $scope.isAlive[$scope.gridIndex][$scope.r]=new Array($scope.c);
+//         $scope.isAlive[1-$scope.gridIndex][$scope.r]=new Array($scope.c);
+//         for(i=0;i<2;i++){
+//             for(j=0;j<$scope.vertDivs;j++){
+//                 $scope.isAlive[i][j]=new Array($scope.horizDivs)
+//             }
+//         }
         $scope.$apply();
     };
     //LIFE
     //runs once, setting off the iterate function that updates the board
     $scope.$watch('$viewContentLoaded', function() {
-        $scope.isAlive[$scope.gridIndex][$scope.r]=new Array($scope.vertDivs);
-        $scope.isAlive[1-$scope.gridIndex][$scope.r]=new Array($scope.vertDivs);
+        $scope.cellSide=$scope.getWidth()/$scope.horizDivs;
+        $scope.vertDivs=Math.floor($scope.getHeight()/$scope.cellSide*3/4);
+        $scope.gridIndex= 0;
+        $scope.isAlive  = [[],[]];
+        $scope.isAlive[$scope.gridIndex]=new Array($scope.vertDivs);
+        $scope.isAlive[1-$scope.gridIndex]=new Array($scope.vertDivs);
         for(i=0;i<2;i++){
             for(j=0;j<$scope.vertDivs;j++){
-                $scope.isAlive[i][j]=new Array($scope.horizDivs)
+                $scope.isAlive[i][j]=new Array($scope.horizDivs);
             }
         }
-        setInterval($scope.iterate,3000);
+        setInterval($scope.iterate,900);
     });
 
-    $scope.gridIndex= 0;
-    $scope.isAlive  = [[],[]]
-    $scope.iterate=function(){
-        for($scope.r=1;$scope.r<$scope.vertDivs-1;$scope.r++){
 
-            for($scope.c=1;$scope.c<$scope.horizDivs-1;$scope.c++){
-                neighbors=0;
-                for(n=0;n<7;n++){
-                    if($scope.isAlive[1-$scope.gridIndex][$scope.r+adjacent[n][1]][$scope.c+adjacent[n][2]]){
-                        neighbors++;
+    $scope.iterate=function(){
+        for($scope.r=0;$scope.r<$scope.vertDivs;$scope.r++){
+
+            for($scope.c=0;$scope.c<$scope.horizDivs;$scope.c++){
+                if($scope.r==0 || $scope.c==0 || $scope.r == $scope.vertDivs-1 || $scope.c == $scope.horizDivs-1){
+                    $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=false;
+                }else{
+                    neighbors=0;
+                    for(n=0;n<8;n++){
+                        if($scope.isAlive[1-$scope.gridIndex][$scope.r+adjacent[n][0]][$scope.c+adjacent[n][1]]){
+                            neighbors++;
+                        }
+                    }
+                    if(neighbors<2){
+                        $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=false;
+                    }else if(neighbors>3){
+                        $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=false;
+                    }else if(neighbors==3){
+                        $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=true;
+                    }else{
+                        $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=$scope.isAlive[1-$scope.gridIndex][$scope.r][$scope.c];
                     }
                 }
-                if(neighbors<2){
-                    $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=false;
-                }else if(neighbors>3){
-                    $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=false;
-                }else if(neighbors==3){
-                    $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=true;
-                }else if(neighbors==2){
-                    $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=true;
-                };
             }
         }
         $scope.gridIndex=1-$scope.gridIndex;
