@@ -1,25 +1,33 @@
 <!DOCTYPE html>
-<html ng-app="ratanrsur" >
+<html ng-app="ratanrsur" ng-controller="lifeTable">
 <head>
     <title>Ratan Rai Sur</title>
     <link rel="stylesheet" type="text/css" href="index.css">
     <script src="bower_components/angular.js"></script>
-<!--     <script src="bower_components/jquery/src/jquery.js"></script> -->
-    <script src="js/controllers.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script src="js/lifeTable.js"></script>
+<!--     <script src="js/drawers.js"></script> -->
 </head>
 <body>
-    <table ng-controller="tableCtrl">
+    <table>
         <tr ng-repeat="i in getNumber(vertDivs) track by $index">
-            <td ng-class="{alive: isAlive[1-gridIndex][$parent.$index][$index]}"
+            <td ng-class="{alive: (!drawerOpen && isAlive[1-gridIndex][$parent.$index][$index]), aliveDrawer:(drawerOpen && isAlive[1-gridIndex][$parent.$index][$index])}"
                 ng-mouseenter="isAlive[1-gridIndex][$parent.$index][$index] = true"
                 ng-style="{ 'width' : cellSide+'px','height' : cellSide+'px' }"
                 ng-repeat="i in getNumber(horizDivs) track by $index">
             </td>
         </tr>
     </table>
-    <div class="name"
-         ng-style="{ 'font-size' : +'px' }">
-        Ratan Rai Sur
+    <div class="nav"
+         ng-repeat="i in getNumber(menuItem.length) track by $index"
+         ng-click="clickIndex=$index ; activeItem[$index]=true"
+         ng-class="{active: activeItem[$index],name: $index==0}"
+         ng-style="{ 'font-size' : (getHeight()-cellSide*vertDivs)*.5+'px' }">
+         {{menuItem[$index]}}
+    </div>
+    <div class="content"
+         ng-style="{'width': '100%'}">
+<!--         He's a Civil Engineering student at The Cooper Union in his homecity, New York. In his free time he enjoys playing The Four Knights Game, Scotch Variation in Marcus Garvey Park in Harlem, getting pump faked at NYU's gym, making his computer cry with the humbling problems of Project Euler, and meeting astronauts while dressed as an astronaut. -->
     </div>
 </body>
 </html>

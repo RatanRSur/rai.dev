@@ -2,15 +2,30 @@ html{
   background-color:#151515;
 }
 
+.content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events:none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
 
 .alive{
   background-color: #FF8C00;
 }
-
 .name{
-    font-size: 100px;
+    color:#FF8C00;
+}
+.nav{
+    display: inline-block;
     font-family: Wendy;
-    color: #FF8C00
+}
+.active{
+    color:white;
+}
+.inactive{
+    color:#353535;
 }
 
 @font-face {
@@ -22,4 +37,10 @@ table{
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+.aliveDrawer{
+    background-color: #353535;
+}
+
+/* animations` */
 
