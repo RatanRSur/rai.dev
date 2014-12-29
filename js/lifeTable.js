@@ -96,7 +96,7 @@ ratanrsur.controller('lifeTable', function ($scope) {
     }
 
     $scope.$watch('getClick()',function(newValue,oldValue){
-        console.log(newValue,oldValue);
+//         console.log(newValue,oldValue);
         if($scope.clickIndex==0){
 
             $scope.activeItem[1]=false;
@@ -127,4 +127,10 @@ ratanrsur.controller('lifeTable', function ($scope) {
             $scope.activeItem[1]=false;
         }
     },true);
+
+   //Life parameter stuff
+    $scope.numChecks=[1,6,1];
+    $scope.displayVals=[[3],[1,4,5,6,7,8],[2]];
+    $scope.checkBoxMessage=["Born with","Dies with","Persists with"];
+
 });

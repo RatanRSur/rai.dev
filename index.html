@@ -40,9 +40,27 @@
         He's a Civil Engineering student at The Cooper Union in his homecity, New York. In his free time he enjoys<br>
         <ul>
             <li> playing <a target ="_blank" href="http://en.wikipedia.org/wiki/King%27s_Gambit">1. e4 e5 2. f4</a> in Marcus Garvey Park in Harlem
-            <li>
+            <li> making random observations to strangers
+            <li> troubleshooting basic Linux issues because he's "not ready for <a target="_blank" href="https://wiki.archlinux.org/">Arch</a> yet"
+            <li> playing basketball
+            <li> reading <a target="_blank" href="https://what-if.xkcd.com/">What If?</a>, <a target="_blank" href="http://xkcd.com/">xkcd</a>, <a target="_blank" href="http://waitbutwhy.com/">Wait But Why</a>
+            <li> listening to <a target="_blank" href="http://www.hellointernet.fm/">Hello Internet</a>, <a target="_blank" href="http://qi.com/podcast/">No Such Thing As A Fish</a>
+            <li> <a target="_blank" href="https://projecteuler.net/">Project Euler</a> problems
+            <li> inventing beer pong variants
             <li> <a target="_blank" href="ChrisHadfield.jpg">meeting astronauts while dressed as an astronaut</a>
+            <li> wearing bird costumes in public (coming soon!)
         </ul>
+        The backdrop is a <a target="_blank" href="http://en.wikipedia.org/wiki/Cellular_automaton">cellular automaton</a> board with the default set to <a target="_blank" href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">John Conway's Game of Life</a>.<br>
+        You can play around with the parameters below!<br>
+        <br>
+        <div ng-repeat="i in getNumber(3) track by $index">
+            {{checkBoxMessage[$index]}}<span ng-repeat="i in getNumber(numChecks[$index]) track by $index"> {{displayVals[$parent.$index][$index]}}<input  type="checkbox" ng-checked=""></span> neighbors.
+        </div>
+        <div>
+            Color: #<input placeholder="Hex Color Code">
+        </div>
+        <br>
+        Note: The display grid is not toroidal, so cells at the edges are always "dead".
     </div>
 </body>
 </html>

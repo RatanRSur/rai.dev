@@ -10,9 +10,13 @@ html{
     pointer-events:none;
     color: white;
     font-family: 'Roboto', sans-serif;
+    overflow:auto;
 }
 
 .content a {
+    pointer-events:auto;
+}
+.content input{
     pointer-events:auto;
 }
 
