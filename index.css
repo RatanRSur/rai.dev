@@ -4,12 +4,24 @@ html{
 
 .content{
     position: absolute;
-    top: 0;
-    left: 0;
+    top:20px;
+    right:20px;
+    width:auto;
     pointer-events:none;
     color: white;
     font-family: 'Roboto', sans-serif;
 }
+
+.content a {
+    pointer-events:auto;
+}
+
+a:link{color:white; text-decoration:underline}
+a:visited{color:white; text-decoration:underline}
+a:hover{color:white; text-decoration:underline}
+a:active{color:white; text-decoration:underline}
+
+.text{cursor:default;}
 
 .alive{
   background-color: #FF8C00;
@@ -20,6 +32,7 @@ html{
 .nav{
     display: inline-block;
     font-family: Wendy;
+    cursor:pointer;
 }
 .active{
     color:white;
@@ -27,7 +40,6 @@ html{
 .inactive{
     color:#353535;
 }
-
 @font-face {
     font-family: Wendy;
     src: wendy.ttf
@@ -41,6 +53,3 @@ table{
 .aliveDrawer{
     background-color: #353535;
 }
-
-/* animations` */
-

@@ -91,46 +91,40 @@ ratanrsur.controller('lifeTable', function ($scope) {
     $scope.activeItem=[false,false,false]
     $scope.firstTime=true;
     $scope.clickIndex=-1;
-//     $scope.$watchGroup('activeItem', function(newValue, oldValue) {
-    $scope.$watchGroup(['activeItem[0]', 'activeItem[1]', 'activeItem[2]'], function(newValue, oldValue) {
+    $scope.getClick=function(){
+        return $scope.clickIndex;
+    }
 
-        if($scope.firstTime){
-            $scope.firstTime=false//watch gets called on page load, this voids that call
-        }else{
-            console.log($scope.clickIndex);
-            if($scope.drawerOpen==false){
-                $scope.drawerOpen=true
+    $scope.$watch('getClick()',function(newValue,oldValue){
+        console.log(newValue,oldValue);
+        if($scope.clickIndex==0){
+
+            $scope.activeItem[1]=false;
+            $scope.activeItem[2]=false;
+            if($scope.drawerOpen){
+                if(oldValue==1 || oldValue==2){
+                    $scope.clickIndex=-1;
+                }else{
+                    $scope.drawerOpen=false;
+                    $scope.menuItem[1]=''
+                    $scope.menuItem[2]=''
+                    $scope.activeItem[0]=false;
+                    $scope.clickIndex=-1;
+                }
+            }else{
                 $scope.menuItem[1]='Work'
                 $scope.menuItem[2]='Life'
-            }else{
-               if($scope.activeItem[0]){
-                   if(oldValue[0]){
-                       $scope.menuItem[1]=''
-                       $scope.menuItem[2]=''
-                       for (i=0;i<3;i++){
-                           $scope.activeItem[i]=false;
-                       }
-                   }else{
-                       $scope.activeItem[1]=false;
-                       $scope.activeItem[2]=false;
-                   }
-               }
+                $scope.drawerOpen=true;
+                $scope.clickIndex=-1;
             }
         }
-//             if($scope.clickIndex==0){
-//                 $scope.activeItem[0]=false;
-//                 $scope.menuItem[1]='';
-//                 $scope.menuItem[2]='';
-//                 console.log(1);
-//             }else if ($scope.clickIndex==0 && oldValue[0]==false){
-//                 $scope.menuItem[1]='Work'
-//                 console.log(2);
-//                 $scope.menuItem[2]='Life'
-//                 for(i=0;i<3;i++){
-//                     $scope.activeItem[i]=false;
-//                 }
-//                 $scope.activeItem[$scope.clickIndex]=true;
-//             }
-//         }
-    });
+        if($scope.clickIndex==1){
+            $scope.activeItem[0]=false;
+            $scope.activeItem[2]=false;
+        }
+        if($scope.clickIndex==2){
+            $scope.activeItem[0]=false;
+            $scope.activeItem[1]=false;
+        }
+    },true);
 });

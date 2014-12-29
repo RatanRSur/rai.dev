@@ -19,15 +19,30 @@
         </tr>
     </table>
     <div class="nav"
-         ng-repeat="i in getNumber(menuItem.length) track by $index"
-         ng-click="clickIndex=$index ; activeItem[$index]=true"
-         ng-class="{active: activeItem[$index],name: $index==0}"
+         ng-click="activeItem[0]=true;clickIndex=0;"
+         ng-class="{active: activeItem[0], name:!drawerOpen, inactive:!activeItem[0]&&drawerOpen}"
          ng-style="{ 'font-size' : (getHeight()-cellSide*vertDivs)*.5+'px' }">
-         {{menuItem[$index]}}
+         {{menuItem[0]}}
     </div>
-    <div class="content"
-         ng-style="{'width': '100%'}">
-<!--         He's a Civil Engineering student at The Cooper Union in his homecity, New York. In his free time he enjoys playing The Four Knights Game, Scotch Variation in Marcus Garvey Park in Harlem, getting pump faked at NYU's gym, making his computer cry with the humbling problems of Project Euler, and meeting astronauts while dressed as an astronaut. -->
+
+    <div class="nav"
+         ng-repeat="i in [0,1] track by $index"
+         ng-click="activeItem[$index+1]=true ; $parent.clickIndex=$index+1"
+         ng-class="{active: activeItem[$index+1], inactive:!activeItem[$index+1]}"
+         ng-style="{ 'font-size' : (getHeight()-cellSide*vertDivs)*.5+'px' }">
+        {{menuItem[$index+1]}}
+    </div>
+    <div class="content workContent"
+         ng-show="activeItem[1]">
+    </div>
+    <div class="content lifeContent"
+         ng-show="activeItem[2]">
+        He's a Civil Engineering student at The Cooper Union in his homecity, New York. In his free time he enjoys<br>
+        <ul>
+            <li> playing <a target ="_blank" href="http://en.wikipedia.org/wiki/King%27s_Gambit">1. e4 e5 2. f4</a> in Marcus Garvey Park in Harlem
+            <li>
+            <li> <a target="_blank" href="ChrisHadfield.jpg">meeting astronauts while dressed as an astronaut</a>
+        </ul>
     </div>
 </body>
 </html>
