@@ -129,8 +129,94 @@ ratanrsur.controller('lifeTable', function ($scope) {
     },true);
 
    //Life parameter stuff
-    $scope.numChecks=[1,6,1];
-    $scope.displayVals=[[3],[1,4,5,6,7,8],[2]];
-    $scope.checkBoxMessage=["Born with","Dies with","Persists with"];
+    $scope.paramText=['Born with: ','Dies with: ','Persists with: '];
+    $scope.numBoxes=[1,
+                     6,
+                     1];
+    $scope.boxNums=[[3],
+                    [1,4,5,6,7,8],
+                    [2]]
+//     $scope.checkedBox=[[false,false,true,false,false,false,false,false],
+//                        [true,false,false,true,true,true,true,true],
+//                        [false,true,false,false,false,false,false,false]]
+    $scope.checkedBox=[[true],
+                       [true,true,true,true,true,true],
+                       [true]]
 
+    $scope.numFalse=function(array){
+        var falses=0
+        for(i=0;i<array.length;i++){
+            for(j=0;j<array[i].length;j++){
+                if(array[i][j]==false){
+                    falses++
+                }
+            }
+        }
+        return falses;
+    }
+
+    $scope.newBoolIndex=function(newArray,oldArray){
+        for(i=0;i<newArray.length;i++){
+            for(j=0;j<newArray[i].length;j++){
+                if(newArray[i][j]!=oldArray[i][j])
+                    return [i,j]
+                }
+            }
+        }
+    }
+
+    Array.prototype.insert = function (index, item) {
+        this.splice(index, 0, item);
+    };
+    Array.prototype.remove = function(from, to) {
+        var rest = this.slice((to || from) + 1 || this.length);
+        this.length = from < 0 ? this.length + from : from;
+        return this.push.apply(this, rest);
+    };
+
+    $scope.$watch('checkedBox',function(newValue,oldValue){
+//         console.log(newValue,oldValue)
+        console.log($scope.numFalse(newValue),$scope.numFalse(oldValue))
+        if($scope.numFalse(newValue)-1==$scope.numFalse(oldValue)){
+            //a box just got unclicked
+            var clickedRow=$scope.newBoolIndex(newValue,oldValue)[0]
+            var clickedCol=$scope.boxNums[$scope.newBoolIndex(newValue,oldValue)[0]][$scope.newBoolIndex(newValue,oldValue)[1]]
+            console.log("clickedRow: "+clickedRow,"clickedVal: "+clickedVal)
+            for(i=0;i<3;i++){
+                if(i==clickedRow){
+                    //skip
+                }else{
+                    //increment the number of boxes
+                    $scope.numBoxes[i]++;
+                    //add the freed number to the display list for the other rows
+                    for(j=$scope.boxNums[i].length-1;j>=0;j--){
+                        if($scope.boxNums[i][j]<clickedVal){
+                            $scope.boxNums[i].insert(j+1,clickedVal);
+                            $scope.checkedBox[i].insert(j+1,false);
+                            break;
+                        }else if(j==0){
+                            $scope.boxNums[i].insert(0,clickedVal);
+                            $scope.checkedBox[i].insert(0,false);
+                            break;
+                        }
+                    }
+                }
+            }
+        }else if($scope.numFalse(newValue)+1==$scope.numFalse(oldValue)){
+            var clickedRow=$scope.newBoolIndex(newValue,oldValue)[0]
+            var clickedCol=$scope.boxNums[$scope.newBoolIndex(newValue,oldValue)[0]][$scope.newBoolIndex(newValue,oldValue)[1]]
+            for(i=0;i<3;i++){
+                if(i==clickedRow){
+                    //skip
+                }else{
+                    //decrement the number of boxes
+                    $scope.numBoxes[i]--;
+                    for(j=0;j<boxNums[i].length;j++){
+                        if($scope.boxNums[i][j]==click){
+                    }
+                    }
+                }
+            }
+        }
+    },true);
 });

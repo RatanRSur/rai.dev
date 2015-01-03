@@ -37,7 +37,7 @@
     </div>
     <div class="content lifeContent"
          ng-show="activeItem[2]">
-        He's a Civil Engineering student at The Cooper Union in his homecity, New York. In his free time he enjoys<br>
+        He's a civil engineering student at The Cooper Union in his homecity, New York. In his free time he enjoys<br>
         <ul>
             <li> playing <a target ="_blank" href="http://en.wikipedia.org/wiki/King%27s_Gambit">1. e4 e5 2. f4</a> in Marcus Garvey Park in Harlem
             <li> making random observations to strangers
@@ -54,13 +54,12 @@
         You can play around with the parameters below!<br>
         <br>
         <div ng-repeat="i in getNumber(3) track by $index">
-            {{checkBoxMessage[$index]}}<span ng-repeat="i in getNumber(numChecks[$index]) track by $index"> {{displayVals[$parent.$index][$index]}}<input  type="checkbox" ng-checked=""></span> neighbors.
+            {{paramText[$index]}}
+            <span ng-repeat="i in getNumber(numBoxes[$index]) track by $index">
+                    {{boxNums[$parent.$index][$index]}}<input type="checkbox" ng-model="checkedBox[$parent.$index][$index]">
+                </span> neighbors.
+
         </div>
-        <div>
-            Color: #<input placeholder="Hex Color Code">
-        </div>
-        <br>
-        Note: The display grid is not toroidal, so cells at the edges are always "dead".
     </div>
 </body>
 </html>

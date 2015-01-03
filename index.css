@@ -33,6 +33,10 @@ a:active{color:white; text-decoration:underline}
 .name{
     color:#FF8C00;
 }
+@font-face {
+    font-family: Wendy;
+    src: url(wendy.ttf);
+}
 .nav{
     display: inline-block;
     font-family: Wendy;
@@ -44,10 +48,7 @@ a:active{color:white; text-decoration:underline}
 .inactive{
     color:#353535;
 }
-@font-face {
-    font-family: Wendy;
-    src: wendy.ttf
-}
+
 
 table{
     border-collapse: collapse;
