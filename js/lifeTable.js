@@ -257,11 +257,13 @@ ratanrsur.controller('lifeTable', function ($scope) {
     },true);
 
     //color stuff
+    $scope.colorVal=''
     $scope.colorStyle=function(){
-        if($scope.colorVal==''){
-            return 'ff8c00'
-        }else{
+        if($scope.colorVal!=''){
             return $scope.colorVal
+        }else{
+            return 'ff8c00'
         }
     }
+
 });
