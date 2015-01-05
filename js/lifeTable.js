@@ -76,33 +76,38 @@ ratanrsur.controller('lifeTable', function ($scope) {
             return true;
         }
     }
+    //wrap index from one side to the other
+    var wrap=function(index,arrayLen){
+        if(index<0){
+            return arrayLen+index;
+        }else if(index>=arrayLen){
+            return index-arrayLen
+        }else{
+            return index;
+        }
+    }
     //iterate
     $scope.iterate=function(){
         for($scope.r=0;$scope.r<$scope.vertDivs;$scope.r++){
             for($scope.c=0;$scope.c<$scope.horizDivs;$scope.c++){
-                if($scope.r==0 || $scope.c==0 || $scope.r == $scope.vertDivs-1 || $scope.c == $scope.horizDivs-1){
-                    //edges are dead
+                neighbors=0;
+                for(n=0;n<8;n++){
+                    if($scope.isAlive[1-$scope.gridIndex][wrap($scope.r+adjacent[n][0],$scope.vertDivs)][wrap($scope.c+adjacent[n][1],$scope.horizDivs)]){
+                        neighbors++;
+                    }
+                }
+                if(notValid()){
+                    //Everything Freezes
+                    $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=$scope.isAlive[1-$scope.gridIndex][$scope.r][$scope.c];
+                }else if(neighborCond(neighbors,$scope.boxNums[0])){
+                    //Born
+                    $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=true;
+                }else if(neighborCond(neighbors,$scope.boxNums[1])){
+                    //Dies
                     $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=false;
-                }else{
-                    neighbors=0;
-                    for(n=0;n<8;n++){
-                        if($scope.isAlive[1-$scope.gridIndex][$scope.r+adjacent[n][0]][$scope.c+adjacent[n][1]]){
-                            neighbors++;
-                        }
-                    }
-                    if(notValid()){
-                        $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=false;
-                    }else if(neighborCond(neighbors,$scope.boxNums[0])){
-                        //Born
-                        $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=true;
-                    }else if(neighborCond(neighbors,$scope.boxNums[1])){
-                        //Dies
-                        $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=false;
-                    }else if(neighborCond(neighbors,$scope.boxNums[2])){
-                        //Persists
-                        $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=$scope.isAlive[1-$scope.gridIndex][$scope.r][$scope.c];
-                    }
-//                     console.log(neighbors,$scope.isAlive[$scope.gridIndex][$scope.r][$scope.c])
+                }else if(neighborCond(neighbors,$scope.boxNums[2])){
+                    //Persists
+                    $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=$scope.isAlive[1-$scope.gridIndex][$scope.r][$scope.c];
                 }
             }
         }
@@ -160,9 +165,6 @@ ratanrsur.controller('lifeTable', function ($scope) {
     $scope.boxNums=[[3],
                     [0,1,4,5,6,7,8],
                     [2]]
-//     $scope.checkedBox=[[false,false,true,false,false,false,false,false],
-//                        [true,false,false,true,true,true,true,true],
-//                        [false,true,false,false,false,false,false,false]]
     $scope.checkedBox=[[true],
                        [true,true,true,true,true,true,true],
                        [true]]
@@ -255,14 +257,32 @@ ratanrsur.controller('lifeTable', function ($scope) {
             }
         }
     },true);
+    //presets
+    $scope.presets=[{option:"Game of Life"},{option:"Clovers"}]
+    $scope.$watch('selected',function(newValue,oldValue){
+        console.log($scope.selected)
+        if($scope.selected.option=="Game of Life"){
+            $scope.numBoxes=[1,7,1];
+            $scope.boxNums=[[3],[0,1,4,5,6,7,8],[2]]
+            $scope.checkedBox=[[true],[true,true,true,true,true,true,true],[true]]
+        }else if($scope.selected.option=='Clovers'){
+            console.log("here")
+            $scope.numBoxes=[2,6,1]
+            $scope.boxNums=[[0,7],[1,3,4,5,6,8],[2]]
+            $scope.checkedBox=[[true,true],[true,true,true,true,true,true],[true]]
+        }
+    });
 
     //color stuff
-    $scope.colorVal=''
+//     $scope.colorVal="#ff8c00"
+    $scope.colorVal="DarkOrange"
     $scope.colorStyle=function(){
         if($scope.colorVal!=''){
             return $scope.colorVal
+        }else if($scope.colorVal==''){
+            return "white"
         }else{
-            return 'ff8c00'
+            return 'DarkOrange'
         }
     }
 

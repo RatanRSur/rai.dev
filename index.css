@@ -10,10 +10,13 @@ html{
     color: white;
     font-family: 'Roboto', sans-serif;
     overflow:auto;
+    line-height:1.5em;
 }
+
 .workContent{
     width:75%;
 }
+
 .lifeContent{
     width:auto;
 }
@@ -22,6 +25,9 @@ html{
     pointer-events:auto;
 }
 .content input{
+    pointer-events:auto;
+}
+.content select{
     pointer-events:auto;
 }
 
@@ -35,19 +41,24 @@ a:active{color:white; text-decoration:underline}
 .alive{
   background-color: #FF8C00;
 }
+
+
+
 .name{
     color:#FF8C00;
 }
+
 @font-face {
     font-family: Wendy;
     src: url(wendy.ttf);
 }
+
 .nav{
     display: inline-block;
     font-family: Wendy;
     cursor:pointer;
 }
-.active{
+body{
     color:white;
 }
 .inactive{
