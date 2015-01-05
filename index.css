@@ -27,9 +27,9 @@ a:active{color:white; text-decoration:underline}
 
 .text{cursor:default;}
 
-.alive{
+/* .alive{
   background-color: #FF8C00;
-}
+} */
 .name{
     color:#FF8C00;
 }

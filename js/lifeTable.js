@@ -55,13 +55,33 @@ ratanrsur.controller('lifeTable', function ($scope) {
         }
         setInterval($scope.iterate,500);
     });
+    //function to check if any neighbor conditions are met
+    var neighborCond=function(nNeighbors,array){
+        for(i=0;i<array.length;i++){
+            if(nNeighbors==array[i]){
+                return true;
+            }
+        }
+        return false;
+    }
 
+    var notValid=function(){
+        var totalBoxes=0;
+        for(i=0;i<3;i++){
+            totalBoxes+=$scope.numBoxes[i]
+        }
+        if(totalBoxes==9){
+            return false;
+        }else{
+            return true;
+        }
+    }
     //iterate
     $scope.iterate=function(){
         for($scope.r=0;$scope.r<$scope.vertDivs;$scope.r++){
-
             for($scope.c=0;$scope.c<$scope.horizDivs;$scope.c++){
                 if($scope.r==0 || $scope.c==0 || $scope.r == $scope.vertDivs-1 || $scope.c == $scope.horizDivs-1){
+                    //edges are dead
                     $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=false;
                 }else{
                     neighbors=0;
@@ -70,15 +90,19 @@ ratanrsur.controller('lifeTable', function ($scope) {
                             neighbors++;
                         }
                     }
-                    if(neighbors<2){
+                    if(notValid()){
                         $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=false;
-                    }else if(neighbors>3){
-                        $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=false;
-                    }else if(neighbors==3){
+                    }else if(neighborCond(neighbors,$scope.boxNums[0])){
+                        //Born
                         $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=true;
-                    }else{
+                    }else if(neighborCond(neighbors,$scope.boxNums[1])){
+                        //Dies
+                        $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=false;
+                    }else if(neighborCond(neighbors,$scope.boxNums[2])){
+                        //Persists
                         $scope.isAlive[$scope.gridIndex][$scope.r][$scope.c]=$scope.isAlive[1-$scope.gridIndex][$scope.r][$scope.c];
                     }
+//                     console.log(neighbors,$scope.isAlive[$scope.gridIndex][$scope.r][$scope.c])
                 }
             }
         }
@@ -131,16 +155,16 @@ ratanrsur.controller('lifeTable', function ($scope) {
    //Life parameter stuff
     $scope.paramText=['Born with: ','Dies with: ','Persists with: '];
     $scope.numBoxes=[1,
-                     6,
+                     7,
                      1];
     $scope.boxNums=[[3],
-                    [1,4,5,6,7,8],
+                    [0,1,4,5,6,7,8],
                     [2]]
 //     $scope.checkedBox=[[false,false,true,false,false,false,false,false],
 //                        [true,false,false,true,true,true,true,true],
 //                        [false,true,false,false,false,false,false,false]]
     $scope.checkedBox=[[true],
-                       [true,true,true,true,true,true],
+                       [true,true,true,true,true,true,true],
                        [true]]
 
     $scope.numFalse=function(array){
@@ -158,16 +182,18 @@ ratanrsur.controller('lifeTable', function ($scope) {
     $scope.newBoolIndex=function(newArray,oldArray){
         for(i=0;i<newArray.length;i++){
             for(j=0;j<newArray[i].length;j++){
-                if(newArray[i][j]!=oldArray[i][j])
+                if(newArray[i][j]!=oldArray[i][j]){
                     return [i,j]
                 }
             }
         }
     }
 
+
     Array.prototype.insert = function (index, item) {
         this.splice(index, 0, item);
     };
+
     Array.prototype.remove = function(from, to) {
         var rest = this.slice((to || from) + 1 || this.length);
         this.length = from < 0 ? this.length + from : from;
@@ -175,48 +201,67 @@ ratanrsur.controller('lifeTable', function ($scope) {
     };
 
     $scope.$watch('checkedBox',function(newValue,oldValue){
-//         console.log(newValue,oldValue)
-        console.log($scope.numFalse(newValue),$scope.numFalse(oldValue))
         if($scope.numFalse(newValue)-1==$scope.numFalse(oldValue)){
-            //a box just got unclicked
             var clickedRow=$scope.newBoolIndex(newValue,oldValue)[0]
-            var clickedCol=$scope.boxNums[$scope.newBoolIndex(newValue,oldValue)[0]][$scope.newBoolIndex(newValue,oldValue)[1]]
-            console.log("clickedRow: "+clickedRow,"clickedVal: "+clickedVal)
+            var clickedVal=$scope.boxNums[$scope.newBoolIndex(newValue,oldValue)[0]][$scope.newBoolIndex(newValue,oldValue)[1]]
             for(i=0;i<3;i++){
                 if(i==clickedRow){
                     //skip
+
                 }else{
                     //increment the number of boxes
                     $scope.numBoxes[i]++;
                     //add the freed number to the display list for the other rows
-                    for(j=$scope.boxNums[i].length-1;j>=0;j--){
-                        if($scope.boxNums[i][j]<clickedVal){
-                            $scope.boxNums[i].insert(j+1,clickedVal);
-                            $scope.checkedBox[i].insert(j+1,false);
-                            break;
-                        }else if(j==0){
-                            $scope.boxNums[i].insert(0,clickedVal);
-                            $scope.checkedBox[i].insert(0,false);
-                            break;
+                    if($scope.boxNums[i].length==0){
+                        $scope.boxNums[i].push(clickedVal);
+                        $scope.checkedBox[i].push(false);
+                    }else{
+                        for(j=$scope.boxNums[i].length-1;j>=0;j--){
+                            if($scope.boxNums[i][j]<clickedVal){
+                                $scope.boxNums[i].insert(j+1,clickedVal);
+                                $scope.checkedBox[i].insert(j+1,false);
+                                break;
+                            }else if(j==0){
+                                $scope.boxNums[i].insert(0,clickedVal);
+                                $scope.checkedBox[i].insert(0,false);
+                                break;
+                            }
                         }
                     }
                 }
             }
         }else if($scope.numFalse(newValue)+1==$scope.numFalse(oldValue)){
             var clickedRow=$scope.newBoolIndex(newValue,oldValue)[0]
-            var clickedCol=$scope.boxNums[$scope.newBoolIndex(newValue,oldValue)[0]][$scope.newBoolIndex(newValue,oldValue)[1]]
+            var clickedVal=$scope.boxNums[$scope.newBoolIndex(newValue,oldValue)[0]][$scope.newBoolIndex(newValue,oldValue)[1]]
             for(i=0;i<3;i++){
                 if(i==clickedRow){
                     //skip
                 }else{
                     //decrement the number of boxes
                     $scope.numBoxes[i]--;
-                    for(j=0;j<boxNums[i].length;j++){
-                        if($scope.boxNums[i][j]==click){
-                    }
+                    if($scope.checkedBox[i].length==1){
+                        $scope.boxNums[i]=[];
+                        $scope.checkedBox[i]=[];
+                    }else{
+                        for(j=0;j<$scope.boxNums[i].length;j++){
+                            if($scope.boxNums[i][j]==clickedVal){
+                                $scope.boxNums[i].remove(j,j);
+                                $scope.checkedBox[i].remove(j,j);
+                                break;
+                            }
+                        }
                     }
                 }
             }
         }
     },true);
+
+    //color stuff
+    $scope.colorStyle=function(){
+        if($scope.colorVal==''){
+            return 'ff8c00'
+        }else{
+            return $scope.colorVal
+        }
+    }
 });
