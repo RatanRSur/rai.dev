@@ -53,7 +53,7 @@ ratanrsur.controller('lifeTable', function ($scope) {
                 $scope.isAlive[i][j]=new Array($scope.horizDivs);
             }
         }
-        setInterval($scope.iterate,500);
+        setInterval($scope.iterate,400);
     });
     //function to check if any neighbor conditions are met
     var neighborCond=function(nNeighbors,array){
@@ -274,16 +274,16 @@ ratanrsur.controller('lifeTable', function ($scope) {
     });
 
     //color stuff
-//     $scope.colorVal="#ff8c00"
     $scope.colorVal="DarkOrange"
     $scope.colorStyle=function(){
         if($scope.colorVal!=''){
-            return $scope.colorVal
-        }else if($scope.colorVal==''){
-            return "white"
+            return ''+$scope.colorVal
         }else{
-            return 'DarkOrange'
+            return "White"
         }
     }
-
+    $scope.style=".alive{background-color:"+$scope.colorStyle()+"}.aliveActive{background-color:"+$scope.colorStyle()+"}.active{color:"+$scope.colorStyle()+"}"
+    $scope.$watch('colorVal',function(newValue,oldValue){
+        $scope.style=".alive{background-color:"+$scope.colorStyle()+"}.aliveActive{background-color:"+$scope.colorStyle()+"}.active{color:"+$scope.colorStyle()+"}"
+    });
 });

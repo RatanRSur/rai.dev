@@ -14,11 +14,11 @@ html{
 }
 
 .workContent{
-    width:75%;
+    width:50%;
 }
 
 .lifeContent{
-    width:auto;
+    width:50%
 }
 
 .content a {
@@ -38,12 +38,6 @@ a:active{color:white; text-decoration:underline}
 
 .text{cursor:default;}
 
-.alive{
-  background-color: #FF8C00;
-}
-
-
-
 .name{
     color:#FF8C00;
 }
@@ -58,6 +52,7 @@ a:active{color:white; text-decoration:underline}
     font-family: Wendy;
     cursor:pointer;
 }
+
 body{
     color:white;
 }

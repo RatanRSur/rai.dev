@@ -3,21 +3,18 @@
 <head>
     <title>Ratan Rai Sur</title>
     <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="bower_components/angular.js"></script>
+    <script src="angular.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/ico" src="favicon.ico">
     <script src="js/lifeTable.js"></script>
-    <style>
-        .alive{background-color:{{''+colorStyle()}}}
-        .aliveActive{background-color:{{''+colorStyle()}}}
-        .active{color:{{''+colorStyle()}}}
-    </style>
+    <style ng-bind="style"></style>
 </head>
 <body>
     <table>
         <tr ng-repeat="i in getNumber(vertDivs) track by $index">
             <td ng-class="{alive: (!drawerOpen && isAlive[1-gridIndex][$parent.$index][$index]), aliveDrawer:(drawerOpen && isAlive[1-gridIndex][$parent.$index][$index] && !activeItem[0]), aliveActive:drawerOpen && isAlive[1-gridIndex][$parent.$index][$index] && activeItem[0]}"
                 ng-mouseenter="isAlive[1-gridIndex][$parent.$index][$index] = true"
-                ng-style="{ 'cellColor':'#'+colorVal,'width' : cellSide+'px','height' : cellSide+'px' }"
+                ng-style="{'width' : cellSide+'px','height' : cellSide+'px' }"
                 ng-repeat="i in getNumber(horizDivs) track by $index">
             </td>
         </tr>
@@ -71,8 +68,7 @@
             <li> <a target="_blank" href="ChrisHadfield.jpg">meeting astronauts while dressed as an astronaut</a>
             <li> wearing bird costumes in public (coming soon!)
         </ul>
-        The backdrop is a <a target="_blank" href="http://en.wikipedia.org/wiki/Cellular_automaton">cellular automaton</a> board with the default set to <a target="_blank" href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">John Conway's Game of Life</a>.<br>
-        You can play around with the parameters below!
+        The backdrop is a <a target="_blank" href="http://en.wikipedia.org/wiki/Cellular_automaton">cellular automaton</a> board with the default set to <a target="_blank" href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">John Conway's Game of Life</a>. Play around with the parameters below!
         <br>
         Presets: <select ng-options="item.option for item in presets" ng-model="selected"></select>
         <br>
