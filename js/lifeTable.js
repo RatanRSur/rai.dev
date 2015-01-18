@@ -53,7 +53,7 @@ ratanrsur.controller('lifeTable', function ($scope) {
                 $scope.isAlive[i][j]=new Array($scope.horizDivs);
             }
         }
-        setInterval($scope.iterate,400);
+        setInterval($scope.iterate,469);
     });
     //function to check if any neighbor conditions are met
     var neighborCond=function(nNeighbors,array){
