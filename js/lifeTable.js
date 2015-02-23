@@ -7,7 +7,7 @@ var neighbors=0;
 
 ratanrsur.controller('lifeTable', function ($scope) {
     //WINDOW GENERATION
-    $scope.horizDivs=75;
+    $scope.horizDivs=60;
     $scope.getNumber = function(num) {
         return new Array(num);
     }
