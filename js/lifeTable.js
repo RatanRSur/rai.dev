@@ -309,7 +309,7 @@ ratanrsur.controller('lifeTable', function($scope) {
         });
 
         //color stuff
-        $scope.colorVal = "DarkOrange"
+        $scope.colorVal = "White"
         $scope.colorStyle = function() {
                 if ($scope.colorVal != '') {
                         return '' + $scope.colorVal
