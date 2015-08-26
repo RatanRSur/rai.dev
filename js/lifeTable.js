@@ -89,7 +89,7 @@ ratanrsur.controller('lifeTable', function($scope) {
                 //wrap index from one side to the other
         var wrap = function(index, arrayLen) {
                         if (index < 0) {
-                                return arrayLen + index;
+                                return index + arrayLen;
                         } else if (index >= arrayLen) {
                                 return index - arrayLen
                         } else {
