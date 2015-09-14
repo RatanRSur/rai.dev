@@ -45,6 +45,7 @@ ratanrsur.controller('lifeTable', function($scope) {
                 }
                 $scope.$apply();
         };
+
         //LIFE
         //runs once, declaring initial arrays and
         //setting off the iterate function that updates the board
@@ -63,8 +64,9 @@ ratanrsur.controller('lifeTable', function($scope) {
                                 $scope.isAlive[i][j] = new Array($scope.horizDivs);
                         }
                 }
-                setInterval($scope.iterate, 469);
+                setInterval($scope.iterate, 470);
         });
+
         //function to check if any neighbor conditions are met
         var neighborCond = function(nNeighbors, array) {
                 for (i = 0; i < array.length; i++) {
@@ -76,27 +78,29 @@ ratanrsur.controller('lifeTable', function($scope) {
         }
 
         var notValid = function() {
-                        var totalBoxes = 0;
-                        for (i = 0; i < 3; i++) {
-                                totalBoxes += $scope.numBoxes[i]
-                        }
-                        if (totalBoxes == 9) {
-                                return false;
-                        } else {
-                                return true;
-                        }
+                var totalBoxes = 0;
+                for (i = 0; i < 3; i++) {
+                        totalBoxes += $scope.numBoxes[i]
                 }
-                //wrap index from one side to the other
+                if (totalBoxes == 9) {
+                        return false;
+                } else {
+                        return true;
+                }
+        }
+
+        //wrap index from one side to the other
         var wrap = function(index, arrayLen) {
-                        if (index < 0) {
-                                return index + arrayLen;
-                        } else if (index >= arrayLen) {
-                                return index - arrayLen
-                        } else {
-                                return index;
-                        }
+                if (index < 0) {
+                        return index + arrayLen;
+                } else if (index >= arrayLen) {
+                        return index - arrayLen
+                } else {
+                        return index;
                 }
-                //iterate
+        }
+
+        //iterate
         $scope.iterate = function() {
                 for ($scope.r = 0; $scope.r < $scope.vertDivs; $scope.r++) {
                         for ($scope.c = 0; $scope.c < $scope.horizDivs; $scope.c++) {
@@ -309,7 +313,7 @@ ratanrsur.controller('lifeTable', function($scope) {
         });
 
         //color stuff
-        $scope.colorVal = "White"
+        $scope.colorVal = "LightBlue"
         $scope.colorStyle = function() {
                 if ($scope.colorVal != '') {
                         return '' + $scope.colorVal
