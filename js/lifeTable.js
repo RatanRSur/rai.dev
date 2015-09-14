@@ -64,7 +64,7 @@ ratanrsur.controller('lifeTable', function($scope) {
                                 $scope.isAlive[i][j] = new Array($scope.horizDivs);
                         }
                 }
-                setInterval($scope.iterate, 470);
+                setInterval($scope.iterate, 400);
         });
 
         //function to check if any neighbor conditions are met
@@ -276,12 +276,16 @@ ratanrsur.controller('lifeTable', function($scope) {
                         }
                 }
         }, true);
+
         //presets
         $scope.presets = [{
                 option: "Game of Life"
         }, {
                 option: "Clovers"
+        }, {
+                option: "Amoeba"
         }]
+
         $scope.$watch('selected', function(newValue, oldValue) {
                 console.log($scope.selected)
                 if ($scope.selected.option == "Game of Life") {
@@ -297,7 +301,6 @@ ratanrsur.controller('lifeTable', function($scope) {
                                 [true]
                         ]
                 } else if ($scope.selected.option == 'Clovers') {
-                        console.log("here")
                         $scope.numBoxes = [2, 6, 1]
                         $scope.boxNums = [
                                 [0, 7],
@@ -308,6 +311,18 @@ ratanrsur.controller('lifeTable', function($scope) {
                                 [true, true],
                                 [true, true, true, true, true, true],
                                 [true]
+                        ]
+                } else if ($scope.selected.option == 'Amoeba') {
+                        $scope.numBoxes = [5, 2, 2]
+                        $scope.boxNums = [
+                                [4, 5, 6, 7, 8],
+                                [1, 3],
+                                [0, 2]
+                        ]
+                        $scope.checkedBox = [
+                                [true, true, true, true, true],
+                                [true, true],
+                                [true, true]
                         ]
                 }
         });
