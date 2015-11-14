@@ -2,78 +2,78 @@
 <html ng-app="ratanrsur" ng-controller="lifeTable">
 
 <head>
-        <title>Ratan Rai Sur</title>
-        <link rel="stylesheet" type="text/css" href="index.css">
-        <link rel="icon" type="image/ico" src="favicon.ico">
-        <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-        <script src="angular.min.js"></script>
-        <script src="js/lifeTable.js"></script>
-        <!--<script type="text/javascript">-->
-        <!--//          if(screen.width <= 800){-->
-        <!--//              document.location="mobile.html";-->
-        <!--//          }-->
-        <!--if (window.width >= 800) {-->
-        <!--document.location = "mobile.html";-->
-        <!--}-->
-        <!--</script>-->
-        <style ng-bind="style"></style>
+    <title>Ratan Rai Sur</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="icon" type="image/ico" src="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script src="angular.min.js"></script>
+    <script src="js/lifeTable.js"></script>
+    <!--<script type="text/javascript">-->
+    <!--//          if(screen.width <= 800){-->
+    <!--//              document.location="mobile.html";-->
+    <!--//          }-->
+    <!--if (window.width >= 800) {-->
+    <!--document.location = "mobile.html";-->
+    <!--}-->
+    <!--</script>-->
+    <style ng-bind="style"></style>
 </head>
 
 <body>
-        <table>
-                <tr ng-repeat="i in getNumber(vertDivs) track by $index">
-                        <td ng-class="{alive: (!drawerOpen && isAlive[1-gridIndex][$parent.$index][$index]), aliveDrawer:(drawerOpen && isAlive[1-gridIndex][$parent.$index][$index] && !activeItem[0]), aliveActive:drawerOpen && isAlive[1-gridIndex][$parent.$index][$index] && activeItem[0]}" ng-mouseenter="isAlive[1-gridIndex][$parent.$index][$index] = true" ng-style="{'width' : cellSide+'px','height' : cellSide+'px' }" ng-repeat="i in getNumber(horizDivs) track by $index">
-                        </td>
-                </tr>
-        </table>
-        <div class="nav" ng-click="activeItem[0]=true;clickIndex=0;" ng-class="{active: !(activeItem[1] || activeItem[2]),name:!drawerOpen, inactive:!activeItem[0]&&drawerOpen}" ng-style="{ 'font-size' : (getHeight()-cellSide*vertDivs)*.5+'px'}">
-                {{menuItem[0]}}
-        </div>
+    <table>
+        <tr ng-repeat="i in getNumber(vertDivs) track by $index">
+            <td ng-class="{alive: (!drawerOpen && isAlive[1-gridIndex][$parent.$index][$index]), aliveDrawer:(drawerOpen && isAlive[1-gridIndex][$parent.$index][$index] && !activeItem[0]), aliveActive:drawerOpen && isAlive[1-gridIndex][$parent.$index][$index] && activeItem[0]}" ng-mouseenter="isAlive[1-gridIndex][$parent.$index][$index] = true" ng-style="{'width' : cellSide+'px','height' : cellSide+'px' }" ng-repeat="i in getNumber(horizDivs) track by $index">
+            </td>
+        </tr>
+    </table>
+    <div class="nav" ng-click="activeItem[0]=true;clickIndex=0;" ng-class="{active: !(activeItem[1] || activeItem[2]),name:!drawerOpen, inactive:!activeItem[0]&&drawerOpen}" ng-style="{ 'font-size' : (getHeight()-cellSide*vertDivs)*.5+'px'}">
+        {{menuItem[0]}}
+    </div>
 
-        <div class="nav" ng-repeat="i in [0,1] track by $index" ng-click="activeItem[$index+1]=true ; $parent.clickIndex=$index+1" ng-class="{active: activeItem[$index+1], inactive:!activeItem[$index+1]}" ng-style="{ 'font-size' : (getHeight()-cellSide*vertDivs)*.5+'px' }">
-                {{menuItem[$index+1]}}
-        </div>
-        <div class="content workContent" ng-show="activeItem[1]">
-                If it involves programming or electronics, I love it! These are the things I've been working on recently:
-                <br>
-                <ul>
-                        <li>
-                                I have a fractured shin at the moment so I've been spending my days learning to implement machine learning algorithms and generally thinking a lot about the nature of intelligence, artificial or of the human variety.</li>
-                        <li><a target="_blank" href="http://www.tactilecity.org"><span style="color:#ff6700"><em>Tactile City</em></span></a> is a proposal made to the Mayor's Office for People with Disabilities upon request by the Department of Design and Construction. The team consisted of architects, artists and an engineer (me). In addition to brainstorming, my role was to prototype the electronics associated with the audio portion of our proposal. The system is a reactive sound box which adjusts it's volume according to the ambient noise. The effect was acheived through a combination of passive circuit components, such as capacitors, and a Python script loaded onto a Raspberry Pi. The Pi was chosen for ease of prototyping, however, moving forward, a clear winner in terms of power management would be a small Arduino with a shield designed for audio playback. I'm very proud of the proposal even beyond the electronics portion, so please take a look at the website!</li>
-                        <li><a target="_blank" href="http://hackCooper.org"><em>HackCooper</em></a> is an annual hackathon organized by us at create@cooper and hosted at The Cooper Union. This <span style="color:hotpink">Valentine's Day</span> was the second one. In 2014's HackCooper, a considerable proportion of the hacks were hardware hacks and I really wanted to double down on that for 2015. I think most students would enjoy staying up 24 hours building a funny robot more than they would the thousandth geotagging-social-sharing app. Sure enough, we definitely saw a lot of hardware projects thanks in no small part to littleBit's beginner friendlyness and the allure of the Oculus Rifts MLH provided.
+    <div class="nav" ng-repeat="i in [0,1] track by $index" ng-click="activeItem[$index+1]=true ; $parent.clickIndex=$index+1" ng-class="{active: activeItem[$index+1], inactive:!activeItem[$index+1]}" ng-style="{ 'font-size' : (getHeight()-cellSide*vertDivs)*.5+'px' }">
+        {{menuItem[$index+1]}}
+    </div>
+    <div class="content workContent" ng-show="activeItem[1]">
+        If it involves programming or electronics, I love it! These are the things I've been working on recently:
+        <br>
+        <ul>
+            <li>
+                I have a fractured shin at the moment so I've been spending my days learning to implement machine learning algorithms and generally thinking a lot about the nature of intelligence, artificial or of the human variety.</li>
+            <li><a target="_blank" href="http://www.tactilecity.org"><span style="color:#ff6700"><em>Tactile City</em></span></a> is a proposal made to the Mayor's Office for People with Disabilities upon request by the Department of Design and Construction. The team consisted of architects, artists and an engineer (me). In addition to brainstorming, my role was to prototype the electronics associated with the audio portion of our proposal. The system is a reactive sound box which adjusts it's volume according to the ambient noise. The effect was acheived through a combination of passive circuit components, such as capacitors, and a Python script loaded onto a Raspberry Pi. The Pi was chosen for ease of prototyping, however, moving forward, a clear winner in terms of power management would be a small Arduino with a shield designed for audio playback. I'm very proud of the proposal even beyond the electronics portion, so please take a look at the website!</li>
+            <li><a target="_blank" href="http://hackCooper.org"><em>HackCooper</em></a> is an annual hackathon organized by us at create@cooper and hosted at The Cooper Union. This <span style="color:hotpink">Valentine's Day</span> was the second one. In 2014's HackCooper, a considerable proportion of the hacks were hardware hacks and I really wanted to double down on that for 2015. I think most students would enjoy staying up 24 hours building a funny robot more than they would the thousandth geotagging-social-sharing app. Sure enough, we definitely saw a lot of hardware projects thanks in no small part to littleBit's beginner friendlyness and the allure of the Oculus Rifts MLH provided.
 
-                                <!--<li> <a target="_blank" href="http://yorgo.org">Yorgo Alexopolous</a> is an artist I programmed for during the semester. The project I was working on involved a ton of cute hobbyist displays controlled by Raspberry Pi's and Arduinos. Some of the displays cycle through some pretty straightforward animations. Others would require a lot of thought to get a sense of what they're up to. He gave me a lot of creative freedom so I chose to find my inspiration in some lesser known mathematical patterns , such as <a href="http://en.wikipedia.org/wiki/Ulam_spiral">The Ulam Spiral</a>-->
+                <!--<li> <a target="_blank" href="http://yorgo.org">Yorgo Alexopolous</a> is an artist I programmed for during the semester. The project I was working on involved a ton of cute hobbyist displays controlled by Raspberry Pi's and Arduinos. Some of the displays cycle through some pretty straightforward animations. Others would require a lot of thought to get a sense of what they're up to. He gave me a lot of creative freedom so I chose to find my inspiration in some lesser known mathematical patterns , such as <a href="http://en.wikipedia.org/wiki/Ulam_spiral">The Ulam Spiral</a>-->
 
-                </ul>
-                
-                Contact me at Ratan.R.Sur@gmail.com
-        </div>
-        <div class="content lifeContent" ng-show="activeItem[2]">
-                I'm a civil engineering alumnus from Cooper Union in my homecity, New York. In my free time I enjoy
-                <br>
-                <ul>
-                        <li> <a target="_blank" href="ChrisHadfield.jpg">meeting astronauts while dressed as an astronaut</a>
-                                <li> playing <a target="_blank" href="http://en.wikipedia.org/wiki/King%27s_Gambit">1. e4 e5 2. f4</a> in Marcus Garvey Park in Harlem
-                                        <li> making random observations to strangers
-                                                <li> playing basketball
-                                                        <li> reading <a target="_blank" href="http://artofelectronics.net/"><em>Art of Electronics</em></a>, <a target="_blank" href="https://what-if.xkcd.com/">What If?</a>, <a target="_blank" href="http://xkcd.com/">xkcd</a>, <a target="_blank" href="http://waitbutwhy.com/">Wait But Why</a>
-                                                                <li> listening to <a target="_blank" href="http://qi.com/podcast/">No Such Thing As A Fish</a>, <a target="_blank" href="http://www.hellointernet.fm/">Hello Internet</a>, <a target="_blank" href="https://itunes.apple.com/us/podcast/whats-the-point/id1011406983?mt=2">What's The Point</a>
-                </ul>
-                The backdrop is <a target="_blank" href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">John Conway's Game of Life</a>. Play around with the parameters below!
-                <br> Presets:
-                <select ng-options="item.option for item in presets" ng-model="selected"></select>
-                <br>
-                <div ng-repeat="i in getNumber(3) track by $index">
-                        {{paramText[$index]}}
-                        <span ng-repeat="i in getNumber(numBoxes[$index]) track by $index">
+        </ul>
+
+        Contact me at Ratan.R.Sur@gmail.com
+    </div>
+    <div class="content lifeContent" ng-show="activeItem[2]">
+        I'm a civil engineering alumnus from Cooper Union in my homecity, New York. In my free time I enjoy
+        <br>
+        <ul>
+            <li> <a target="_blank" href="ChrisHadfield.jpg">meeting astronauts while dressed as an astronaut</a>
+                <li> playing <a target="_blank" href="http://en.wikipedia.org/wiki/King%27s_Gambit">1. e4 e5 2. f4</a> in Marcus Garvey Park in Harlem
+                    <li> making random observations to strangers
+                        <li> playing basketball
+                            <li> reading <a target="_blank" href="http://artofelectronics.net/"><em>Art of Electronics</em></a>, <a target="_blank" href="https://what-if.xkcd.com/">What If?</a>, <a target="_blank" href="http://xkcd.com/">xkcd</a>, <a target="_blank" href="http://waitbutwhy.com/">Wait But Why</a>
+                                <li> listening to <a target="_blank" href="http://qi.com/podcast/">No Such Thing As A Fish</a>, <a target="_blank" href="http://www.hellointernet.fm/">Hello Internet</a>, <a target="_blank" href="https://itunes.apple.com/us/podcast/whats-the-point/id1011406983?mt=2">What's The Point</a>
+        </ul>
+        The backdrop is <a target="_blank" href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">John Conway's Game of Life</a>. Play around with the parameters below!
+        <br> Presets:
+        <select ng-options="item.option for item in presets" ng-model="selected"></select>
+        <br>
+        <div ng-repeat="i in getNumber(3) track by $index">
+            {{paramText[$index]}}
+            <span ng-repeat="i in getNumber(numBoxes[$index]) track by $index">
                     {{boxNums[$parent.$index][$index]}}<input type="checkbox" ng-model="checkedBox[$parent.$index][$index]">
                 </span> neighbors.
-                </div>
-                <div>
-                        Color:
-                        <input placeholder="Name or Hex" ng-model="colorVal">
-                </div>
         </div>
+        <div>
+            Color:
+            <input placeholder="Name or Hex" ng-model="colorVal">
+        </div>
+    </div>
 </body>
 
 </html>
