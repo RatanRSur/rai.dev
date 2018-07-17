@@ -129,8 +129,8 @@ ratanrsur.controller('lifeTable', function($scope) {
         $scope.$apply();
     };
     //Drawer Stuff
-    $scope.drawerOpen = false;
-    $scope.menuItem = ['Ratan Rai Sur', '', '']
+    $scope.drawerOpen = true;
+    $scope.menuItem = ['Ratan Rai Sur', 'Work', 'Life']
     $scope.activeItem = [false, false, false]
     $scope.firstTime = true;
     $scope.clickIndex = -1;
