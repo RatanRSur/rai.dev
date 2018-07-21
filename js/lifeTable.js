@@ -129,9 +129,9 @@ ratanrsur.controller('lifeTable', function($scope) {
         $scope.$apply();
     };
     //Drawer Stuff
-    $scope.drawerOpen = true;
+    $scope.contentShowing = false
     $scope.menuItem = ['Ratan Rai Sur', 'Work', 'Life']
-    $scope.activeItem = [false, false, false]
+    $scope.activeItem = [true, false, false]
     $scope.clickIndex = -1;
     $scope.getClick = function() {
         return $scope.clickIndex;
@@ -141,14 +141,15 @@ ratanrsur.controller('lifeTable', function($scope) {
         if ($scope.clickIndex == 0) {
             $scope.activeItem[1] = false;
             $scope.activeItem[2] = false;
-        }
-        if ($scope.clickIndex == 1) {
+            $scope.contentShowing = false;
+        } else if ($scope.clickIndex == 1) {
             $scope.activeItem[0] = false;
             $scope.activeItem[2] = false;
-        }
-        if ($scope.clickIndex == 2) {
+            $scope.contentShowing = true;
+        } else if ($scope.clickIndex == 2) {
             $scope.activeItem[0] = false;
             $scope.activeItem[1] = false;
+            $scope.contentShowing = true;
         }
     }, true);
 

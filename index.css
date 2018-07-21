@@ -57,10 +57,6 @@ a:active {
     cursor: default;
 }
 
-.name {
-    color: #FF8C00;
-}
-
 @font-face {
     font-family: Wendy;
     src: url(wendy.ttf);

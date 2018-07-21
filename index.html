@@ -14,16 +14,12 @@
 <body>
     <table>
         <tr ng-repeat="i in getNumber(vertDivs) track by $index">
-            <td ng-class="{alive: (!drawerOpen && isAlive[1-gridIndex][$parent.$index][$index]), aliveDrawer:(drawerOpen && isAlive[1-gridIndex][$parent.$index][$index] && !activeItem[0]), aliveActive:drawerOpen && isAlive[1-gridIndex][$parent.$index][$index] && activeItem[0]}" ng-mouseenter="isAlive[1-gridIndex][$parent.$index][$index] = true" ng-style="{'width' : cellSide+'px','height' : cellSide+'px' }" ng-repeat="i in getNumber(horizDivs) track by $index">
+            <td ng-class="{alive: (!contentShowing && isAlive[1-gridIndex][$parent.$index][$index]), aliveDrawer:(contentShowing && isAlive[1-gridIndex][$parent.$index][$index] && !activeItem[0]), aliveActive:contentShowing && isAlive[1-gridIndex][$parent.$index][$index] && activeItem[0]}" ng-mouseenter="isAlive[1-gridIndex][$parent.$index][$index] = true" ng-style="{'width' : cellSide+'px','height' : cellSide+'px' }" ng-repeat="i in getNumber(horizDivs) track by $index">
             </td>
         </tr>
     </table>
-    <div class="nav" ng-click="activeItem[0]=true;clickIndex=0;" ng-class="{active: !(activeItem[1] || activeItem[2]),name:!drawerOpen, inactive:!activeItem[0]&&drawerOpen}" ng-style="{ 'font-size' : (getHeight()-cellSide*vertDivs)*.5+'px'}">
-        {{menuItem[0]}}
-    </div>
-
-    <div class="nav" ng-repeat="i in [0,1] track by $index" ng-click="activeItem[$index+1]=true ; $parent.clickIndex=$index+1" ng-class="{active: activeItem[$index+1], inactive:!activeItem[$index+1]}" ng-style="{ 'font-size' : (getHeight()-cellSide*vertDivs)*.5+'px' }">
-        {{menuItem[$index+1]}}
+    <div class="nav" ng-repeat="i in [0,1,2] track by $index" ng-click="activeItem[$index]=true ; $parent.clickIndex=$index" ng-class="{active: activeItem[$index], inactive:!activeItem[$index]}" ng-style="{ 'font-size' : (getHeight()-cellSide*vertDivs)*.5+'px' }">
+        {{menuItem[$index]}}
     </div>
     <div class="content workContent" ng-show="activeItem[1]">
         <p>
