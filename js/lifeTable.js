@@ -132,34 +132,15 @@ ratanrsur.controller('lifeTable', function($scope) {
     $scope.drawerOpen = true;
     $scope.menuItem = ['Ratan Rai Sur', 'Work', 'Life']
     $scope.activeItem = [false, false, false]
-    $scope.firstTime = true;
     $scope.clickIndex = -1;
     $scope.getClick = function() {
         return $scope.clickIndex;
     }
 
     $scope.$watch('getClick()', function(newValue, oldValue) {
-        //         console.log(newValue,oldValue);
         if ($scope.clickIndex == 0) {
-
             $scope.activeItem[1] = false;
             $scope.activeItem[2] = false;
-            if ($scope.drawerOpen) {
-                if (oldValue == 1 || oldValue == 2) {
-                    $scope.clickIndex = -1;
-                } else {
-                    $scope.drawerOpen = false;
-                    $scope.menuItem[1] = ''
-                    $scope.menuItem[2] = ''
-                    $scope.activeItem[0] = false;
-                    $scope.clickIndex = -1;
-                }
-            } else {
-                $scope.menuItem[1] = 'Work'
-                $scope.menuItem[2] = 'Life'
-                $scope.drawerOpen = true;
-                $scope.clickIndex = -1;
-            }
         }
         if ($scope.clickIndex == 1) {
             $scope.activeItem[0] = false;
