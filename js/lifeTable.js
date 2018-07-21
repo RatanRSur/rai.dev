@@ -130,7 +130,7 @@ ratanrsur.controller('lifeTable', function($scope) {
     };
     //Drawer Stuff
     $scope.contentShowing = false
-    $scope.menuItem = ['Ratan Rai Sur', 'Work', 'Life']
+    $scope.menuItem = ['>Ratan Rai Sur', '>Work', '>Life']
     $scope.activeItem = [true, false, false]
     $scope.clickIndex = -1;
     $scope.getClick = function() {
