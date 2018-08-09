@@ -1,0 +1,65 @@
+<html ng-app="ratanrsur" ng-controller="mobile">
+<head>
+    <title>Ratan Rai Sur</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="mobile.css">
+    <link rel="icon" type="image/ico" src="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script src="angular.min.js"></script>
+    <script src="js/mobile.js"></script>
+</head>
+<body>
+    <div ng-repeat="i in [0,1,2] track by $index" >
+        <div class="nav" ng-click="activeItem[$index]=true ; $parent.clickIndex=$index" ng-class="{active: activeItem[$index], inactive:!activeItem[$index]}" ng-style="{ 'font-size' : (getHeight()-cellSide*vertDivs)*.5+'px' }">
+            {{menuItem[$index]}}
+        </div>
+        <br>
+    </div>
+    <div class="content workContent" ng-show="activeItem[1]">
+        <p>
+            Hi! I'm Ratan, some people call me Rai. You can click on the LIFE link below to see what I like to do in my free time but I'll talk a little bit about myself professionally here.
+        </p>
+        <p>
+            While I was at Microsoft I worked on Azure Machine Learning, creating an Apache Spark "Transformer" that could evaluate trained machine learning models in parallel on Spark clusters. One of the major aspects of this was generating the Java bindings for the C++ API of Microsoft's Neural Network framework CNTK.
+        </p>
+        <p>
+            I spent some time traveling the world next and got very interested in Blockchain and it's potential for social good. Below you can find a link to my YouTube channel which should have archives of the twitch live coding sessions I did while working on my own blockchain as a personal project.
+        </p>
+        <p align=right>
+            <a target="_blank" href="https://www.youtube.com/channel/UCx02LJT0RTblmsGnDoNGxKw/featured">youtube</a>
+            <br>
+            <a target="_blank" href="https://www.twitch.tv/rainocodes">twitch</a>
+            <br>
+            <a target="_blank" href="https://www.github.com/ratanrsur">github</a>
+            <br>
+            <a target="_blank" href="mailto:ratan.r.sur@gmail.com">email</a>
+        </p>
+
+    </div>
+    <div class="content lifeContent" ng-show="activeItem[2]">
+        Some things about me:
+        <br>
+        <ul>
+            <li> <a target="_blank" href="ChrisHadfield.jpg">I meet astronauts while dressed as an astronaut</a>
+            <li> I've been on 3 silent meditation retreats. One was 10 days long and the other two were 7 days each.
+            <li> I spent 7 months traveling, including 5 months in Brazil where I learned to speak Portuguese.
+            <li> Related to the above: turning strangers into friends can result in some of the most rewarding experiences out there.
+        </ul>
+        The backdrop is <a target="_blank" href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">John Conway's Game of Life</a> on a flattened torus. Play around with the parameters below!
+        <br> Presets:
+        <select ng-options="item.option for item in presets" ng-model="selected"></select>
+        <br>
+        <div ng-repeat="i in getNumber(3) track by $index">
+            {{paramText[$index]}}
+            <span ng-repeat="i in getNumber(numBoxes[$index]) track by $index">
+                    {{boxNums[$parent.$index][$index]}}<input type="checkbox" ng-model="checkedBox[$parent.$index][$index]">
+                </span> neighbors.
+        </div>
+        <div>
+            Color:
+            <input placeholder="Name or Hex" ng-model="colorVal">
+        </div>
+    </div>
+    </div>
+</body>
+</html>

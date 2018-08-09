@@ -1,22 +1,6 @@
-if( screen.width <= 3000 ) {
-    location.href = 'mobile.html';
-}
-
 var ratanrsur = angular.module('ratanrsur', []);
 
-var adjacent = [
-    [-1, -1],
-    [-1, 0],
-    [-1, 1],
-    [0, -1],
-    [0, 1],
-    [1, -1],
-    [1, 0],
-    [1, 1]
-];
-var neighbors = 0;
-
-ratanrsur.controller('lifeTable', function($scope) {
+ratanrsur.controller('mobile', function($scope) {
     //WINDOW GENERATION
     $scope.horizDivs = 60;
     $scope.getNumber = function(num) {
@@ -134,7 +118,7 @@ ratanrsur.controller('lifeTable', function($scope) {
     };
     //Drawer Stuff
     $scope.contentShowing = false
-    $scope.menuItem = ['>Ratan Rai Sur', '>Work', '>Life']
+    $scope.menuItem = ['Ratan', 'Work', 'Life']
     $scope.activeItem = [true, false, false]
     $scope.clickIndex = -1;
     $scope.getClick = function() {
@@ -265,7 +249,7 @@ ratanrsur.controller('lifeTable', function($scope) {
 
     //presets
     $scope.presets = [{
-        option: "Game of Life"
+        option: ""
     }, {
         option: "Clovers"
     }, {
