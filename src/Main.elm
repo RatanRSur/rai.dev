@@ -1,29 +1,16 @@
 module Main exposing (main)
 
 import Html exposing (Html)
-import Svg exposing (svg, rect, circle)
-import Svg.Attributes exposing (width, height, viewBox, x, y, rx, ry, cx, cy, r)
+import TypedSvg exposing (polygon, svg)
+import TypedSvg.Attributes exposing (class, height, id, points, width)
+import TypedSvg.Types exposing (Length(..), pc, pt)
+
 
 main : Html a
 main =
-  svg
-    [ width "120"
-    , height "120"
-    , viewBox "0 0 120 120"
-    ]
-    [ rect
-        [ x "10"
-        , y "10"
-        , width "100"
-        , height "100"
-        , rx "15"
-        , ry "15"
+    svg
+        [ id "color-fill", width (pc 100), height (pt 300) ]
+        [ polygon
+            [ class [ "hex" ], points [ ( 300, 150 ), ( 225, 280 ), ( 75, 280 ), ( 0, 150 ), ( 75, 20 ), ( 225, 20 ) ] ]
+            []
         ]
-        []
-    , circle
-        [ cx "50"
-        , cy "50"
-        , r "50"
-        ]
-        []
-    ]
