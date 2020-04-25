@@ -14,3 +14,16 @@ main =
             [ class [ "hex" ], points [ ( 300, 150 ), ( 225, 280 ), ( 75, 280 ), ( 0, 150 ), ( 75, 20 ), ( 225, 20 ) ] ]
             []
         ]
+
+
+hexagonPoints : ( Int, Int ) -> Int -> List ( Float, Float )
+hexagonPoints (x, y) sideLength =
+    direction = 0 --degrees
+    let firstPoint = (x-sideLength/2, y + sideLength/(2*(tan pi/2))
+    --[(x-sideLength/2,)
+    --,(x+sideLength/2,)
+    --,(,)
+    --,(,)
+    --,(x-sideLength/2,)
+    --,(,)]
+
