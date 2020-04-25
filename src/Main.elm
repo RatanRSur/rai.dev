@@ -33,6 +33,10 @@ myCircle center attrs =
     circle ([ cx (px center.x), cy (px center.y), r (px 5) ] ++ attrs)
 
 
+
+-- see https://www.wikiwand.com/en/Delaunay_triangulation for how to compute
+
+
 main : Html a
 main =
     svg [ height (pc 100), width (pc 100) ]
