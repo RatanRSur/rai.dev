@@ -36,7 +36,7 @@ myCircle center attrs =
 
 
 
--- see https://www.wikiwand.com/en/Delaunay_triangulation for how to compute
+-- see http://www.s-hull.org/paper/s_hull.pdf
 
 
 points : List Point
