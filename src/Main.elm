@@ -30,9 +30,9 @@ pointC =
     { x = 750, y = 200 }
 
 
-myCircle : Point -> List (Html.Attribute msg) -> List (Svg msg) -> Html.Html msg
-myCircle center attrs =
-    circle ([ cx (px center.x), cy (px center.y), r (px 5) ] ++ attrs)
+myCircle : Point -> Html.Html msg
+myCircle center =
+    circle [ cx (px center.x), cy (px center.y), r (px 5) ] []
 
 
 
@@ -57,14 +57,8 @@ main =
             (sortBy (euclidian pointB) points)
             ++ [ svg [ height (pc 100), width (pc 100) ]
                     [ myCircle pointB
-                        []
-                        []
                     , myCircle pointA
-                        []
-                        []
                     , myCircle pointC
-                        []
-                        []
                     ]
                ]
         )
