@@ -1,11 +1,9 @@
 module Main exposing (main)
 
-import Html exposing (Html, div, text)
-import List exposing (head, sortBy, sortWith, tail)
-import Maybe exposing (withDefault)
+import Html exposing (Html, div)
+import List exposing (head, sortBy)
 import TypedSvg exposing (circle, svg)
 import TypedSvg.Attributes exposing (cx, cy, height, r, width)
-import TypedSvg.Core exposing (Svg)
 import TypedSvg.Types exposing (Length(..), pc, px)
 
 
