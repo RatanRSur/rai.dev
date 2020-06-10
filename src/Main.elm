@@ -1,7 +1,7 @@
 module Main exposing (main)
 
 import Html exposing (Html, div)
-import List exposing (head, sortBy)
+import List exposing (foldl, head, sortBy)
 import TypedSvg exposing (circle, svg)
 import TypedSvg.Attributes exposing (cx, cy, height, r, width)
 import TypedSvg.Types exposing (Length(..), pc, px)
@@ -19,12 +19,18 @@ type alias Circle =
     }
 
 
-points : List Point
-points =
-    [ { x = 750, y = 200 }
+testPoints : List Point
+testPoints =
+    [ { x = 700, y = 200 }
     , { x = 450, y = 450 }
     , { x = 300, y = 200 }
+    , { x = 200, y = 500 }
+    , { x = 500, y = 200 }
     , { x = 20, y = 20 }
+    , { x = 20, y = 20 }
+    , { x = 500, y = 220 }
+    , { x = 30, y = 150 }
+    , { x = 700, y = 700 }
     ]
 
 
@@ -58,34 +64,66 @@ circumcircle a b c =
     }
 
 
+
+-- try to make this less deeply nested with head and `Maybe.andThen`
+
+
+seedHull : List Point -> Maybe Circle
+seedHull points =
+    case points of
+        --we want to make sure we have at least 3 points in the list
+        seedPoint :: _ :: _ :: _ ->
+            case sortBy (euclidian seedPoint) points of
+                alsoSeedPoint :: b :: c :: rest ->
+                    Just
+                        (foldl
+                            (\point circle ->
+                                let
+                                    candidateCircle =
+                                        circumcircle alsoSeedPoint b point
+                                in
+                                if candidateCircle.radius < circle.radius then
+                                    candidateCircle
+
+                                else
+                                    circle
+                            )
+                            (circumcircle alsoSeedPoint b c)
+                            rest
+                        )
+
+                _ ->
+                    Nothing
+
+        _ ->
+            Nothing
+
+
 main : Html a
 main =
-    let
-        debug =
-            Debug.log
-                "smallest circle"
-                (case points of
-                    seedPoint :: secondPointCandidates ->
-                        let
-                            sortedByDistance =
-                                sortBy (euclidian seedPoint) secondPointCandidates
-                        in
-                        case sortedByDistance of
-                            closestPoint :: thirdPointCandidates ->
-                                case head (sortBy (\otherPoint -> (circumcircle seedPoint closestPoint otherPoint).radius) thirdPointCandidates) of
-                                    Just smallestCirclePoint ->
-                                        [ seedPoint, closestPoint, smallestCirclePoint ]
-
-                                    Nothing ->
-                                        []
-
-                            _ ->
-                                []
-
-                    _ ->
-                        []
-                )
-    in
+    --let
+    --debug =
+    --Debug.log
+    --"smallest circle"
+    --(case points of
+    --seedPoint :: secondPointCandidates ->
+    --let
+    --sortedByDistance =
+    --sortBy (euclidian seedPoint) secondPointCandidates
+    --in
+    --case sortedByDistance of
+    --closestPoint :: thirdPointCandidates ->
+    --case head (sortBy (\otherPoint -> (circumcircle seedPoint closestPoint otherPoint).radius) thirdPointCandidates) of
+    --Just smallestCirclePoint ->
+    --[ seedPoint, closestPoint, smallestCirclePoint ]
+    --Nothing ->
+    --[]
+    --_ ->
+    --[]
+    --_ ->
+    --[]
+    --)
+    --in
     div
         []
-        [ svg [ height (pc 100), width (pc 100) ] (List.map dot points) ]
+        [ svg [ height (pc 100), width (pc 100) ] (List.map dot testPoints) ]
