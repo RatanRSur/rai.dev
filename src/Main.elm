@@ -2,6 +2,7 @@ module Main exposing (main)
 
 import Html exposing (Html, div)
 import List exposing (foldl, head, sortBy)
+import Maybe exposing (andThen)
 import TypedSvg exposing (circle, svg)
 import TypedSvg.Attributes exposing (cx, cy, height, r, width)
 import TypedSvg.Types exposing (Length(..), pc, px)
@@ -64,39 +65,34 @@ circumcircle a b c =
     }
 
 
-
--- try to make this less deeply nested with head and `Maybe.andThen`
-
-
 seedHull : List Point -> Maybe Circle
 seedHull points =
-    case points of
-        --we want to make sure we have at least 3 points in the list
-        seedPoint :: _ :: _ :: _ ->
-            case sortBy (euclidian seedPoint) points of
-                alsoSeedPoint :: b :: c :: rest ->
-                    Just
-                        (foldl
-                            (\point circle ->
-                                let
-                                    candidateCircle =
-                                        circumcircle alsoSeedPoint b point
-                                in
-                                if candidateCircle.radius < circle.radius then
-                                    candidateCircle
+    head points
+        |> andThen
+            (\seedPoint ->
+                case sortBy (euclidian seedPoint) points of
+                    --we want to make sure we have at least 3 points in the list
+                    alsoSeedPoint :: b :: c :: rest ->
+                        Just
+                            (foldl
+                                (\point circle ->
+                                    let
+                                        candidateCircle =
+                                            circumcircle alsoSeedPoint b point
+                                    in
+                                    if candidateCircle.radius < circle.radius then
+                                        candidateCircle
 
-                                else
-                                    circle
+                                    else
+                                        circle
+                                )
+                                (circumcircle alsoSeedPoint b c)
+                                rest
                             )
-                            (circumcircle alsoSeedPoint b c)
-                            rest
-                        )
 
-                _ ->
-                    Nothing
-
-        _ ->
-            Nothing
+                    _ ->
+                        Nothing
+            )
 
 
 main : Html a
