@@ -72,13 +72,14 @@ seedHull points =
             (\seedPoint ->
                 case sortBy (euclidian seedPoint) points of
                     --we want to make sure we have at least 3 points in the list
-                    alsoSeedPoint :: b :: c :: rest ->
+                    alsoSeedPoint :: seedClosestToPoint :: initialThirdPoint :: rest ->
                         Just
+                            -- find, from among all the points, the smallest circumcircle that includes the seed point and the point closest to the seed point
                             (foldl
                                 (\point circle ->
                                     let
                                         candidateCircle =
-                                            circumcircle alsoSeedPoint b point
+                                            circumcircle alsoSeedPoint seedClosestToPoint point
                                     in
                                     if candidateCircle.radius < circle.radius then
                                         candidateCircle
@@ -86,7 +87,7 @@ seedHull points =
                                     else
                                         circle
                                 )
-                                (circumcircle alsoSeedPoint b c)
+                                (circumcircle alsoSeedPoint seedClosestToPoint initialThirdPoint)
                                 rest
                             )
 
