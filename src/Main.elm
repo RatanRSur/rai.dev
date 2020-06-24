@@ -17,6 +17,7 @@ type alias Point =
 type alias Circle =
     { center : Point
     , radius : Float
+    , circumscribedPoints : List Point
     }
 
 
@@ -62,11 +63,12 @@ circumcircle a b c =
     in
     { center = center
     , radius = euclidian a center
+    , circumscribedPoints = [ a, b, c ]
     }
 
 
-seedHull : List Point -> Maybe Circle
-seedHull points =
+smallestCircumcircle : List Point -> Maybe Circle
+smallestCircumcircle points =
     head points
         |> andThen
             (\seedPoint ->
