@@ -14,7 +14,7 @@ type alias Point =
     }
 
 
-type alias Circle =
+type alias Circumcircle =
     { center : Point
     , radius : Float
     , circumscribedPoints : List Point
@@ -50,7 +50,7 @@ euclidian p1 p2 =
     sqrt ((p1.x - p2.x) ^ 2 + (p1.y - p2.y) ^ 2)
 
 
-circumcircle : Point -> Point -> Point -> Circle
+circumcircle : Point -> Point -> Point -> Circumcircle
 circumcircle a b c =
     let
         d =
@@ -67,7 +67,7 @@ circumcircle a b c =
     }
 
 
-smallestCircumcircle : List Point -> Maybe Circle
+smallestCircumcircle : List Point -> Maybe ( Circumcircle, List Point )
 smallestCircumcircle points =
     head points
         |> andThen
@@ -75,22 +75,30 @@ smallestCircumcircle points =
                 case sortBy (euclidian seedPoint) points of
                     --we want to make sure we have at least 3 points in the list
                     alsoSeedPoint :: seedClosestToPoint :: initialThirdPoint :: rest ->
+                        -- find, from among all the points, the smallest circumcircle that includes the seed point and the point closest to the seed point
                         Just
-                            -- find, from among all the points, the smallest circumcircle that includes the seed point and the point closest to the seed point
-                            (foldl
-                                (\point circle ->
+                            (let
+                                fullyDeterminedCircle =
+                                    circumcircle alsoSeedPoint seedClosestToPoint
+
+                                evaluateCandidatePoint candidatePoint ( bestPoint, bestCircle, eliminatedPoints ) =
                                     let
                                         candidateCircle =
-                                            circumcircle alsoSeedPoint seedClosestToPoint point
+                                            fullyDeterminedCircle candidatePoint
                                     in
-                                    if candidateCircle.radius < circle.radius then
-                                        candidateCircle
+                                    if candidateCircle.radius < bestCircle.radius then
+                                        ( candidatePoint, candidateCircle, bestPoint :: eliminatedPoints )
 
                                     else
-                                        circle
-                                )
-                                (circumcircle alsoSeedPoint seedClosestToPoint initialThirdPoint)
-                                rest
+                                        ( bestPoint, bestCircle, candidatePoint :: eliminatedPoints )
+
+                                ( _, finalCircle, otherPoints ) =
+                                    foldl
+                                        evaluateCandidatePoint
+                                        ( initialThirdPoint, fullyDeterminedCircle initialThirdPoint, [] )
+                                        rest
+                             in
+                             ( finalCircle, otherPoints )
                             )
 
                     _ ->
