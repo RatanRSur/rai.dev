@@ -1,17 +1,25 @@
 module Main exposing (main)
 
+import Color exposing (black)
 import Html exposing (Html, div)
-import List exposing (foldl, head, sortBy)
+import List exposing (append, foldl, head, sortBy)
 import Maybe exposing (andThen)
-import TypedSvg exposing (circle, svg)
-import TypedSvg.Attributes exposing (cx, cy, height, r, width)
-import TypedSvg.Types exposing (Length(..), pc, px)
+import Maybe.Extra exposing (toList)
+import TypedSvg exposing (circle, polyline, svg)
+import TypedSvg.Attributes exposing (cx, cy, height, points, r, stroke, width)
+import TypedSvg.Core exposing (Svg)
+import TypedSvg.Types exposing (Length(..), Paint(..), pc, px)
 
 
 type alias Point =
     { x : Float
     , y : Float
     }
+
+
+toFloats : Point -> ( Float, Float )
+toFloats point =
+    ( point.x, point.y )
 
 
 type alias Circumcircle =
@@ -36,7 +44,7 @@ testPoints =
     ]
 
 
-dot : Point -> Html.Html msg
+dot : Point -> Svg msg
 dot center =
     circle [ cx (px center.x), cy (px center.y), r (px 5) ] []
 
@@ -67,8 +75,8 @@ circumcircle a b c =
     }
 
 
-smallestCircumcircle : List Point -> Maybe ( Circumcircle, List Point )
-smallestCircumcircle points =
+smallestCircumcircleAndRemainingPoints : List Point -> Maybe ( Circumcircle, List Point )
+smallestCircumcircleAndRemainingPoints points =
     head points
         |> andThen
             (\seedPoint ->
@@ -108,29 +116,17 @@ smallestCircumcircle points =
 
 main : Html a
 main =
-    --let
-    --debug =
-    --Debug.log
-    --"smallest circle"
-    --(case points of
-    --seedPoint :: secondPointCandidates ->
-    --let
-    --sortedByDistance =
-    --sortBy (euclidian seedPoint) secondPointCandidates
-    --in
-    --case sortedByDistance of
-    --closestPoint :: thirdPointCandidates ->
-    --case head (sortBy (\otherPoint -> (circumcircle seedPoint closestPoint otherPoint).radius) thirdPointCandidates) of
-    --Just smallestCirclePoint ->
-    --[ seedPoint, closestPoint, smallestCirclePoint ]
-    --Nothing ->
-    --[]
-    --_ ->
-    --[]
-    --_ ->
-    --[]
-    --)
-    --in
     div
         []
-        [ svg [ height (pc 100), width (pc 100) ] (List.map dot testPoints) ]
+        [ svg [ height (pc 100), width (pc 100) ]
+            (smallestCircumcircleAndRemainingPoints
+                testPoints
+                |> Maybe.map
+                    (\( circle, _ ) ->
+                        polyline [ stroke (Paint black), points (List.map toFloats circle.circumscribedPoints) ]
+                            []
+                    )
+                |> toList
+                |> append (List.map dot testPoints)
+            )
+        ]
