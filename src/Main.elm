@@ -114,6 +114,11 @@ smallestCircumcircleAndRemainingPoints points =
             )
 
 
+sortByDistanceToInitialCircumcircle : Point -> List Point -> List Point
+sortByDistanceToInitialCircumcircle circumcircleCenter =
+    List.sortBy (euclidian circumcircleCenter)
+
+
 main : Html a
 main =
     div
