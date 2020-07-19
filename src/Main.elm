@@ -5,8 +5,8 @@ import Html exposing (Html, div)
 import List exposing (append, foldl, head, sortBy)
 import Maybe exposing (andThen)
 import Maybe.Extra exposing (toList)
-import TypedSvg exposing (circle, polyline, svg)
-import TypedSvg.Attributes exposing (cx, cy, height, points, r, stroke, width)
+import TypedSvg exposing (circle, polygon, svg)
+import TypedSvg.Attributes exposing (cx, cy, height, noFill, points, r, stroke, width)
 import TypedSvg.Core exposing (Svg)
 import TypedSvg.Types exposing (Length(..), Paint(..), pc, px)
 
@@ -123,7 +123,7 @@ main =
                 testPoints
                 |> Maybe.map
                     (\( circle, _ ) ->
-                        polyline [ stroke (Paint black), points (List.map toFloats circle.circumscribedPoints) ]
+                        polygon [ noFill, stroke (Paint black), points (List.map toFloats circle.circumscribedPoints) ]
                             []
                     )
                 |> toList
