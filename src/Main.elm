@@ -44,8 +44,8 @@ testPoints =
     ]
 
 
-dot : Point -> Svg msg
-dot center =
+drawDot : Point -> Svg msg
+drawDot center =
     circle [ cx (px center.x), cy (px center.y), r (px 5) ] []
 
 
@@ -75,6 +75,33 @@ circumcircle a b c =
     }
 
 
+smallestCircumcircleAndRemainingPointsGivenAtLeast3Points : Point -> Point -> Point -> List Point -> ( Circumcircle, List Point )
+smallestCircumcircleAndRemainingPointsGivenAtLeast3Points seedPoint pointClosestToSeed anyThirdPoint rest =
+    -- find, from among all the points, the smallest circumcircle that includes the seed point and the point closest to the seed point
+    let
+        fullyDetermineCircle =
+            circumcircle seedPoint pointClosestToSeed
+
+        evaluateCandidatePoint candidatePoint ( bestPoint, bestCircle, eliminatedPoints ) =
+            let
+                candidateCircle =
+                    fullyDetermineCircle candidatePoint
+            in
+            if candidateCircle.radius < bestCircle.radius then
+                ( candidatePoint, candidateCircle, bestPoint :: eliminatedPoints )
+
+            else
+                ( bestPoint, bestCircle, candidatePoint :: eliminatedPoints )
+
+        ( _, finalCircle, otherPoints ) =
+            foldl
+                evaluateCandidatePoint
+                ( anyThirdPoint, fullyDetermineCircle anyThirdPoint, [] )
+                rest
+    in
+    ( finalCircle, otherPoints )
+
+
 smallestCircumcircleAndRemainingPoints : List Point -> Maybe ( Circumcircle, List Point )
 smallestCircumcircleAndRemainingPoints points =
     head points
@@ -82,31 +109,13 @@ smallestCircumcircleAndRemainingPoints points =
             (\seedPoint ->
                 case sortBy (euclidian seedPoint) points of
                     --we want to make sure we have at least 3 points in the list
-                    alsoSeedPoint :: seedClosestToPoint :: initialThirdPoint :: rest ->
-                        -- find, from among all the points, the smallest circumcircle that includes the seed point and the point closest to the seed point
+                    alsoSeedPoint :: pointClosestToSeed :: initialThirdPoint :: rest ->
                         Just
-                            (let
-                                fullyDeterminedCircle =
-                                    circumcircle alsoSeedPoint seedClosestToPoint
-
-                                evaluateCandidatePoint candidatePoint ( bestPoint, bestCircle, eliminatedPoints ) =
-                                    let
-                                        candidateCircle =
-                                            fullyDeterminedCircle candidatePoint
-                                    in
-                                    if candidateCircle.radius < bestCircle.radius then
-                                        ( candidatePoint, candidateCircle, bestPoint :: eliminatedPoints )
-
-                                    else
-                                        ( bestPoint, bestCircle, candidatePoint :: eliminatedPoints )
-
-                                ( _, finalCircle, otherPoints ) =
-                                    foldl
-                                        evaluateCandidatePoint
-                                        ( initialThirdPoint, fullyDeterminedCircle initialThirdPoint, [] )
-                                        rest
-                             in
-                             ( finalCircle, otherPoints )
+                            (smallestCircumcircleAndRemainingPointsGivenAtLeast3Points
+                                alsoSeedPoint
+                                pointClosestToSeed
+                                initialThirdPoint
+                                rest
                             )
 
                     _ ->
@@ -119,19 +128,21 @@ sortByDistanceToInitialCircumcircle circumcircleCenter =
     List.sortBy (euclidian circumcircleCenter)
 
 
+drawPolygon : List Point -> Svg msg
+drawPolygon verticies =
+    polygon
+        [ noFill, stroke (Paint black), points (List.map toFloats verticies) ]
+        []
+
+
 main : Html a
 main =
     div
         []
         [ svg [ height (pc 100), width (pc 100) ]
-            (smallestCircumcircleAndRemainingPoints
-                testPoints
-                |> Maybe.map
-                    (\( circle, _ ) ->
-                        polygon [ noFill, stroke (Paint black), points (List.map toFloats circle.circumscribedPoints) ]
-                            []
-                    )
+            (smallestCircumcircleAndRemainingPoints testPoints
+                |> Maybe.map (\( circle, _ ) -> drawPolygon circle.circumscribedPoints)
                 |> toList
-                |> append (List.map dot testPoints)
+                |> append (List.map drawDot testPoints)
             )
         ]
