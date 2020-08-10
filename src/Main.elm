@@ -11,80 +11,57 @@ import TypedSvg.Core exposing (Svg)
 import TypedSvg.Types exposing (Length(..), Paint(..), pc, px)
 
 
-type alias Point =
-    { x : Float
-    , y : Float
-    }
-
-
-type alias Triangulation =
-    { interiorEdges : List Line
-    , convexHull : List Line
-    }
-
-
-type alias Line =
-    { a : Point
-    , b : Point
-    }
-
-
-toFloats : Point -> ( Float, Float )
-toFloats point =
-    ( point.x, point.y )
-
-
-type alias Circumcircle =
-    { center : Point
-    , radius : Float
-    , circumscribedPoints : List Point
-    }
-
-
-testPoints : List Point
-testPoints =
-    [ { x = 450, y = 450 }
-    , { x = 500, y = 220 }
-    , { x = 200, y = 500 }
-    , { x = 700, y = 200 }
-    , { x = 300, y = 200 }
-    , { x = 500, y = 200 }
-    , { x = 20, y = 20 }
-    , { x = 20, y = 20 }
-    , { x = 30, y = 150 }
-    , { x = 700, y = 700 }
-    ]
-
-
-drawDot : Point -> Svg msg
-drawDot center =
-    circle [ cx (px center.x), cy (px center.y), r (px 5) ] []
-
-
 
 -- see http://www.s-hull.org/paper/s_hull.pdf
 
 
-euclidian : Point -> Point -> Float
-euclidian p1 p2 =
-    sqrt ((p1.x - p2.x) ^ 2 + (p1.y - p2.y) ^ 2)
+main : Html a
+main =
+    div
+        []
+        [ svg [ height (pc 100), width (pc 100) ]
+            (smallestCircumcircleAndRemainingPoints testPoints
+                |> Maybe.map (\( circle, _ ) -> drawPolygon circle.circumscribedPoints)
+                |> toList
+                |> append (List.map drawDot testPoints)
+            )
+        ]
 
 
-circumcircle : Point -> Point -> Point -> Circumcircle
-circumcircle a b c =
-    let
-        d =
-            1 / (2 * (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)))
+sortByDistanceToInitialCircumcircle : Point -> List Point -> List Point
+sortByDistanceToInitialCircumcircle circumcircleCenter =
+    List.sortBy (euclidian circumcircleCenter)
 
-        center =
-            { x = d * ((a.x ^ 2 + a.y ^ 2) * (b.y - c.y) + (b.x ^ 2 + b.y ^ 2) * (c.y - a.y) + (c.x ^ 2 + c.y ^ 2) * (a.y - b.y))
-            , y = d * ((a.x ^ 2 + a.y ^ 2) * (c.x - b.x) + (b.x ^ 2 + b.y ^ 2) * (a.x - c.x) + (c.x ^ 2 + c.y ^ 2) * (b.x - a.x))
-            }
-    in
-    { center = center
-    , radius = euclidian a center
-    , circumscribedPoints = [ a, b, c ]
-    }
+
+nonOverlappingTriangulation : Triangulation -> List Point -> Triangulation
+nonOverlappingTriangulation initialCircumcircleTriangulation otherPoints =
+    foldl addPointToConvexHull initialCircumcircleTriangulation otherPoints
+
+
+addPointToConvexHull : Point -> Triangulation -> Triangulation
+addPointToConvexHull =
+    Debug.todo ""
+
+
+smallestCircumcircleAndRemainingPoints : List Point -> Maybe ( Circumcircle, List Point )
+smallestCircumcircleAndRemainingPoints points =
+    head points
+        |> andThen
+            (\seedPoint ->
+                case sortBy (euclidian seedPoint) points of
+                    --we want to make sure we have at least 3 points in the list
+                    alsoSeedPoint :: pointClosestToSeed :: initialThirdPoint :: rest ->
+                        Just
+                            (smallestCircumcircleAndRemainingPointsGivenAtLeast3Points
+                                alsoSeedPoint
+                                pointClosestToSeed
+                                initialThirdPoint
+                                rest
+                            )
+
+                    _ ->
+                        Nothing
+            )
 
 
 smallestCircumcircleAndRemainingPointsGivenAtLeast3Points : Point -> Point -> Point -> List Point -> ( Circumcircle, List Point )
@@ -114,40 +91,40 @@ smallestCircumcircleAndRemainingPointsGivenAtLeast3Points seedPoint pointClosest
     ( finalCircle, otherPoints )
 
 
-smallestCircumcircleAndRemainingPoints : List Point -> Maybe ( Circumcircle, List Point )
-smallestCircumcircleAndRemainingPoints points =
-    head points
-        |> andThen
-            (\seedPoint ->
-                case sortBy (euclidian seedPoint) points of
-                    --we want to make sure we have at least 3 points in the list
-                    alsoSeedPoint :: pointClosestToSeed :: initialThirdPoint :: rest ->
-                        Just
-                            (smallestCircumcircleAndRemainingPointsGivenAtLeast3Points
-                                alsoSeedPoint
-                                pointClosestToSeed
-                                initialThirdPoint
-                                rest
-                            )
+circumcircle : Point -> Point -> Point -> Circumcircle
+circumcircle a b c =
+    let
+        d =
+            1 / (2 * (a.x * (b.y - c.y) + b.x * (c.y - a.y) + c.x * (a.y - b.y)))
 
-                    _ ->
-                        Nothing
-            )
+        center =
+            { x = d * ((a.x ^ 2 + a.y ^ 2) * (b.y - c.y) + (b.x ^ 2 + b.y ^ 2) * (c.y - a.y) + (c.x ^ 2 + c.y ^ 2) * (a.y - b.y))
+            , y = d * ((a.x ^ 2 + a.y ^ 2) * (c.x - b.x) + (b.x ^ 2 + b.y ^ 2) * (a.x - c.x) + (c.x ^ 2 + c.y ^ 2) * (b.x - a.x))
+            }
+    in
+    { center = center
+    , radius = euclidian a center
+    , circumscribedPoints = [ a, b, c ]
+    }
 
 
-sortByDistanceToInitialCircumcircle : Point -> List Point -> List Point
-sortByDistanceToInitialCircumcircle circumcircleCenter =
-    List.sortBy (euclidian circumcircleCenter)
+euclidian : Point -> Point -> Float
+euclidian p1 p2 =
+    sqrt ((p1.x - p2.x) ^ 2 + (p1.y - p2.y) ^ 2)
 
 
-nonOverlappingTriangulation : Triangulation -> List Point -> Triangulation
-nonOverlappingTriangulation initialCircumcircleTriangulation otherPoints =
-    foldl addPointToConvexHull initialCircumcircleTriangulation otherPoints
-
-
-addPointToConvexHull : Point -> Triangulation -> Triangulation
-addPointToConvexHull =
-    Debug.todo ""
+testPoints : List Point
+testPoints =
+    [ { x = 500, y = 220 }
+    , { x = 450, y = 450 }
+    , { x = 200, y = 500 }
+    , { x = 700, y = 200 }
+    , { x = 300, y = 200 }
+    , { x = 500, y = 200 }
+    , { x = 20, y = 20 }
+    , { x = 30, y = 150 }
+    , { x = 700, y = 700 }
+    ]
 
 
 drawPolygon : List Point -> Svg msg
@@ -157,14 +134,36 @@ drawPolygon verticies =
         []
 
 
-main : Html a
-main =
-    div
-        []
-        [ svg [ height (pc 100), width (pc 100) ]
-            (smallestCircumcircleAndRemainingPoints testPoints
-                |> Maybe.map (\( circle, _ ) -> drawPolygon circle.circumscribedPoints)
-                |> toList
-                |> append (List.map drawDot testPoints)
-            )
-        ]
+toFloats : Point -> ( Float, Float )
+toFloats point =
+    ( point.x, point.y )
+
+
+drawDot : Point -> Svg msg
+drawDot center =
+    circle [ cx (px center.x), cy (px center.y), r (px 5) ] []
+
+
+type alias Triangulation =
+    { interiorEdges : List Line
+    , convexHull : List Line
+    }
+
+
+type alias Line =
+    { a : Point
+    , b : Point
+    }
+
+
+type alias Point =
+    { x : Float
+    , y : Float
+    }
+
+
+type alias Circumcircle =
+    { center : Point
+    , radius : Float
+    , circumscribedPoints : List Point
+    }
