@@ -1,10 +1,12 @@
-module Main exposing (main)
+module Main exposing (Model, Msg, init, update, view)
 
+import Browser
 import Color exposing (black)
 import Html exposing (Html, div)
 import List exposing (append, foldl, head, sortBy)
 import Maybe exposing (andThen)
 import Maybe.Extra exposing (toList)
+import Random
 import TypedSvg exposing (circle, polygon, svg)
 import TypedSvg.Attributes exposing (cx, cy, height, noFill, points, r, stroke, width)
 import TypedSvg.Core exposing (Svg)
@@ -15,12 +17,41 @@ import TypedSvg.Types exposing (Length(..), Paint(..), pc, px)
 -- see http://www.s-hull.org/paper/s_hull.pdf
 
 
-main : Html a
+main : Program () ( Model, Cmd Msg ) Msg
 main =
+    Browser.sandbox
+        { init = init
+        , view = view
+        , update = update
+        }
+
+
+type alias Model =
+    { points : List Point }
+
+
+init : ( Model, Cmd Msg )
+init =
+    ( Model [], Random.generate RandomPoints (Random.list 20 randomPoint) )
+
+
+type Msg
+    = RandomPoints (List Point)
+
+
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        RandomPoints points ->
+            { model | points = points }
+
+
+view : Model -> Html Msg
+view model =
     div
         []
         [ svg [ height (pc 100), width (pc 100) ]
-            (smallestCircumcircleAndRemainingPoints testPoints
+            (smallestCircumcircleAndRemainingPoints model.points
                 |> Maybe.map (\( circle, _ ) -> drawPolygon circle.circumscribedPoints)
                 |> toList
                 |> append (List.map drawDot testPoints)
@@ -125,6 +156,16 @@ testPoints =
     , { x = 30, y = 150 }
     , { x = 700, y = 700 }
     ]
+
+
+randomCoordinate : Random.Generator Float
+randomCoordinate =
+    Random.float 0 500
+
+
+randomPoint : Random.Generator Point
+randomPoint =
+    Random.map2 Point randomCoordinate randomCoordinate
 
 
 drawPolygon : List Point -> Svg msg
