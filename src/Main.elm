@@ -17,6 +17,18 @@ type alias Point =
     }
 
 
+type alias Triangulation =
+    { interiorEdges : List Line
+    , convexHull : List Line
+    }
+
+
+type alias Line =
+    { a : Point
+    , b : Point
+    }
+
+
 toFloats : Point -> ( Float, Float )
 toFloats point =
     ( point.x, point.y )
@@ -126,6 +138,16 @@ smallestCircumcircleAndRemainingPoints points =
 sortByDistanceToInitialCircumcircle : Point -> List Point -> List Point
 sortByDistanceToInitialCircumcircle circumcircleCenter =
     List.sortBy (euclidian circumcircleCenter)
+
+
+nonOverlappingTriangulation : Triangulation -> List Point -> Triangulation
+nonOverlappingTriangulation initialCircumcircleTriangulation otherPoints =
+    foldl addPointToConvexHull initialCircumcircleTriangulation otherPoints
+
+
+addPointToConvexHull : Point -> Triangulation -> Triangulation
+addPointToConvexHull =
+    Debug.todo ""
 
 
 drawPolygon : List Point -> Svg msg
