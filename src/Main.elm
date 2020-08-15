@@ -70,7 +70,7 @@ nonOverlappingTriangulation initialCircumcircleTriangulation otherPoints =
 
 
 addPointToConvexHull : Point -> Triangulation -> Triangulation
-addPointToConvexHull =
+addPointToConvexHull point triangulation =
     Debug.todo ""
 
 
@@ -186,8 +186,8 @@ drawDot center =
 
 
 type alias Triangulation =
-    { interiorEdges : List Line
-    , convexHull : List Line
+    { edges : List Line
+    , convexHull : List Point
     }
 
 
