@@ -63,7 +63,7 @@ view model =
             (smallestCircumcircleAndRemainingPoints model.points
                 |> Maybe.map (\( circle, _ ) -> drawPolygon circle.circumscribedPoints)
                 |> toList
-                |> append (List.map drawDot testPoints)
+                |> append (List.map drawDot model.points)
             )
         ]
 
@@ -151,20 +151,6 @@ circumcircle a b c =
 euclidian : Point -> Point -> Float
 euclidian p1 p2 =
     sqrt ((p1.x - p2.x) ^ 2 + (p1.y - p2.y) ^ 2)
-
-
-testPoints : List Point
-testPoints =
-    [ { x = 500, y = 220 }
-    , { x = 450, y = 450 }
-    , { x = 200, y = 500 }
-    , { x = 700, y = 200 }
-    , { x = 300, y = 200 }
-    , { x = 500, y = 200 }
-    , { x = 20, y = 20 }
-    , { x = 30, y = 150 }
-    , { x = 700, y = 700 }
-    ]
 
 
 randomCoordinate : Random.Generator Float
