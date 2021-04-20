@@ -15,14 +15,16 @@ import TypedSvg.Types exposing (Length(..), Paint(..), pc, px)
 
 
 -- see http://www.s-hull.org/paper/s_hull.pdf
+--main : Program () ( Model, Cmd Msg ) Msg
 
 
-main : Program () ( Model, Cmd Msg ) Msg
+main : Program () Model Msg
 main =
-    Browser.sandbox
+    Browser.element
         { init = init
         , view = view
         , update = update
+        , subscriptions = subscriptions
         }
 
 
@@ -30,8 +32,13 @@ type alias Model =
     { points : List Point }
 
 
-init : ( Model, Cmd Msg )
-init =
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+    Sub.none
+
+
+init : () -> ( Model, Cmd Msg )
+init _ =
     ( Model [], Random.generate RandomPoints (Random.list 20 randomPoint) )
 
 
@@ -39,11 +46,13 @@ type Msg
     = RandomPoints (List Point)
 
 
-update : Msg -> Model -> Model
+update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    case msg of
+    ( case msg of
         RandomPoints points ->
             { model | points = points }
+    , Cmd.none
+    )
 
 
 view : Model -> Html Msg
