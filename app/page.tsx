@@ -3,17 +3,19 @@
 import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
 
-function generateRandomPoints(numberOfPoints, xMin, xMax, yMin, yMax) {
+function generateRandomPointsNormalized(
+  numberOfPoints: number
+): [number, number][] {
   const points = [];
   for (let i = 0; i < numberOfPoints; i++) {
-    const x = Math.random() * (xMax - xMin) + xMin;
-    const y = Math.random() * (yMax - yMin) + yMin;
+    const x = Math.random();
+    const y = Math.random();
     points.push([x, y]);
   }
   return points;
 }
 
-const initialPoints = generateRandomPoints(10, 0, 600, 0, 600);
+const normalizedInitialPoints = generateRandomPointsNormalized(10);
 
 function useWindowSize(): { width: number; height: number } {
   // Initialize state with undefined width/height so server and client renders match
@@ -45,13 +47,16 @@ const VoronoiDiagram: React.FC = ({ width, height }) => {
   const [mousePoint, setMousePoint] = useState([0, 0]);
 
   useEffect(() => {
-    const points = [...initialPoints, mousePoint];
+    const scaledInitialPoints = normalizedInitialPoints.map(([x, y]) => [
+      x * width,
+      y * height,
+    ]);
+    const points = [...scaledInitialPoints, mousePoint];
     const svg = d3
       .select(ref.current)
       .attr("width", width)
       .attr("height", height);
 
-    console.log({ width, height });
     const voronoi = d3.Delaunay.from(points).voronoi([0, 0, width, height]);
 
     svg
