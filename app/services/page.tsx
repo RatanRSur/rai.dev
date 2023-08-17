@@ -3,11 +3,11 @@ export default function Services() {
     <div className="centered-window">
       <div className="normal-text">
         <p>
-          my experience is leading a team of engineers to think comprehensively
-          and adversarially enough about a codebase, protocol, or mental model
-          that we notice the gaps in the armor. we'd then fill in those gaps
-          with automation, testing, new mechanisms, or even redesigns if
-          necessary. i also just like writing code in general :)
+          my experience is in leading a team of engineers to think
+          comprehensively and adversarially enough about a codebase, protocol,
+          or mental model that we notice the gaps in the armor. we'd then fill
+          in those gaps with automation, testing, new mechanisms, or even
+          redesigns if necessary. i also just like writing code in general :)
         </p>
         <br></br>
         <p>
