@@ -30,7 +30,7 @@ export default function Contact() {
             href="https://giddy-daisy-03d.notion.site/You-Have-the-Wrong-Challenge-45e07366a9004b47a3229b4e249decd9?pvs=4"
           >
             a common trap many men fall into when faced with their feelings of
-            unworthiness
+            romantic unworthiness
           </Link>
         </p>
         <p>
