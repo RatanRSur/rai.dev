@@ -13,8 +13,8 @@ export default function About() {
           <Link href="https://github.com/hyperledger/besu">
             ethereum core developer
           </Link>
-          , and cofounder of{" "}
-          <Link href="https://alongside.xyz/">alongside</Link>.<br></br>
+          , and cto of <Link href="https://alongside.xyz/">alongside</Link>.
+          <br></br>
           so far i've tried to have an impact by{" "}
           <Link href="https://80000hours.org/articles/earning-to-give/#what-is-earning-to-give">
             earning to give
