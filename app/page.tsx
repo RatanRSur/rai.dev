@@ -2,6 +2,7 @@
 
 import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
+import "./page.css";
 
 function generateRandomPointsNormalized(
   numberOfPoints: number
@@ -15,7 +16,7 @@ function generateRandomPointsNormalized(
   return points;
 }
 
-const normalizedInitialPoints = generateRandomPointsNormalized(10);
+const normalizedInitialPoints = generateRandomPointsNormalized(2 ** 5);
 
 function useWindowSize(): { width: number; height: number } {
   // Initialize state with undefined width/height so server and client renders match
@@ -65,7 +66,7 @@ const VoronoiDiagram: React.FC = ({ width, height }) => {
       .join("path")
       .attr("d", d3.line())
       .attr("fill", "none")
-      .attr("stroke", "white");
+      .attr("stroke", "#454545");
 
     svg
       .selectAll("circle")
@@ -100,6 +101,7 @@ export default function Home() {
   return (
     <main className="">
       <VoronoiDiagram width={width} height={height}></VoronoiDiagram>
+      <img src="/flower.svg" className="centered-img" />
     </main>
   );
 }
