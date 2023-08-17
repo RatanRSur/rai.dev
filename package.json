@@ -1,7 +1,7 @@
 {
   "name": "rai.dev",
   "version": "0.1.0",
-  "homepage": "https://RatanRSur.github.io/rai.dev",
+  "homepage": "http://ratanrsur.github.io/rai.dev/",
   "private": true,
   "scripts": {
     "dev": "next dev",
