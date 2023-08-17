@@ -23,6 +23,7 @@ body {
 
 .normal-text {
   display: block;
+  max-width: 600px;
 }
 
 a {
