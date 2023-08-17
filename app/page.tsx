@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Home() {
   return (
     <main className="">
@@ -9,17 +7,17 @@ export default function Home() {
           <p>rai</p>
           <br></br>
           <p>
-            <Link href="/about">about</Link>
+            <a href="/about">about</a>
           </p>
           <p>
-            <Link href="/writing">writing</Link>
+            <a href="/writing">writing</a>
           </p>
           <p>
-            <Link href="/services">services</Link>
+            <a href="/services">services</a>
           </p>
           <p>
             <u>
-              <Link href="/contact">contact</Link>
+              <a href="/contact">contact</a>
             </u>
           </p>
         </div>

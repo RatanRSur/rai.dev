@@ -1,29 +1,32 @@
-import Link from "next/link";
-
 export default function About() {
   return (
     <div className="centered-window">
       <div className="normal-text">
         <p>
           i'm a former{" "}
-          <a href="https://arxiv.org/abs/1804.04031">
+          <a target="_blank" href="https://arxiv.org/abs/1804.04031">
             machine learning engineer
           </a>
           ,{" "}
-          <Link href="https://github.com/hyperledger/besu">
+          <a target="_blank" href="https://github.com/hyperledger/besu">
             ethereum core developer
-          </Link>
-          , and cto of <Link href="https://alongside.xyz/">alongside</Link>.
-          <br></br>
+          </a>
+          , and cto of <a href="https://alongside.xyz/">alongside</a>.<br></br>
           so far i've tried to have an impact by{" "}
-          <Link href="https://80000hours.org/articles/earning-to-give/#what-is-earning-to-give">
+          <a
+            target="_blank"
+            href="https://80000hours.org/articles/earning-to-give/#what-is-earning-to-give"
+          >
             earning to give
-          </Link>{" "}
+          </a>{" "}
           (and I may continue to) but these days i'm seeing if i can have a more
           direct impact on{" "}
-          <Link href="https://80000hours.org/problem-profiles/artificial-intelligence/">
+          <a
+            target="_blank"
+            href="https://80000hours.org/problem-profiles/artificial-intelligence/"
+          >
             existential risk from unaligned artificial intelligence
-          </Link>
+          </a>
           .
         </p>
         <br></br>
@@ -34,7 +37,7 @@ export default function About() {
         </p>
         <br></br>
         <p>
-          <Link href="..">«</Link>
+          <a href="..">«</a>
         </p>
       </div>
     </div>

@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Services() {
   return (
     <div className="centered-window">
@@ -43,11 +41,11 @@ export default function Services() {
         </p>
         <br></br>
         <p>
-          <Link href="../contact">contact</Link>
+          <a href="../contact">contact</a>
         </p>
         <br></br>
         <p>
-          <Link href="..">«</Link>
+          <a href="..">«</a>
         </p>
       </div>
     </div>

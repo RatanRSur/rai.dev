@@ -1,18 +1,14 @@
-import Link from "next/link";
-
 export default function Contact() {
   return (
     <div className="centered-window">
       <div className="normal-text">
         <p>
-          <Link target="_blank" href="https://twitter.com/0xRaino">
+          <a target="_blank" href="https://twitter.com/0xRaino">
             twitter
-          </Link>
+          </a>
         </p>
         <p>
-          <Link target="_blank" href="mailto:rai@rai.dev">
-            email
-          </Link>
+          <a href="mailto:rai@rai.dev">email</a>
         </p>
         <br></br>
         <p>
