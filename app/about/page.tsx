@@ -11,7 +11,11 @@ export default function About() {
           <a target="_blank" href="https://github.com/hyperledger/besu">
             ethereum core developer
           </a>
-          , and cto of <a href="https://alongside.xyz/">alongside</a>.<br></br>
+          , and cto of{" "}
+          <a target="_blank" href="https://alongside.xyz/">
+            alongside
+          </a>
+          .<br></br>
           so far i've tried to have an impact by{" "}
           <a
             target="_blank"
