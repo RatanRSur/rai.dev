@@ -1,5 +1,7 @@
 body {
+  background-color: black;
   color: white;
+  font-size: 14px
 }
 
 .center-div {
