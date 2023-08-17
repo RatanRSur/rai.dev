@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import * as d3 from "d3";
 import "./page.css";
+import Link from "next/link";
 
 function generateRandomPointsNormalized(
   numberOfPoints: number
@@ -66,16 +67,7 @@ const VoronoiDiagram: React.FC = ({ width, height }) => {
       .join("path")
       .attr("d", d3.line())
       .attr("fill", "none")
-      .attr("stroke", "#454545");
-
-    svg
-      .selectAll("circle")
-      .data(points)
-      .join("circle")
-      .attr("cx", (d) => d[0])
-      .attr("cy", (d) => d[1])
-      .attr("r", 4)
-      .attr("fill", "black");
+      .attr("stroke", "#5f5f5f");
   }, [mousePoint]);
 
   useEffect(() => {
@@ -94,14 +86,22 @@ const VoronoiDiagram: React.FC = ({ width, height }) => {
   return <svg ref={ref}></svg>;
 };
 
-//export default VoronoiDiagram;
-
 export default function Home() {
   const { width, height } = useWindowSize();
   return (
     <main className="">
-      <VoronoiDiagram width={width} height={height}></VoronoiDiagram>
-      <img src="/flower.svg" className="centered-img" />
+      <VoronoiDiagram width={width} height={height} />
+      <div className="centered-window">
+        <img src="/flower.svg" className="flower" />
+        <div class="navigation">
+          <p>rai</p>
+          <p>
+            <Link href="/services">
+              <u>services</u>
+            </Link>
+          </p>
+        </div>
+      </div>
     </main>
   );
 }
