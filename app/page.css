@@ -17,10 +17,11 @@ body {
   z-index: 9999;
   display: flex;
   align-items: center;
+  font-family: monospace;
 }
 
-.navigation {
-  font-family: monospace;
+.normal-text {
+  display: block
 }
 
 .flower {
