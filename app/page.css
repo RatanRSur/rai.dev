@@ -11,20 +11,25 @@ body {
 
 .centered-window {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
+  top: 0;
+  right: 10%;
+  bottom: 0;
+  left: 10%;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: monospace;
 }
 
 .normal-text {
-  display: block
+  display: block;
 }
 
 .flower {
   float: left;
   width:200;
+}
+
+a {
+  text-decoration: underline;
 }

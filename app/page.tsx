@@ -10,19 +10,10 @@ export default function Home() {
         <div className="navigation">
           <p>rai</p>
           <p>
-            <Link href="/about">
-              <u>about</u>
-            </Link>
+            <Link href="/about">about</Link>
           </p>
           <p>
-            <Link href="/services">
-              <u>services</u>
-            </Link>
-          </p>
-          <p>
-            <Link href="/testimonials">
-              <u>testimonials</u>
-            </Link>
+            <Link href="/services">services</Link>
           </p>
           <p>
             <u>contact</u>
