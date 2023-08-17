@@ -1,12 +1,15 @@
 {
   "name": "rai.dev",
   "version": "0.1.0",
+  "homepage": "https://RatanRSur.github.io/rai.dev",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@types/node": "20.5.0",
@@ -22,5 +25,8 @@
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.0.0"
   }
 }
