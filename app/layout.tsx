@@ -23,6 +23,7 @@ function generateRandomPointsNormalized(
 }
 
 const normalizedInitialPoints = generateRandomPointsNormalized(2 ** 5);
+const radii = normalizedInitialPoints.map(() => Math.random() * 50 + 50);
 
 function useWindowSize(): { width: number; height: number } {
   // Initialize state with undefined width/height so server and client renders match
@@ -50,11 +51,30 @@ function useWindowSize(): { width: number; height: number } {
 
 const VoronoiDiagram: React.FC = ({ width, height }) => {
   const [mousePoint, setMousePoint] = useState([0, 0]);
+  const handleMouseMove = (event) => {
+    const { clientX, clientY } = event;
+    setMousePoint([clientX, clientY]);
+  };
+  useEffect(() => {
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  const [tick, setTick] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTick((tick) => tick + 1);
+    }, 16);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
-    const scaledInitialPoints = normalizedInitialPoints.map(([x, y]) => [
-      x * width,
-      y * height,
+    const scaledInitialPoints = normalizedInitialPoints.map(([x, y], i) => [
+      x * width + Math.sin(tick / 200 + i) * radii[i],
+      y * height + Math.cos(tick / 200 + i) * radii[i],
     ]);
     const points = [...scaledInitialPoints, mousePoint];
     const svg = d3
@@ -71,21 +91,9 @@ const VoronoiDiagram: React.FC = ({ width, height }) => {
       .attr("d", d3.line())
       .attr("fill", "none")
       .attr("stroke", "#5f5f5f");
-  }, [mousePoint]);
+  }, [mousePoint, tick]);
 
-  useEffect(() => {
-    document.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-
-  const handleMouseMove = (event) => {
-    const { clientX, clientY } = event;
-    setMousePoint([clientX, clientY]);
-  };
-
+  console.log("rendering");
   return <svg id="voronoi"></svg>;
 };
 

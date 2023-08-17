@@ -12,6 +12,7 @@ export default function Contact() {
             a cautionary tale about how to resolve friendly bets
           </Link>
         </p>
+        <br></br>
         <p>
           <Link
             target="_blank"
@@ -24,6 +25,7 @@ export default function Contact() {
             EIP-4444: Bound Historical Data in Execution Clients
           </Link>
         </p>
+        <br></br>
         <p>
           <Link
             target="_blank"
@@ -33,6 +35,7 @@ export default function Contact() {
             romantic unworthiness
           </Link>
         </p>
+        <br></br>
         <p>
           <Link
             target="_blank"
