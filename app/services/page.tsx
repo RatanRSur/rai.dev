@@ -5,9 +5,9 @@ export default function Services() {
     <div className="centered-window">
       <div className="normal-text">
         <p>
-          my strength is thinking comprehensively about systems of code and
-          mental models to find the gaps. i don't know all the answers but i'm
-          good at noticing confusion when others don't.
+          my strength is thinking comprehensively enough about software systems
+          and mental models that i find the gaps. i'm good at noticing confusion
+          when others don't.
         </p>
         <br></br>
         <p>
