@@ -6,9 +6,9 @@ export default function About() {
       <div className="normal-text">
         <p>
           i'm a former{" "}
-          <Link href="https://arxiv.org/abs/1804.04031">
+          <a href="https://arxiv.org/abs/1804.04031">
             machine learning engineer
-          </Link>
+          </a>
           ,{" "}
           <Link href="https://github.com/hyperledger/besu">
             ethereum core developer
