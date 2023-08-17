@@ -44,8 +44,6 @@ function useWindowSize(): { width: number; height: number } {
 }
 
 const VoronoiDiagram: React.FC = ({ width, height }) => {
-  const ref = useRef(null);
-
   const [mousePoint, setMousePoint] = useState([0, 0]);
 
   useEffect(() => {
@@ -55,7 +53,7 @@ const VoronoiDiagram: React.FC = ({ width, height }) => {
     ]);
     const points = [...scaledInitialPoints, mousePoint];
     const svg = d3
-      .select(ref.current)
+      .select("svg#voronoi")
       .attr("width", width)
       .attr("height", height);
 
@@ -83,7 +81,7 @@ const VoronoiDiagram: React.FC = ({ width, height }) => {
     setMousePoint([clientX, clientY]);
   };
 
-  return <svg ref={ref}></svg>;
+  return <svg id="voronoi"></svg>;
 };
 
 export default function Home() {
