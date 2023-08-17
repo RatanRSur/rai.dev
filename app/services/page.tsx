@@ -5,8 +5,11 @@ export default function Services() {
     <div className="centered-window">
       <div className="normal-text">
         <p>
-          my strength is thinking comprehensively enough about software systems
-          and mental models that i notice the gaps others don't.
+          my experience is thinking comprehensively and adversarially enough
+          about a codebase, protocol, or mental model that i notice the gaps in
+          the armor. i then fill in those gaps with automation, testing, new
+          mechanisms, or even redesigns if necessary. i also just like writing
+          code in general :)
         </p>
         <br></br>
         <p>
@@ -23,7 +26,7 @@ export default function Services() {
         </p>
         <p>
           offchain services and tooling{" "}
-          <em>[rust, typescript, python, scala, kotlin, java]</em>
+          <em>[rust, typescript, scala/java, python]</em>
         </p>
         <p>
           smart contracts <em>[solidity, foundry]</em>
@@ -33,10 +36,10 @@ export default function Services() {
           <u>business uncertainty reduction</u>
         </p>
         <p>
-          taking high-stakes decisions – ones that seem totally unmeasurable –
-          and estimating their risks, finding shaky assumptions you weren't
-          aware you were resting on, and designing cheap experiments that
-          drastically reduce uncertainty.
+          estimating/modeling the risks of high-stakes decisions (even seemingly
+          non-quantifiable ones), finding shaky assumptions hidden in plain
+          sight, and designing cheap experiments that drastically reduce
+          uncertainty.
         </p>
         <br></br>
         <p>
