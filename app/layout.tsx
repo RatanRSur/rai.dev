@@ -13,13 +13,10 @@ import "./page.css";
 function generateRandomPointsNormalized(
   numberOfPoints: number
 ): [number, number][] {
-  const points = [];
-  for (let i = 0; i < numberOfPoints; i++) {
-    const x = Math.random();
-    const y = Math.random();
-    points.push([x, y]);
-  }
-  return points;
+  return Array.from({ length: numberOfPoints }, () => [
+    Math.random(),
+    Math.random(),
+  ]);
 }
 
 const normalizedInitialPoints = generateRandomPointsNormalized(2 ** 5);
@@ -49,9 +46,13 @@ function useWindowSize(): { width: number; height: number } {
   return windowSize;
 }
 
-const VoronoiDiagram: React.FC = ({ width, height }) => {
-  const [mousePoint, setMousePoint] = useState([0, 0]);
-  const handleMouseMove = (event) => {
+const VoronoiDiagram: React.FC<{ width: number; height: number }> = ({
+  width,
+  height,
+}) => {
+  const initMousePoint: [number, number] = [0, 0];
+  const [mousePoint, setMousePoint] = useState(initMousePoint);
+  const handleMouseMove = (event: any) => {
     const { clientX, clientY } = event;
     setMousePoint([clientX, clientY]);
   };
@@ -72,10 +73,12 @@ const VoronoiDiagram: React.FC = ({ width, height }) => {
   }, []);
 
   useEffect(() => {
-    const scaledInitialPoints = normalizedInitialPoints.map(([x, y], i) => [
-      x * width + Math.sin(tick / 200 + i) * radii[i],
-      y * height + Math.cos(tick / 200 + i) * radii[i],
-    ]);
+    const scaledInitialPoints = normalizedInitialPoints.map<[number, number]>(
+      ([x, y], i) => [
+        x * width + Math.sin(tick / 200 + i) * radii[i],
+        y * height + Math.cos(tick / 200 + i) * radii[i],
+      ]
+    );
     const points = [...scaledInitialPoints, mousePoint];
     const svg = d3
       .select("svg#voronoi")
