@@ -6,8 +6,7 @@ export default function Services() {
       <div className="normal-text">
         <p>
           my strength is thinking comprehensively enough about software systems
-          and mental models that i find the gaps. i'm good at noticing confusion
-          when others don't.
+          and mental models that i notice the gaps others don't.
         </p>
         <br></br>
         <p>
