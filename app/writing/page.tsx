@@ -20,7 +20,7 @@ export default function Contact() {
           </a>{" "}
           about{" "}
           <a href="https://eips.ethereum.org/EIPS/eip-4444">
-            EIP-4444: Bound Historical Data in Execution Clients
+            eip-4444: bound historical data in execution clients
           </a>
         </p>
         <br></br>
