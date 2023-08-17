@@ -1,36 +1,40 @@
+import Link from "next/link";
+
 export default function About() {
   return (
     <div className="centered-window">
       <div className="normal-text">
         <p>
           i'm a former{" "}
-          <a href="https://arxiv.org/abs/1804.04031">
+          <Link href="https://arxiv.org/abs/1804.04031">
             machine learning engineer
-          </a>
+          </Link>
           ,{" "}
-          <a href="https://github.com/hyperledger/besu">
+          <Link href="https://github.com/hyperledger/besu">
             ethereum core developer
-          </a>
-          , and cofounder of <a href="https://alongside.xyz/">alongside</a>.
-          <br></br>
-          i've mostly tried to have an impact by{" "}
-          <a href="https://80000hours.org/articles/earning-to-give/#what-is-earning-to-give">
+          </Link>
+          , and cofounder of{" "}
+          <Link href="https://alongside.xyz/">alongside</Link>.<br></br>
+          so far i've tried to have an impact by{" "}
+          <Link href="https://80000hours.org/articles/earning-to-give/#what-is-earning-to-give">
             earning to give
-          </a>{" "}
-          but these days i'm trying to figure out how to have a more direct
-          impact on{" "}
-          <a href="https://80000hours.org/problem-profiles/artificial-intelligence/">
-            ai safety
-          </a>
+          </Link>{" "}
+          (and I may continue to) but these days i'm seeing if i can have a more
+          direct impact on{" "}
+          <Link href="https://80000hours.org/problem-profiles/artificial-intelligence/">
+            existential risk from unaligned artificial intelligence
+          </Link>
           .
         </p>
         <br></br>
         <p>
-          i also like dancing, meditation, and solving my friend's problems.
+          i'm also a transhumanist who likes dancing, meditation,
+          entrepreneurship, solving my friend's problems, connection games,
+          betting/prediction markets, and rationalist self-improvement.
         </p>
         <br></br>
         <p>
-          <a href="..">«</a>
+          <Link href="..">«</Link>
         </p>
       </div>
     </div>

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Services() {
   return (
     <div className="centered-window">
@@ -13,15 +15,15 @@ export default function Services() {
         </p>
         <p>
           end-to-end specification or review of the on/offchain, financial,
-          game-theoretic, and MEV components of web3 protocols – tell me what
-          you want at the highest level and i'll specify or break your system.
+          game-theoretic, and MEV aspects of web3 protocols – tell me what you
+          want at the highest level and i'll specify or break your system.
         </p>
         <br></br>
         <p>
           <u>architecture, engineering, and testing</u>
         </p>
         <p>
-          offchain components and tooling{" "}
+          offchain services and tooling{" "}
           <em>[rust, typescript, python, scala, kotlin, java]</em>
         </p>
         <p>
@@ -33,13 +35,17 @@ export default function Services() {
         </p>
         <p>
           taking high-stakes decisions – ones that seem totally unmeasurable –
-          and estimating risks, finding shaky assumptions you weren't aware you
-          were resting on, and suggesting cheap experiments that drastically
-          reduce uncertainty.
+          and estimating their risks, finding shaky assumptions you weren't
+          aware you were resting on, and designing cheap experiments that
+          drastically reduce uncertainty.
         </p>
         <br></br>
         <p>
-          <a href="..">«</a>
+          <Link href="../contact">contact</Link>
+        </p>
+        <br></br>
+        <p>
+          <Link href="..">«</Link>
         </p>
       </div>
     </div>
