@@ -5,7 +5,7 @@ export default function About() {
         <p>
           i'm a former{" "}
           <a target="_blank" href="https://arxiv.org/abs/1804.04031">
-            machine learning engineer
+            ai engineer
           </a>
           ,{" "}
           <a target="_blank" href="https://github.com/hyperledger/besu">
