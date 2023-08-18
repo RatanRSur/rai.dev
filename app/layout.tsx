@@ -67,8 +67,8 @@ const VoronoiDiagram: React.FC<{ width: number; height: number }> = ({
   useEffect(() => {
     const scaledInitialPoints = normalizedInitialPoints.map<[number, number]>(
       ([x, y], i) => [
-        x * width + Math.sin(tick / 200 + i) * radii[i],
-        y * height + Math.cos(tick / 200 + i) * radii[i],
+        x * width + Math.sin(tick / 400 + i) * radii[i],
+        y * height + Math.cos(tick / 400 + i) * radii[i],
       ]
     );
     const points = [...scaledInitialPoints, mousePoint];
