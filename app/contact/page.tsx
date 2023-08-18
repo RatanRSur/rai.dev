@@ -3,8 +3,8 @@ export default function Contact() {
     <div className="centered-window">
       <div className="normal-text">
         <p>
-          <a target="_blank" href="https://twitter.com/0xRaino">
-            twitter
+          <a target="_blank" href="https://x.com/0xRaino">
+            x/twitter
           </a>
         </p>
         <p>
