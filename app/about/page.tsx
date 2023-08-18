@@ -23,8 +23,8 @@ export default function About() {
           >
             earning to give
           </a>{" "}
-          (and I may continue to) but these days i'm seeing if i can have a more
-          direct impact on{" "}
+          (and I may continue to) but these days i'm entertaining the idea of
+          having a more direct impact on{" "}
           <a
             target="_blank"
             href="https://80000hours.org/problem-profiles/artificial-intelligence/"
