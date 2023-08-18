@@ -11,16 +11,16 @@ export default function Services() {
         </p>
         <br></br>
         <p>
-          <u>web3 protocol design and red-teaming</u>
+          <b>web3 protocol design and red-teaming:</b>
         </p>
         <p>
           end-to-end specification or review of the on/offchain, financial,
-          game-theoretic, and MEV aspects of web3 protocols – tell me what you
+          game-theoretic, and MEV aspects of web3 protocols. tell me what you
           want at the highest level and i'll specify or break your system.
         </p>
         <br></br>
         <p>
-          <u>architecture, engineering, and testing</u>
+          <b>architecture, engineering, and testing:</b>
         </p>
         <p>
           offchain services and tooling{" "}
@@ -31,7 +31,7 @@ export default function Services() {
         </p>
         <br></br>
         <p>
-          <u>business uncertainty reduction</u>
+          <b>business uncertainty reduction:</b>
         </p>
         <p>
           estimating/modeling the risks of high-stakes decisions (even seemingly
