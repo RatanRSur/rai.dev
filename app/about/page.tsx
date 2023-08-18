@@ -3,11 +3,11 @@ export default function About() {
     <div className="centered-window">
       <div className="normal-text">
         <p>
-          i'm was formerly{" "}
+          i've been an{" "}
           <a target="_blank" href="https://arxiv.org/abs/1804.04031">
             ai engineer
           </a>{" "}
-          @ microsoft,{" "}
+          @ microsoft, an{" "}
           <a target="_blank" href="https://github.com/hyperledger/besu">
             ethereum core developer
           </a>{" "}
