@@ -12,6 +12,13 @@ export default function Contact() {
         </p>
         <br></br>
         <p>
+          <a target="_blank" href="https://alongside.xyz/blog/crypto-indexes">
+            a primer on the tradeoffs between the technical architectures of
+            index tokens
+          </a>
+        </p>
+        <br></br>
+        <p>
           <a
             target="_blank"
             href="https://twitter.com/0xRaino/status/1481657360108204033"
@@ -31,13 +38,6 @@ export default function Contact() {
           >
             a common trap many men fall into when faced with their feelings of
             romantic unworthiness
-          </a>
-        </p>
-        <br></br>
-        <p>
-          <a target="_blank" href="https://alongside.xyz/blog/crypto-indexes">
-            a primer on the tradeoffs between the technical architectures of
-            index tokens
           </a>
         </p>
         <br></br>
