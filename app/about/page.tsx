@@ -46,7 +46,7 @@ export default function About() {
         </p>
         <br></br>
         <p>
-          <a href="..">«</a>
+          <a href="..">⮐</a>
         </p>
       </div>
     </div>
