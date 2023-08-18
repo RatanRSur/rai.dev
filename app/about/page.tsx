@@ -3,7 +3,7 @@ export default function About() {
     <div className="centered-window">
       <div className="normal-text">
         <p>
-          i'm a former{" "}
+          i'm was formerly{" "}
           <a target="_blank" href="https://arxiv.org/abs/1804.04031">
             ai engineer
           </a>{" "}
