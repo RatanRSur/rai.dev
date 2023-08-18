@@ -11,7 +11,11 @@ export default function About() {
           <a target="_blank" href="https://github.com/hyperledger/besu">
             ethereum core developer
           </a>{" "}
-          @ <a href="https://consensys.io/">consensys</a>, and cto @{" "}
+          @{" "}
+          <a target="_blank" href="https://consensys.io/">
+            consensys
+          </a>
+          , and cto @{" "}
           <a target="_blank" href="https://alongside.xyz/">
             alongside
           </a>
