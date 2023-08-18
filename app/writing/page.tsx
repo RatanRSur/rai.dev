@@ -21,7 +21,7 @@ export default function Contact() {
         <p>
           <a
             target="_blank"
-            href="https://twitter.com/0xRaino/status/1481657360108204033"
+            href="https://twitter.com/0xRaino/status/1481657327283359749?s=20"
           >
             thread
           </a>{" "}
