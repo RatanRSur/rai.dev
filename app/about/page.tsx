@@ -6,17 +6,17 @@ export default function About() {
           i'm a former{" "}
           <a target="_blank" href="https://arxiv.org/abs/1804.04031">
             ai engineer
-          </a>
-          ,{" "}
+          </a>{" "}
+          @ microsoft,{" "}
           <a target="_blank" href="https://github.com/hyperledger/besu">
             ethereum core developer
-          </a>
-          , and cto of{" "}
+          </a>{" "}
+          @ <a href="https://consensys.io/">consensys</a>, and cto of{" "}
           <a target="_blank" href="https://alongside.xyz/">
             alongside
           </a>
           .<br></br>
-          so far i've tried to have an impact by{" "}
+          so far i've been{" "}
           <a
             target="_blank"
             href="https://80000hours.org/articles/earning-to-give/#what-is-earning-to-give"
@@ -35,9 +35,9 @@ export default function About() {
         </p>
         <br></br>
         <p>
-          i'm also a transhumanist who likes dancing, meditation,
-          entrepreneurship, solving my friend's problems, connection games,
-          betting/prediction markets, and endless self-improvement.
+          i'm a transhumanist who likes dancing, meditation, entrepreneurship,
+          solving my friend's problems, connection games, betting/prediction
+          markets, and endless self-improvement.
         </p>
         <br></br>
         <p>
