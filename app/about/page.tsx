@@ -16,6 +16,7 @@ export default function About() {
             alongside
           </a>
           .<br></br>
+          <br></br>
           so far i've been{" "}
           <a
             target="_blank"
