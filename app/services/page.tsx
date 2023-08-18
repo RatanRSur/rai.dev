@@ -5,9 +5,9 @@ export default function Services() {
         <p>
           my experience is in leading a team of engineers to think
           comprehensively and adversarially enough about a codebase, protocol,
-          or mental model that we notice the gaps in the armor. we'd then fill
-          in those gaps with automation, testing, new mechanisms, or even
-          redesigns if necessary. i also just like writing code in general :)
+          or mental model that we notice the gaps in the armor. then we'd fill
+          them in with automation, testing, new mechanisms, or even redesigns if
+          necessary. i also just like writing code in general :)
         </p>
         <br></br>
         <p>
