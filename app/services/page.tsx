@@ -3,20 +3,25 @@ export default function Services() {
     <div className="centered-window">
       <div className="normal-text">
         <p>
-          my experience is in leading a team of engineers to think
-          comprehensively and adversarially enough about a codebase, protocol,
-          or mental model that we notice the gaps in the armor. then we'd fill
-          them in with automation, testing, new mechanisms, or even redesigns if
-          necessary. i also just like writing code in general :)
+          i build and lead engineering teams in building extremely robust
+          systems. i do this by having us think comprehensively and
+          adversarially about a codebase, protocol, or mental model. we then
+          fill any gaps with automation, testing, new mechanisms, and even
+          redesigns when necessary. generally: i just love coding
         </p>
         <br></br>
         <p>
-          <b>web3 protocol design and red-teaming:</b>
+          <b>web3 protocol design and red-teaming</b>
         </p>
         <p>
-          end-to-end specification or review of the on/offchain, financial,
-          game-theoretic, and MEV aspects of web3 protocols. tell me what you
-          want at the highest level and i'll specify or break your system.
+          end-to-end specification or review of web3 protocols from all angles:
+          <br></br>* on/offchain responsibilities
+          <br></br>* financial
+          <br></br>* game theoretic
+          <br></br>* MEV
+          <br></br>
+          tell me what you want at the highest level and i'll specify or break
+          your system.
         </p>
         <br></br>
         <p>
@@ -34,9 +39,10 @@ export default function Services() {
           <b>business uncertainty reduction:</b>
         </p>
         <p>
-          estimating/modeling the risks of high-stakes decisions (even seemingly
-          non-quantifiable ones), finding shaky assumptions hidden in plain
-          sight, and designing cheap experiments that drastically reduce
+          * estimating/modeling the risks of high-stakes decisions (even
+          seemingly non-quantifiable ones)
+          <br></br>* finding shaky assumptions hidden in plain sight
+          <br></br>* designing cheap experiments that drastically reduce
           uncertainty.
         </p>
         <br></br>
