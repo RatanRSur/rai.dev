@@ -8,7 +8,12 @@ export default function Contact() {
           </a>
         </p>
         <p>
-          <a href="mailto:rai@rai.dev">email</a>
+          <a
+            target="_blank"
+            href="mailto:rai@rai.dev?subject=interested in <topic/service>"
+          >
+            email
+          </a>
         </p>
         <br></br>
         <p>

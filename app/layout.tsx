@@ -60,7 +60,7 @@ const VoronoiDiagram: React.FC<{ width: number; height: number }> = ({
   useEffect(() => {
     const interval = setInterval(() => {
       setTick((tick) => tick + 1);
-    }, 16);
+    }, 1000 / 30 /*FPS*/);
     return () => clearInterval(interval);
   }, []);
 

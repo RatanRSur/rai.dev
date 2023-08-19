@@ -6,8 +6,9 @@ export default function Services() {
           i build and lead engineering teams in building extremely robust
           systems. i do this by having us think comprehensively and
           adversarially about a codebase, protocol, or mental model. we then
-          fill any gaps with automation, testing, new mechanisms, and even
-          redesigns when necessary. generally: i just love coding
+          apply the simplest automation, testing, new mechanisms, or even
+          redesigns to acheive the desired functionality. generally: i just love
+          coding
         </p>
         <br></br>
         <p>
@@ -15,8 +16,8 @@ export default function Services() {
         </p>
         <p>
           end-to-end specification or review of web3 protocols from all angles:
-          <br></br>* on/offchain responsibilities
-          <br></br>* financial
+          <br></br>* on/offchain separation
+          <br></br>* liquidity
           <br></br>* game theoretic
           <br></br>* MEV
           <br></br>
@@ -40,10 +41,10 @@ export default function Services() {
         </p>
         <p>
           * estimating/modeling the risks of high-stakes decisions (even
-          seemingly non-quantifiable ones)
-          <br></br>* finding shaky assumptions hidden in plain sight
+          seemingly unquantifiable ones)
+          <br></br>* finding unchallenged assumptions
           <br></br>* designing cheap experiments that drastically reduce
-          uncertainty.
+          uncertainty
         </p>
         <br></br>
         <p>
