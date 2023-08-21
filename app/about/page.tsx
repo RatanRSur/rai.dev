@@ -8,11 +8,14 @@ export default function About() {
             ai engineer
           </a>{" "}
           @ microsoft, an{" "}
-          <a target="_blank" href="https://github.com/hyperledger/besu">
+          <a target="_blank" href="https://ethereum.org/gl/governance/">
             ethereum core developer
           </a>{" "}
           @{" "}
-          <a target="_blank" href="https://consensys.io/">
+          <a
+            target="_blank"
+            href="https://consensys.io/products#for-the-ecosystem"
+          >
             consensys
           </a>
           , and cto @{" "}
