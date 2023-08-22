@@ -10,8 +10,8 @@ export default function About() {
           @ microsoft, an{" "}
           <a target="_blank" href="https://ethereum.org/gl/governance/">
             ethereum core developer
-          </a>{" "}
-          @{" "}
+          </a>
+          , a blockchain protocol engineer @{" "}
           <a
             target="_blank"
             href="https://consensys.io/products#for-the-ecosystem"
