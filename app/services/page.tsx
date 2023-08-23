@@ -18,7 +18,7 @@ export default function Services() {
           end-to-end specification or review of web3 protocols from all angles:
           <br></br>* on/offchain separation
           <br></br>* liquidity
-          <br></br>* game theoretic
+          <br></br>* game theory and incentive alignment
           <br></br>* MEV
           <br></br>
           tell me what you want at the highest level and i'll specify or break
