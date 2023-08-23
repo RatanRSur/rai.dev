@@ -5,7 +5,7 @@ export default function Services() {
         <p>
           i build and lead engineering teams in building extremely robust
           systems. i do this by having us think comprehensively and
-          adversarially about a codebase, protocol, or mental model. we then
+          adversarially about a codebase, protocol, or mental model. i/we then
           apply the simplest automation, testing, new mechanisms, or even
           redesigns to acheive the desired functionality. generally: i just love
           coding
@@ -26,7 +26,7 @@ export default function Services() {
         </p>
         <br></br>
         <p>
-          <b>architecture, engineering, and testing:</b>
+          <b>architecture, engineering, and testing</b>
         </p>
         <p>
           offchain services and tooling{" "}
@@ -37,7 +37,7 @@ export default function Services() {
         </p>
         <br></br>
         <p>
-          <b>business uncertainty reduction:</b>
+          <b>business uncertainty reduction</b>
         </p>
         <p>
           * estimating/modeling the risks of high-stakes decisions (even
