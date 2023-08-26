@@ -60,15 +60,15 @@ const VoronoiDiagram: React.FC<{ width: number; height: number }> = ({
   useEffect(() => {
     const interval = setInterval(() => {
       setTick((tick) => tick + 1);
-    }, 1000 / 30 /*FPS*/);
+    }, 1000 / 60 /*FPS*/);
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
     const scaledInitialPoints = normalizedInitialPoints.map<[number, number]>(
       ([x, y], i) => [
-        x * width + Math.sin(tick / 400 + i) * radii[i],
-        y * height + Math.cos(tick / 400 + i) * radii[i],
+        x * width + Math.sin(tick / 800 + i) * radii[i],
+        y * height + Math.cos(tick / 800 + i) * radii[i],
       ]
     );
     const points = [...scaledInitialPoints, mousePoint];
