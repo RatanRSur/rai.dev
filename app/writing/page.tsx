@@ -26,7 +26,7 @@ export default function Contact() {
             thread
           </a>{" "}
           about{" "}
-          <a href="https://eips.ethereum.org/EIPS/eip-4444">
+          <a target="_blank" href="https://eips.ethereum.org/EIPS/eip-4444">
             eip-4444: bound historical data in execution clients
           </a>
         </p>
