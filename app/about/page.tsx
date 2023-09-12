@@ -24,15 +24,14 @@ export default function About() {
           </a>
           .<br></br>
           <br></br>
-          so far i've been{" "}
+          i'm{" "}
           <a
             target="_blank"
             href="https://80000hours.org/articles/earning-to-give/#what-is-earning-to-give"
           >
             earning to give
           </a>{" "}
-          (and I may continue to) but these days i'm entertaining the idea of
-          having a more direct impact on{" "}
+          via entrepreneurship to reduce{" "}
           <a
             target="_blank"
             href="https://80000hours.org/problem-profiles/artificial-intelligence/"
@@ -44,8 +43,8 @@ export default function About() {
         <br></br>
         <p>
           i'm a transhumanist who likes dancing, meditation, entrepreneurship,
-          solving my friends' problems, connection games, betting, prediction
-          markets, and endless self-improvement.
+          connection games, betting, prediction markets, and endless
+          self-improvement.
         </p>
         <br></br>
         <p>
