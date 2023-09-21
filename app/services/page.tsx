@@ -15,13 +15,20 @@ export default function Services() {
         <p>
           <b>web3 protocol design and red-teaming</b>
         </p>
+        <br />
         <p>
           end-to-end specification or review of web3 protocols from all angles:
-          <br />* on/offchain separation
-          <br />* liquidity
-          <br />* game theory and incentive alignment
-          <br />* MEV
-          <br />
+        </p>
+        <br />
+        <p>* on/offchain separation</p>
+        <br />
+        <p>* liquidity</p>
+        <br />
+        <p>* game theory and incentive alignment</p>
+        <br />
+        <p>* MEV</p>
+        <br />
+        <p>
           tell me what you want at the highest level and i'll specify or break
           your system.
         </p>
@@ -30,10 +37,12 @@ export default function Services() {
         <p>
           <b>architecture, engineering, and testing</b>
         </p>
+        <br />
         <p>
           offchain services and tooling{" "}
           <em>[rust, typescript, scala/java, python]</em>
         </p>
+        <br />
         <p>
           smart contracts <em>[solidity, foundry]</em>
         </p>
@@ -42,13 +51,15 @@ export default function Services() {
         <p>
           <b>business uncertainty reduction</b>
         </p>
+        <br />
         <p>
           * estimating/modeling the risks of high-stakes decisions (even
           seemingly unquantifiable ones)
-          <br />* finding unchallenged assumptions
-          <br />* designing cheap experiments that drastically reduce
-          uncertainty
         </p>
+        <br />
+        <p>* finding unchallenged assumptions</p>
+        <br />
+        <p>* designing cheap experiments that drastically reduce uncertainty</p>
         <br />
         <br />
         <p>
