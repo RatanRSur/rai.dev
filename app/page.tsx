@@ -1,13 +1,13 @@
-function CenteredContentBox({ children }: { children: JSX.Element[] }) {
-  return <div className="centered-window">{...children}</div>;
+function CenteredContentBox(props: { children: JSX.Element }) {
+  return <div className="centered-window">{props.children}</div>;
 }
 
 export default function Home() {
   return (
     <main className="">
-      <CenteredContentBox
-        children={[
-          <img src="/flower.svg" className="flower" />,
+      <CenteredContentBox>
+        <>
+          <img src="/flower.svg" className="flower" />
           <div>
             <p>rai</p>
             <br />
@@ -33,9 +33,9 @@ export default function Home() {
                 <a href="/contact">contact</a>
               </u>
             </p>
-          </div>,
-        ]}
-      ></CenteredContentBox>
+          </div>
+        </>
+      </CenteredContentBox>
     </main>
   );
 }

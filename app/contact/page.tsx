@@ -5,7 +5,6 @@ export default function Contact() {
     ["x/twitter", "https://x.com/0xRaino"],
     ["farcaster", "https://warpcast.com/rai"],
     ["email", "mailto:rai@rai.dev?subject=interested in <topic/service>"],
-    ["⮐", ".."],
   ];
   return (
     <div className="centered-window">
@@ -20,6 +19,10 @@ export default function Contact() {
             <br />
           </>
         ))}
+        <br />
+        <a href=".." key="back">
+          ⮐
+        </a>
       </div>
     </div>
   );
