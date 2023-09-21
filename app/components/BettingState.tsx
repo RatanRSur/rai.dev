@@ -57,12 +57,12 @@ export default function BettingState() {
           value={nameA}
           onChange={handleTextChange(setNameA)}
         ></CustomInput>{" "}
-        thinks p(
+        thinks p({" "}
         <CustomInput
           type="text"
           value={event}
           onChange={handleTextChange(setEvent)}
-        ></CustomInput>{" "}
+        ></CustomInput>
         ) ={" "}
         <CustomInput
           type="number"
@@ -82,7 +82,7 @@ export default function BettingState() {
           value={nameB}
           onChange={handleTextChange(setNameB)}
         ></CustomInput>{" "}
-        thinks p({event})={" "}
+        thinks p( {event} ) ={" "}
         <CustomInput
           type="number"
           value={pB}
