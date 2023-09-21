@@ -56,19 +56,19 @@ export default function BettingState() {
         value={nameA}
         onChange={handleTextChange(setNameA)}
       ></CustomInput>{" "}
-      thinks{" "}
+      thinks P(
       <CustomInput
         type="text"
         value={event}
         onChange={handleTextChange(setEvent)}
       ></CustomInput>{" "}
-      is{" "}
+      ) ={" "}
       <CustomInput
         type="number"
         value={pA}
         onChange={handleNumberChange(setPA)}
       ></CustomInput>
-      % likely to happen and is willing to bet $
+      % and is willing to bet $
       <CustomInput
         type="number"
         value={maxBetA}
@@ -81,13 +81,13 @@ export default function BettingState() {
         value={nameB}
         onChange={handleTextChange(setNameB)}
       ></CustomInput>{" "}
-      thinks {event} is{" "}
+      thinks P({event})={" "}
       <CustomInput
         type="number"
         value={pB}
         onChange={handleNumberChange(setPB)}
       ></CustomInput>
-      % to happen and is willing to bet $
+      % and is willing to bet $
       <CustomInput
         type="number"
         value={maxBetB}
