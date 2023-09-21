@@ -2,24 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--background-rgb));
+  font-size: 15px;
+}
+
+.centered-window {
+  position: absolute;
+  top: 0;
+  right: 2%;
+  bottom: 0;
+  left: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace;
+}
+
+.normal-text {
+  display: block;
+  max-width: 600px;
+  max-height: 100%;
+  overflow: auto;
+  font-family: monospace;
+}
+
+.betting-state {
+  background-color: rgb(var(--background-rgb));
+  color: gray;
+  font-size: 22px;
+}
+
+a {
+  text-decoration: underline;
+}
+
+input {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  width: 54px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }

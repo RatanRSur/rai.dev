@@ -85,7 +85,7 @@ const VoronoiDiagram: React.FC<{ width: number; height: number }> = ({
       .join("path")
       .attr("d", d3.line())
       .attr("fill", "none")
-      .attr("stroke", "#5f5f5f");
+      .attr("stroke", "gray");
   }, [mousePoint, tick]);
 
   return <svg id="voronoi"></svg>;
