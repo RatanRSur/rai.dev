@@ -3,8 +3,8 @@ import { useState } from "react";
 import CustomInput from "./CustomInput";
 
 export default function BettingState() {
-  let [nameA, setNameA] = useState("Alice");
-  let [nameB, setNameB] = useState("Bob");
+  let [nameA, setNameA] = useState("alice");
+  let [nameB, setNameB] = useState("bob");
   let [event, setEvent] = useState("a spill in aisle 4");
   let [pA, setPA] = useState(50);
   let [pB, setPB] = useState(60);
@@ -51,56 +51,73 @@ export default function BettingState() {
 
   return (
     <div className="betting-state">
-      <CustomInput
-        type="text"
-        value={nameA}
-        onChange={handleTextChange(setNameA)}
-      ></CustomInput>{" "}
-      thinks P(
-      <CustomInput
-        type="text"
-        value={event}
-        onChange={handleTextChange(setEvent)}
-      ></CustomInput>{" "}
-      ) ={" "}
-      <CustomInput
-        type="number"
-        value={pA}
-        onChange={handleNumberChange(setPA)}
-      ></CustomInput>
-      % and is willing to bet $
-      <CustomInput
-        type="number"
-        value={maxBetA}
-        onChange={handleNumberChange(setMaxBetA)}
-      ></CustomInput>
-      .
+      <p>
+        <CustomInput
+          type="text"
+          value={nameA}
+          onChange={handleTextChange(setNameA)}
+        ></CustomInput>{" "}
+        thinks p(
+        <CustomInput
+          type="text"
+          value={event}
+          onChange={handleTextChange(setEvent)}
+        ></CustomInput>{" "}
+        ) ={" "}
+        <CustomInput
+          type="number"
+          value={pA}
+          onChange={handleNumberChange(setPA)}
+        ></CustomInput>
+        % and is willing to bet $
+        <CustomInput
+          type="number"
+          value={maxBetA}
+          onChange={handleNumberChange(setMaxBetA)}
+        ></CustomInput>
+        .
+        <br />
+        <CustomInput
+          type="text"
+          value={nameB}
+          onChange={handleTextChange(setNameB)}
+        ></CustomInput>{" "}
+        thinks p({event})={" "}
+        <CustomInput
+          type="number"
+          value={pB}
+          onChange={handleNumberChange(setPB)}
+        ></CustomInput>
+        % and is willing to bet $
+        <CustomInput
+          type="number"
+          value={maxBetB}
+          onChange={handleNumberChange(setMaxBetB)}
+        ></CustomInput>
+        .
+      </p>
       <br />
-      <CustomInput
-        type="text"
-        value={nameB}
-        onChange={handleTextChange(setNameB)}
-      ></CustomInput>{" "}
-      thinks P({event})={" "}
-      <CustomInput
-        type="number"
-        value={pB}
-        onChange={handleNumberChange(setPB)}
-      ></CustomInput>
-      % and is willing to bet $
-      <CustomInput
-        type="number"
-        value={maxBetB}
-        onChange={handleNumberChange(setMaxBetB)}
-      ></CustomInput>
-      .
+      <br />
+      <p>
+        {nameA} bets $
+        {maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[0])}
+        .
+        <br />
+        {nameB} bets $
+        {maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[1])}.
+      </p>
       <br />
       <br />
-      {nameA} bets ${maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[0])}
-      .
-      <br />
-      {nameB} bets ${maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[1])}
-      .
+      <p>
+        from{" "}
+        <a
+          target="_blank"
+          href="https://www.lesswrong.com/posts/aiz4FCKTgFBtKiWsE/even-odds"
+        >
+          <span style={{ fontStyle: "italic" }}>even odds</span>
+        </a>{" "}
+        by scott garrabrant
+      </p>
     </div>
   );
 }

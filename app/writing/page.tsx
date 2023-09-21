@@ -48,6 +48,7 @@ export default function Writing() {
         {items.map((item, index) => (
           <React.Fragment key={index}>
             <p>{item}</p>
+            <br />
             {index !== items.length - 1 && <br />}
           </React.Fragment>
         ))}

@@ -8,21 +8,26 @@ export default function Home() {
       <CenteredContentBox
         children={[
           <img src="/flower.svg" className="flower" />,
-          <div className="navigation">
+          <div>
             <p>rai</p>
-            <br></br>
+            <br />
+            <br />
             <p>
               <a href="/about">about</a>
             </p>
+            <br />
             <p>
               <a href="/writing">writing</a>
             </p>
+            <br />
             <p>
               <a href="/bet">bet</a>
             </p>
+            <br />
             <p>
               <a href="/services">services</a>
             </p>
+            <br />
             <p>
               <u>
                 <a href="/contact">contact</a>

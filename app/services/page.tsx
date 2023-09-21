@@ -10,21 +10,23 @@ export default function Services() {
           redesigns to acheive the desired functionality. generally: i just love
           coding
         </p>
-        <br></br>
+        <br />
+        <br />
         <p>
           <b>web3 protocol design and red-teaming</b>
         </p>
         <p>
           end-to-end specification or review of web3 protocols from all angles:
-          <br></br>* on/offchain separation
-          <br></br>* liquidity
-          <br></br>* game theory and incentive alignment
-          <br></br>* MEV
-          <br></br>
+          <br />* on/offchain separation
+          <br />* liquidity
+          <br />* game theory and incentive alignment
+          <br />* MEV
+          <br />
           tell me what you want at the highest level and i'll specify or break
           your system.
         </p>
-        <br></br>
+        <br />
+        <br />
         <p>
           <b>architecture, engineering, and testing</b>
         </p>
@@ -35,22 +37,25 @@ export default function Services() {
         <p>
           smart contracts <em>[solidity, foundry]</em>
         </p>
-        <br></br>
+        <br />
+        <br />
         <p>
           <b>business uncertainty reduction</b>
         </p>
         <p>
           * estimating/modeling the risks of high-stakes decisions (even
           seemingly unquantifiable ones)
-          <br></br>* finding unchallenged assumptions
-          <br></br>* designing cheap experiments that drastically reduce
+          <br />* finding unchallenged assumptions
+          <br />* designing cheap experiments that drastically reduce
           uncertainty
         </p>
-        <br></br>
+        <br />
+        <br />
         <p>
           <a href="../contact">contact</a>
         </p>
-        <br></br>
+        <br />
+        <br />
         <p>
           <a href="..">⮐</a>
         </p>

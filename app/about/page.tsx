@@ -22,8 +22,11 @@ export default function About() {
           <a target="_blank" href="https://alongside.xyz/">
             alongside
           </a>
-          .<br></br>
-          <br></br>
+          .<br />
+        </p>
+        <br />
+        <br />
+        <p>
           i'm{" "}
           <a
             target="_blank"
@@ -41,12 +44,14 @@ export default function About() {
           .
         </p>
         <br></br>
+        <br></br>
         <p>
           i'm a transhumanist who likes dancing, meditation, entrepreneurship,
           connection games, betting, prediction markets, and endless
           self-improvement.
         </p>
-        <br></br>
+        <br />
+        <br />
         <p>
           <a href="..">⮐</a>
         </p>

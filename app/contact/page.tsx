@@ -11,11 +11,14 @@ export default function Contact() {
     <div className="centered-window">
       <div className="normal-text">
         {items.map((item, index) => (
-          <p key={index}>
-            <a target="_blank" href={item[1]}>
-              {item[0]}
-            </a>
-          </p>
+          <>
+            <p key={index}>
+              <a target="_blank" href={item[1]}>
+                {item[0]}
+              </a>
+            </p>
+            <br />
+          </>
         ))}
       </div>
     </div>
