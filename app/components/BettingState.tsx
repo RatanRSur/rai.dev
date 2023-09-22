@@ -52,10 +52,11 @@ export default function BettingState() {
     };
 
   const handleNumberChange =
+    (key: string) =>
     (setNumber: (newVal: number) => void) =>
     ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
       setNumber(parseInt(value));
-      updateQueryParam(value);
+      updateQueryParam(key, value);
     };
 
   const calculateBets = (
@@ -96,19 +97,19 @@ export default function BettingState() {
         <CustomInput
           type="text"
           value={event}
-          onChange={handleTextChange("pA")(setEvent)}
+          onChange={handleTextChange("event")(setEvent)}
         ></CustomInput>
         ) ={" "}
         <CustomInput
           type="number"
           value={pA}
-          onChange={handleNumberChange(setPA)}
+          onChange={handleNumberChange("pA")(setPA)}
         ></CustomInput>
         % and is willing to bet $
         <CustomInput
           type="number"
           value={maxBetA}
-          onChange={handleNumberChange(setMaxBetA)}
+          onChange={handleNumberChange("maxBetA")(setMaxBetA)}
         ></CustomInput>
         .
         <br />
@@ -121,13 +122,13 @@ export default function BettingState() {
         <CustomInput
           type="number"
           value={pB}
-          onChange={handleNumberChange(setPB)}
+          onChange={handleNumberChange("pB")(setPB)}
         ></CustomInput>
         % and is willing to bet $
         <CustomInput
           type="number"
           value={maxBetB}
-          onChange={handleNumberChange(setMaxBetB)}
+          onChange={handleNumberChange("maxBetB")(setMaxBetB)}
         ></CustomInput>
         .
       </p>
