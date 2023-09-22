@@ -36,7 +36,7 @@ export default function BettingState() {
   const pA = defaultNumberOrSearchParam("pA", 50);
   const pB = defaultNumberOrSearchParam("pB", 60);
   const maxBetA = defaultNumberOrSearchParam("maxBetA", 100);
-  const maxBetB = defaultNumberOrSearchParam("maxBetB", 110);
+  const maxBetB = defaultNumberOrSearchParam("maxBetB", 100);
 
   const handleChange =
     (key: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
