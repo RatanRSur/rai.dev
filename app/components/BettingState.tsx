@@ -1,26 +1,52 @@
 "use client";
 import { useState } from "react";
 import CustomInput from "./CustomInput";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
+
+type State = {
+  a: string;
+  b: string;
+  event: string;
+  pA: number;
+  pB: number;
+  maxBetA: number;
+  maxBetB: number;
+};
+
+const dbg = (thing: any) => {
+  console.log(thing);
+  return thing;
+};
 
 export default function BettingState() {
-  let [nameA, setNameA] = useState("alice");
-  let [nameB, setNameB] = useState("bob");
-  let [event, setEvent] = useState("a spill in aisle 4");
-  let [pA, setPA] = useState(50);
-  let [pB, setPB] = useState(60);
-  let [maxBetA, setMaxBetA] = useState(100);
-  let [maxBetB, setMaxBetB] = useState(100);
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
 
-  const handleTextChange =
-    (setText: (newVal: string) => void) =>
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      setText(event.target.value);
-    };
+  const defaultOrSearchParam = (key: string, defaultVal: string) => {
+    const rawVal = searchParams.get(key);
+    return rawVal == null ? defaultVal : rawVal;
+  };
+  const defaultNumberOrSearchParam = (key: string, defaultVal: number) => {
+    const rawVal = searchParams.get(key);
+    return rawVal == null ? defaultVal : parseInt(rawVal);
+  };
+  const a = defaultOrSearchParam("a", "alice");
+  const b = defaultOrSearchParam("b", "bob");
+  const event = defaultOrSearchParam("event", "a spill in aisle 4");
+  const pA = defaultNumberOrSearchParam("pA", 50);
+  const pB = defaultNumberOrSearchParam("pB", 60);
+  const maxBetA = defaultNumberOrSearchParam("maxBetA", 100);
+  const maxBetB = defaultNumberOrSearchParam("maxBetB", 110);
 
-  const handleNumberChange =
-    (setNumber: (newVal: number) => void) =>
-    (event: React.ChangeEvent<HTMLInputElement>) => {
-      setNumber(parseInt(event.target.value));
+  const handleChange =
+    (key: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
+      const newVal = event.target.value;
+      const mutableSearchParams = new URLSearchParams(
+        Array.from(searchParams.entries())
+      );
+      mutableSearchParams.set(key, newVal);
+      router.replace(`${pathname}?${mutableSearchParams.toString()}`);
     };
 
   const calculateBets = (
@@ -54,57 +80,55 @@ export default function BettingState() {
       <p>
         <CustomInput
           type="text"
-          value={nameA}
-          onChange={handleTextChange(setNameA)}
+          value={a}
+          onChange={handleChange("a")}
         ></CustomInput>{" "}
         thinks p({" "}
         <CustomInput
           type="text"
           value={event}
-          onChange={handleTextChange(setEvent)}
+          onChange={handleChange("event")}
         ></CustomInput>
         ) ={" "}
         <CustomInput
           type="number"
           value={pA}
-          onChange={handleNumberChange(setPA)}
+          onChange={handleChange("pA")}
         ></CustomInput>
         % and is willing to bet $
         <CustomInput
           type="number"
           value={maxBetA}
-          onChange={handleNumberChange(setMaxBetA)}
+          onChange={handleChange("maxBetA")}
         ></CustomInput>
         .
         <br />
         <CustomInput
           type="text"
-          value={nameB}
-          onChange={handleTextChange(setNameB)}
+          value={b}
+          onChange={handleChange("b")}
         ></CustomInput>{" "}
         thinks p( {event} ) ={" "}
         <CustomInput
           type="number"
           value={pB}
-          onChange={handleNumberChange(setPB)}
+          onChange={handleChange("pB")}
         ></CustomInput>
         % and is willing to bet $
         <CustomInput
           type="number"
           value={maxBetB}
-          onChange={handleNumberChange(setMaxBetB)}
+          onChange={handleChange("maxBetB")}
         ></CustomInput>
         .
       </p>
       <br />
       <br />
       <p>
-        {nameA} bets $
-        {maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[0])}
+        {a} bets ${maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[0])}
         .
         <br />
-        {nameB} bets $
-        {maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[1])}.
+        {b} bets ${maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[1])}.
       </p>
       <br />
       <br />
