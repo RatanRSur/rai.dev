@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import CustomInput from "./CustomInput";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 
