@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-
 type CustomInputProps<V> = {
   type: string;
   value: any;
