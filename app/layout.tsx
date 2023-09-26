@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import VoronoiDiagram from "./components/Voronoi";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +37,9 @@ export default function RootLayout({
         <title>rai – web3 protocol design and engineering</title>
       </head>
       <body className={inter.className}>
+        {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
+          <GoogleAnalytics id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
+        ) : null}
         <VoronoiDiagram width={width} height={height} />
         {children}
       </body>
