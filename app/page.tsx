@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 function CenteredContentBox(props: { children: JSX.Element }) {
   return <div className="centered-window">{props.children}</div>;
 }
