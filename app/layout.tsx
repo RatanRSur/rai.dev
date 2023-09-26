@@ -31,6 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const { width, height } = useWindowSize();
+  console.log("ga", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS);
   return (
     <html lang="en">
       <head>
