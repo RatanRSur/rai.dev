@@ -19,7 +19,7 @@ export default function Home() {
             </p>
             <br />
             <p>
-              <a href="/writing">writing</a>
+              <a href="/content">content</a>
             </p>
             <br />
             <p>
