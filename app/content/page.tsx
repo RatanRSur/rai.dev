@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Content() {
   let items = [
-    <a target="_blank" href="https://www.youtube.com/playlist?list=PL_xIwPvFS2LyOpthV-K_CPxA1Psc83MAk" key="realfigures">real figures – a podcast where i explore people's problems with concepts from forecasting, estimation, and psychology</a>,
+    <a target="_blank" href="https://www.youtube.com/@realrealfigures" key="realfigures">real figures – a podcast where i explore people's problems with concepts from forecasting, estimation, and psychology</a>,
     <a
       target="_blank"
       href="https://www.lesswrong.com/posts/zysbfcBfBG67pxbaA/spirits-vs-terms-as-arbitration-norms"
