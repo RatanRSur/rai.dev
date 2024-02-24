@@ -7,7 +7,6 @@ export async function POST(req: NextRequest) {
   try {
 
     const { firstName, lastName, email } = await req.json();
-    console.log(process.env.MAILCHIMP_API_KEY)
 
     const response = await axios.post(
       `https://us14.api.mailchimp.com/3.0/lists/${ALL_LIST}/members`,
