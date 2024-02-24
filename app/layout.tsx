@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>rai – web3 protocol design and engineering</title>
+        <title>rai – entrepreneur earning to give</title>
       </head>
       <body className={inter.className}>
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
