@@ -135,11 +135,11 @@ export default function BettingState() {
       <br />
       <br />
       <p>
-        {nameA} bets $
+        {nameA} risks $
         {maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[0])}
         .
         <br />
-        {nameB} bets $
+        {nameB} risks $
         {maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[1])}.
       </p>
       <br />

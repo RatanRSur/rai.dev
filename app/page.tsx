@@ -27,7 +27,7 @@ export default function Home() {
             </p>
             <br />
             <p>
-              <a href="/services">services</a>
+              <a href="/newsletter">newsletter</a>
             </p>
             <br />
             <p>
