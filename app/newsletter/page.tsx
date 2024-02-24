@@ -4,11 +4,11 @@ import CustomInput from "../components/CustomInput";
 import apiClient from "@/libs/api";
 
 export default function Newsletter() {
-  const [firstName, setFirstName] = useState(null);
-  const [lastName, setLastName] = useState(null);
-  const [email, setEmail] = useState(null);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (_: React.FormEvent<HTMLFormElement>) => {
     console.log({ firstName, lastName, email })
     apiClient.post("/newsletter/subscribe", {
       firstName,
