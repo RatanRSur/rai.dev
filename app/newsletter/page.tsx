@@ -26,7 +26,7 @@ export default function Newsletter() {
         <br></br>
         <br></br>
         <p>
-          well then, i've got a newsletter for you. every one of my weeks is just chock full of them. the main characters of my life are also going to make frequent appearances – that means you can reply to me to get an intro if anyone sounds interesting to you.</p>
+          well then, i've got a newsletter for you. my weeks are chock full of them. the main characters of my life also make frequent appearances – that means you can reply to me to get an intro if anyone sounds interesting to you.</p>
         <br></br>
         <br></br>
         <form onSubmit={handleSubmit} className="flex flex-col gap-2">
