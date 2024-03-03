@@ -1,14 +1,10 @@
 import Link from "next/link";
 import Script from "next/script";
 
-function CenteredContentBox(props: { children: JSX.Element }) {
-  return <div className="centered-window">{props.children}</div>;
-}
-
 export default function Home() {
   return (
-    <main className="">
-      <CenteredContentBox>
+    <main className="flex flex-row font-mono h-full justify-center">
+      <div className="flex items-center h-full">
         <>
           <img src="/flower.svg" className="flower" />
           <div>
@@ -16,7 +12,6 @@ export default function Home() {
             <br />
             <br />
             <p>
-
               <Link href="/about">about</Link>
             </p>
             <br />
@@ -39,7 +34,7 @@ export default function Home() {
             </p>
           </div>
         </>
-      </CenteredContentBox>
+      </div>
     </main>
   );
 }

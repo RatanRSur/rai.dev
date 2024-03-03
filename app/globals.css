@@ -14,18 +14,6 @@ body {
   font-size: 15px;
 }
 
-.centered-window {
-  position: absolute;
-  top: 0;
-  right: 2%;
-  bottom: 0;
-  left: 2%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: monospace;
-}
-
 .normal-text {
   color: rgb(220,220,220);
   display: block;

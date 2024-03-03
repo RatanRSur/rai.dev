@@ -8,8 +8,8 @@ export default function Contact() {
     ["email", "mailto:rai@rai.dev?subject=interested in <topic/service>"],
   ];
   return (
-    <div className="centered-window">
-      <div className="normal-text">
+    <div className="h-full flex flex-row justify-center items-center">
+      <div className="full normal-text">
         {items.map((item, index) => (
           <>
             <p key={index}>

@@ -44,8 +44,8 @@ export default function Content() {
   ];
 
   return (
-    <div className="centered-window">
-      <div className="normal-text">
+    <div className="h-full flex flex-row justify-center items-center">
+      <div className="full normal-text">
         {items.map((item, index) => (
           <React.Fragment key={index}>
             <p>{item}</p>

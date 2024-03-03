@@ -32,15 +32,17 @@ export default function RootLayout({
 }) {
   const { width, height } = useWindowSize();
   return (
-    <html lang="en">
+    <html className="h-screen" lang="en">
       <head>
         <title>rai – entrepreneur earning to give</title>
       </head>
-      <body className={inter.className}>
+      <body className={`${inter.className} h-full`}>
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleAnalytics id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         ) : null}
-        <VoronoiDiagram width={width} height={height} />
+        <div className="absolute -z-10 h-screen">
+          <VoronoiDiagram width={width} height={height} />
+        </div>
         {children}
       </body>
     </html>

@@ -3,8 +3,8 @@ import Back from "../components/Back";
 
 export default function About() {
   return (
-    <div className="centered-window">
-      <div className="normal-text">
+    <div className="h-full flex flex-row justify-center items-center">
+      <div className="full normal-text">
         <p>
           i've been an{" "}
           <a target="_blank" href="https://arxiv.org/abs/1804.04031">

@@ -20,8 +20,8 @@ export default function Newsletter() {
   }
 
   return (
-    <div className="centered-window">
-      <div className="normal-text">
+    <div className="h-full flex flex-row justify-center items-center">
+      <div className="full normal-text">
         <p>
           do you like reveling in the embarassments of others, at least a little bit?
         </p>
