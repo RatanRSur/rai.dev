@@ -40,7 +40,7 @@ export default function Content() {
       a common trap many men fall into when faced with their feelings of
       romantic unworthiness
     </a>,
-    <Back></Back>
+    <Back key="back"></Back>
   ];
 
   return (
