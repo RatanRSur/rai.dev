@@ -1,5 +1,5 @@
-import Link from "next/link";
 import BettingState from "../components/BettingState";
+import Back from "../components/Back";
 
 export default function Bet() {
   return (
@@ -8,9 +8,7 @@ export default function Bet() {
         <BettingState />
         <br />
         <br />
-        <Link href=".." key="back">
-          ⮐
-        </Link>
+        <Back></Back>
       </div>
     </div>
   );

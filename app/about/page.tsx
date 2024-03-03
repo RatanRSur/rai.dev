@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Back from "../components/Back";
 
 export default function About() {
   return (
@@ -54,9 +55,7 @@ export default function About() {
         </p>
         <br />
         <br />
-        <p>
-          <Link href="..">⮐</Link>
-        </p>
+        <Back></Back>
       </div>
     </div>
   );

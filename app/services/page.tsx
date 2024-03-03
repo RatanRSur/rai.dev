@@ -1,3 +1,5 @@
+import Back from "../components/Back";
+
 export default function Services() {
   return (
     <div className="centered-window">
@@ -67,9 +69,7 @@ export default function Services() {
         </p>
         <br />
         <br />
-        <p>
-          <a href="..">⮐</a>
-        </p>
+        <Back></Back>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
-import Link from "next/link";
 import React from "react";
+import Back from "../components/Back";
 
 export default function Contact() {
   let items = [
@@ -21,9 +21,7 @@ export default function Contact() {
           </>
         ))}
         <br />
-        <Link href=".." key="back">
-          ⮐
-        </Link>
+        <Back></Back>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import Back from "../components/Back";
 
 export default function Content() {
   let items = [
@@ -39,9 +40,7 @@ export default function Content() {
       a common trap many men fall into when faced with their feelings of
       romantic unworthiness
     </a>,
-    <Link href=".." key="back">
-      ⮐
-    </Link>,
+    <Back></Back>
   ];
 
   return (
