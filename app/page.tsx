@@ -3,10 +3,11 @@ import Script from "next/script";
 
 export default function Home() {
   return (
-    <main className="flex flex-row font-mono h-full justify-center">
-      <div className="flex items-center h-full">
-        <>
-          <img src="/flower.svg" className="flower" />
+    <main className="flex flex-row font-mono h-full items-center justify-center">
+      <div className="flex flex-row items-center justify-center">
+        <img src="/flower.svg" className="flower" />
+        <div>
+          <>
           <div>
             <p>rai</p>
             <br />
@@ -34,6 +35,7 @@ export default function Home() {
             </p>
           </div>
         </>
+      </div>
       </div>
     </main>
   );
