@@ -2,6 +2,7 @@
 import { useState } from "react";
 import CustomInput from "../components/CustomInput";
 import apiClient from "@/libs/api";
+import Link from "next/link";
 
 export default function Newsletter() {
   const [firstName, setFirstName] = useState("");
@@ -57,9 +58,9 @@ export default function Newsletter() {
           <button type="submit" className="border border-gray-200 mt-3">subscribe</button>
         </form>
         <br />
-        <a href=".." key="back">
+        <Link href=".." key="back">
           ⮐
-        </a>
+        </Link>
       </div>
     </div>
   )

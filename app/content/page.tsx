@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function Content() {
@@ -38,9 +39,9 @@ export default function Content() {
       a common trap many men fall into when faced with their feelings of
       romantic unworthiness
     </a>,
-    <a href=".." key="back">
+    <Link href=".." key="back">
       ⮐
-    </a>,
+    </Link>,
   ];
 
   return (

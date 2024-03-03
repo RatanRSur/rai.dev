@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function About() {
   return (
     <div className="centered-window">
@@ -53,7 +55,7 @@ export default function About() {
         <br />
         <br />
         <p>
-          <a href="..">⮐</a>
+          <Link href="..">⮐</Link>
         </p>
       </div>
     </div>

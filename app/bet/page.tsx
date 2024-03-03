@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BettingState from "../components/BettingState";
 
 export default function Bet() {
@@ -7,9 +8,9 @@ export default function Bet() {
         <BettingState />
         <br />
         <br />
-        <a href=".." key="back">
+        <Link href=".." key="back">
           ⮐
-        </a>
+        </Link>
       </div>
     </div>
   );

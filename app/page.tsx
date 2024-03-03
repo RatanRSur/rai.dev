@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Script from "next/script";
 
 function CenteredContentBox(props: { children: JSX.Element }) {
@@ -15,24 +16,25 @@ export default function Home() {
             <br />
             <br />
             <p>
-              <a href="/about">about</a>
+
+              <Link href="/about">about</Link>
             </p>
             <br />
             <p>
-              <a href="/content">content</a>
+              <Link href="/content">content</Link>
             </p>
             <br />
             <p>
-              <a href="/bet">bet</a>
+              <Link href="/bet">bet</Link>
             </p>
             <br />
             <p>
-              <a href="/newsletter">newsletter</a>
+              <Link href="/newsletter">newsletter</Link>
             </p>
             <br />
             <p>
               <u>
-                <a href="/contact">contact</a>
+                <Link href="/contact">contact</Link>
               </u>
             </p>
           </div>
