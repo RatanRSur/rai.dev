@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   const { width, height } = useWindowSize();
   return (
-    <html className="h-full" ang="en">
+    <html className="h-full" lang="en">
       <head>
         <title>rai – entrepreneur earning to give</title>
       </head>
