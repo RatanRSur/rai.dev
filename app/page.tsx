@@ -16,19 +16,19 @@ export default function Home() {
               <Link href="/about">about</Link>
             </p>
             <br />
+              {/* <br />
             <p>
               <Link href="/content">content</Link>
+            </p> */}
+              <p>
+                <Link href="/newsletter">newsletter</Link>
             </p>
             <br />
             <p>
               <Link href="/bet">bet</Link>
             </p>
             <br />
-            <p>
-              <Link href="/newsletter">newsletter</Link>
-            </p>
-            <br />
-            <p>
+              <p>
               <u>
                 <Link href="/contact">contact</Link>
               </u>
