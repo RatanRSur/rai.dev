@@ -5,7 +5,12 @@ export default function Home() {
   return (
     <main className="flex flex-row font-mono h-full items-center justify-center">
       <div className="flex flex-row items-center justify-center">
-        <img src="/flower.svg" className="flower" />
+        <div className="relative">
+          <img src="/flower.svg" className="flower relative z-10" />
+          <svg className="absolute inset-0 -z-10" width="330" height="330">
+            <circle cx="130" cy="220" r="100" fill="black" stroke="black" stroke-width="2" />
+          </svg>
+        </div>
         <div>
           <>
           <div>
