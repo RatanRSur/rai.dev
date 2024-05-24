@@ -8,7 +8,7 @@ export default function Home() {
         <div className="relative">
           <img src="/flower.svg" className="flower relative z-10" />
           <svg className="absolute inset-0 -z-10" width="330" height="330">
-            <circle cx="130" cy="220" r="100" fill="black" stroke="black" stroke-width="2" />
+            <circle cx="130" cy="220" r="100" fill="black" stroke="black" strokeWidth="2" />
           </svg>
         </div>
         <div>
