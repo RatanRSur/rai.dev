@@ -49,7 +49,7 @@ export default function About() {
         <br></br>
         <br></br>
         <p>
-          i'm a transhumanist who likes circling / relating games, productive beleif-sharing, betting on those beliefs, being present in my body, and endless self-improvement.
+          i'm a transhumanist who likes <a target="_blank" href="https://www.relateful.com/">circling</a>, <a target="_blank" href="https://www.lesswrong.com/posts/yeADMcScw8EW9yxpH/a-sketch-of-good-communication">sharing beliefs productively</a>,  betting on those beliefs, being present in my body, and endless self-improvement.
         </p>
         <br />
         <br />
