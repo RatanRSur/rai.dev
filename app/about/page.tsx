@@ -50,7 +50,7 @@ export default function About() {
         <br></br>
         <p>
           i'm a transhumanist who likes dancing, meditation, entrepreneurship,
-          connection games, betting, prediction markets, and endless
+          circling / authentic relating, betting, prediction markets, and endless
           self-improvement.
         </p>
         <br />
