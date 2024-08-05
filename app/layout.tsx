@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html className="h-full" lang="en">
       <head>
-        <title>rai – entrepreneur earning to give</title>
+        <title>rai sur</title>
       </head>
       <body className={`${inter.className} h-full`}>
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
