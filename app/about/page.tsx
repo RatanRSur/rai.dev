@@ -82,12 +82,12 @@ export default function About() {
         </p>
         <br />
         <br />
-        i'm pretty good at helping people through emotional and strategic problems. because they're fun, i do limited paid{" "}
+        i'm pretty good at helping people through emotional and strategic problems. because they're fun, you can{" "}
         <a data-cal-namespace="consultation"
           data-cal-link="raisur/consultation"
 
           data-cal-config='{"layout":"week_view"}'
-        >consultations</a> for a low rate ($69).
+        >book a call</a> to get advice.
         <br />
         <br />
         <Back></Back>
