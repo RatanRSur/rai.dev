@@ -15,7 +15,7 @@ export default function About() {
     <div className="h-full flex flex-row justify-center items-center">
       <div className="full normal-text p-3">
         <p>
-          i'm a cofounder and the head of emergency response @ <a target="_blank" href="https://sentinel-team.org/">sentinel</a>, an org that attempts to foresee large-scale/existential catastrophes and deploy emergency response measures to avert disaster. please <a href="/contact">reach out</a> if you want to learn more, be involved, or support in any way.
+          i'm a cofounder and the head of emergency response @ <a target="_blank" href="https://sentinel-team.org/">sentinel</a>, an org that attempts to foresee large-scale/existential catastrophes and deploy emergency response teams to avert disaster. please <a href="/contact">reach out</a> if you want to learn more, be involved, or support in any way.
         </p>
         <br />
         <br />
@@ -32,11 +32,7 @@ export default function About() {
         <br />
         <br />
         <p>
-          i've been an{" "}
-          <a target="_blank" href="https://arxiv.org/abs/1804.04031">
-            ai engineer
-          </a>{" "}
-          @ microsoft, an{" "}
+          previously, i've worked as an ai engineer @ microsoft, an{" "}
           <a target="_blank" href="https://ethereum.org/gl/governance/">
             ethereum core developer
           </a>
@@ -82,12 +78,10 @@ export default function About() {
         </p>
         <br />
         <br />
+        <p>
         if you want some free advice on anything (personal or profesional), you can{" "}
-        <a data-cal-namespace="consultation"
-          data-cal-link="raisur/consultation"
-
-          data-cal-config='{"layout":"week_view"}'
-        >book a call with me</a>.
+          <a data-cal-namespace="consultation" data-cal-link="raisur/consultation" data-cal-config='{"layout":"week_view"}'>book a call with me</a>.
+        </p>
         <br />
         <br />
         <Back></Back>
