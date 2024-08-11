@@ -57,13 +57,32 @@ export default function VoronoiDiagram({
 
     const voronoi = d3.Delaunay.from(points).voronoi([0, 0, width, height]);
 
+    // Create a linear gradient definition
+    // Remove existing gradient definition if it exists
+    svg.select("defs").remove();
+
+    // Create a new gradient definition
+    const gradient = svg.append("defs")
+      .append("linearGradient")
+      .attr("id", "line-gradient")
+      .attr("gradientUnits", "userSpaceOnUse")
+      .attr("x1", 0).attr("y1", 0)
+      .attr("x2", width).attr("y2", height);
+
+    gradient.append("stop").attr("offset", "0%").attr("stop-color", "black");;
+    gradient.append("stop").attr("offset", "17%").attr("stop-color", "black");;
+    gradient.append("stop").attr("offset", "50%").attr("stop-color", "gray");
+    gradient.append("stop").attr("offset", "83%").attr("stop-color", "black");
+    gradient.append("stop").attr("offset", "100%").attr("stop-color", "black");
+
     svg
       .selectAll("path")
       .data(voronoi.cellPolygons())
       .join("path")
       .attr("d", d3.line())
       .attr("fill", "none")
-      .attr("stroke", "gray");
+      .attr("stroke", "url(#line-gradient)")
+      .attr("stroke-width", 1);
   }, [mousePoint, tick]);
 
   return <svg id="voronoi"></svg>;
