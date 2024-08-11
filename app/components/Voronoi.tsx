@@ -67,12 +67,10 @@ export default function VoronoiDiagram({
       .attr("id", "line-gradient")
       .attr("gradientUnits", "userSpaceOnUse")
       .attr("x1", 0).attr("y1", 0)
-      .attr("x2", width).attr("y2", height);
+      .attr("x2", width).attr("y2", 0);
 
     gradient.append("stop").attr("offset", "0%").attr("stop-color", "black");;
-    gradient.append("stop").attr("offset", "17%").attr("stop-color", "black");;
     gradient.append("stop").attr("offset", "50%").attr("stop-color", "gray");
-    gradient.append("stop").attr("offset", "83%").attr("stop-color", "black");
     gradient.append("stop").attr("offset", "100%").attr("stop-color", "black");
 
     svg
