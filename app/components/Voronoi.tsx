@@ -70,7 +70,7 @@ export default function VoronoiDiagram({
       .attr("x2", width).attr("y2", 0);
 
     gradient.append("stop").attr("offset", "0%").attr("stop-color", "black");;
-    gradient.append("stop").attr("offset", "50%").attr("stop-color", "gray");
+    gradient.append("stop").attr("offset", "50%").attr("stop-color", "#A9A9A9");
     gradient.append("stop").attr("offset", "100%").attr("stop-color", "black");
 
     svg
