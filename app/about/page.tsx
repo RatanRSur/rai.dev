@@ -20,7 +20,7 @@ export default function About() {
         <br />
         <br />
         <p>
-          i'm particularly worried about{" "}
+          i'm particularly concerned about{" "}
           <a
             target="_blank"
             href="https://80000hours.org/problem-profiles/artificial-intelligence/"
