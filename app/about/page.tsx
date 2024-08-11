@@ -15,7 +15,7 @@ export default function About() {
     <div className="h-full flex flex-row justify-center items-center">
       <div className="full normal-text p-3">
         <p>
-          i'm a cofounder and the head of emergency response @ <a target="_blank" href="https://sentinel-team.org/">sentinel</a>, a project that forecasts large-scale/existential catastrophes and uses an emergency response team to avert disaster. please <a href="/contact">reach out</a> if you want to learn more, be involved, or support in any way.
+          i'm a cofounder and the head of emergency response @ <a target="_blank" href="https://sentinel-team.org/">sentinel</a>, an org that attempts to foresee large-scale/existential catastrophes and deploy emergency response measures to avert disaster. please <a href="/contact">reach out</a> if you want to learn more, be involved, or support in any way.
         </p>
         <br />
         <br />
