@@ -13,9 +13,9 @@ export default function About() {
   }, [])
   return (
     <div className="h-full flex flex-row justify-center items-center">
-      <div className="full normal-text">
+      <div className="full normal-text p-3">
         <p>
-          i'm a cofounder of <a target="_blank" href="https://sentinel-team.org/">sentinel</a>, a project that forecasts global catastrophes and uses an emergency response team to try to bend the arc of history when the shape of the looming problem is clearest. please <a href="/contact">reach out</a> if you want to support or be involved.
+          i'm a cofounder and the head of emergency response @ <a target="_blank" href="https://sentinel-team.org/">sentinel</a>, a project that forecasts large-scale/existential catastrophes and uses an emergency response team to avert disaster. please <a href="/contact">reach out</a> if you want to learn more, be involved, or support in any way.
         </p>
         <br />
         <br />
@@ -74,6 +74,11 @@ export default function About() {
         <br></br>
         <p>
           i'm a transhumanist who likes <a target="_blank" href="https://www.relateful.com/">circling</a>, <a target="_blank" href="https://www.lesswrong.com/posts/yeADMcScw8EW9yxpH/a-sketch-of-good-communication">sharing beliefs productively</a>,  betting on those beliefs, skillfully relating to the sensations in my body, and endless self-improvement.
+        </p>
+        <br />
+        <br />
+        <p>
+          i follow <a target="_blank" href="http://sl4.org/crocker.html">crocker's rules</a>.
         </p>
         <br />
         <br />
