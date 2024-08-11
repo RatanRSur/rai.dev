@@ -4,7 +4,7 @@ import Script from "next/script";
 export default function Home() {
   return (
     <main className="flex flex-row font-mono h-full items-center justify-center">
-      <div className="flex flex-row items-center justify-center">
+      <div className="flex flex-row items-center justify-center p-3">
         <div className="relative">
           <img src="/flower.svg" className="flower relative z-10" />
           <svg className="absolute inset-0 -z-10" width="330" height="330">
