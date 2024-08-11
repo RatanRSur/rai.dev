@@ -82,12 +82,12 @@ export default function About() {
         </p>
         <br />
         <br />
-        i'm pretty good at helping people through emotional and strategic problems. because they're fun, you can{" "}
+        if you want some free advice on anything (personal or profesional), you can{" "}
         <a data-cal-namespace="consultation"
           data-cal-link="raisur/consultation"
 
           data-cal-config='{"layout":"week_view"}'
-        >book a call</a> to get advice.
+        >book a call with me</a>.
         <br />
         <br />
         <Back></Back>
