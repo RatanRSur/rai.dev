@@ -26,7 +26,7 @@ export default function Home() {
               <Link href="/content">content</Link>
             </p> */}
               <p>
-                <Link href="https://flowerpetals.substack.com">newsletter</Link>
+                <Link target="_blank" href="https://flowerpetals.substack.com">newsletter</Link>
             </p>
             <br />
             <p>
