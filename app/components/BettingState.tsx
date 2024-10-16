@@ -148,7 +148,7 @@ export default function BettingState() {
         from{" "}
         <a
           target="_blank"
-          href="https://www.lesswrong.com/posts/aiz4FCKTgFBtKiWsE/even-odds"
+          href="https://web.archive.org/web/20190220163419/http://bywayofcontradiction.com/even-odds/"
         >
           <span style={{ fontStyle: "italic" }}>even odds</span>
         </a>{" "}
