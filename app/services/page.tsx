@@ -9,7 +9,7 @@ export default function Services() {
           systems. i do this by having us think comprehensively and
           adversarially about a codebase, protocol, or mental model. i/we then
           apply the simplest automation, testing, new mechanisms, or even
-          redesigns to acheive the desired functionality. generally: i just love
+          redesigns to achieve the desired functionality. generally: i just love
           coding
         </p>
         <br />

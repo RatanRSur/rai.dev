@@ -79,7 +79,7 @@ export default function About() {
         <br />
         <br />
         <p>
-        if you want some free advice on anything (personal or profesional), you can{" "}
+          if you want some free advice on anything (personal or professional), you can{" "}
           <a data-cal-namespace="consultation" data-cal-link="raisur/consultation" data-cal-config='{"layout":"week_view"}'>book a call with me</a>.
         </p>
         <br />
