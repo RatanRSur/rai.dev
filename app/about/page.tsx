@@ -43,9 +43,9 @@ export default function About() {
           >
             consensys
           </a>
-          , and cto @{" "}
-          <a target="_blank" href="https://alongside.xyz/">
-            alongside
+          , and cofounder/cto @{" "}
+          <a target="_blank" href="https://blockworks.co/news/universal-raise-led-by-a16z">
+            universal
           </a>
           .<br />
         </p>
