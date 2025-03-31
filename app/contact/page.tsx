@@ -4,7 +4,7 @@ import Back from "../components/Back";
 export default function Contact() {
   let items = [
     ["x/twitter", "https://x.com/rai_sur11"],
-    ["instagram", "https://instagram.com/anditsfunagain"],
+    // ["instagram", "https://instagram.com/anditsfunagain"],
     ["email", "mailto:rai@rai.dev?subject=interested in <topic/service>"],
   ];
   return (
