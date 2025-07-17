@@ -1,33 +1,36 @@
 {
   "name": "rai.dev",
   "version": "0.1.0",
-  "homepage": "http://ratanrsur.github.io/rai.dev/",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "@calcom/embed-react": "^1.5.0",
+    "@types/d3": "^7.4.0",
+    "@types/node": "^22.13.14",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "autoprefixer": "10.4.15",
+    "axios": "^1.6.7",
+    "d3": "^7.8.5",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.5",
+    "lodash": "^4.17.21",
+    "next": "14.2.5",
+    "postcss": "8.4.39",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "tailwindcss": "3.4.6",
+    "typescript": "5.5.3"
+  },
+  "homepage": "http://ratanrsur.github.io/rai.dev/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-  "dependencies": {
-    "@calcom/embed-react": "^1.5.0",
-    "@types/d3": "^7.4.0",
-    "@types/node": "20.5.0",
-    "@types/react": "18.2.20",
-    "@types/react-dom": "18.2.7",
-    "autoprefixer": "10.4.15",
-    "axios": "^1.6.7",
-    "d3": "^7.8.5",
-    "eslint": "8.47.0",
-    "eslint-config-next": "13.4.16",
-    "lodash": "^4.17.21",
-    "next": "13.4.16",
-    "postcss": "8.4.28",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-hot-toast": "^2.4.1",
-    "tailwindcss": "3.3.3",
-    "typescript": "5.1.6"
-  },
-  "devDependencies": {}
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
