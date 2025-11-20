@@ -10,7 +10,7 @@ export default function Home() {
             <circle cx="130" cy="220" r="100" fill="black" stroke="black" strokeWidth="2" />
           </svg>
 
-          <div className="absolute top-[30%] -right-2 z-20">
+          <div className="absolute top-[32%] -right-2 z-20">
             <p className="font-blackletter text-5xl">Rai</p>
           </div>
 
