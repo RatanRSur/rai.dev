@@ -2,20 +2,19 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex flex-row font-mono h-full items-center justify-center">
+    <main className="flex flex-row font-serif h-full items-center justify-center">
       <div className="flex flex-row items-center justify-center p-3">
         <div className="relative">
           <img src="/flower.svg" className="flower relative z-10" />
           <svg className="absolute inset-0 -z-10" width="330" height="330">
             <circle cx="130" cy="220" r="100" fill="black" stroke="black" strokeWidth="2" />
           </svg>
-        </div>
-        <div>
-          <>
-          <div>
-            <p>rai</p>
-            <br />
-            <br />
+
+          <div className="absolute top-[30%] -right-2 z-20">
+            <p className="font-blackletter text-5xl">Rai</p>
+          </div>
+
+          <div className="absolute top-[58%] -right-8 z-20">
             <p>
               <Link href="/about">about</Link>
             </p>
@@ -38,8 +37,7 @@ export default function Home() {
               </u>
             </p>
           </div>
-        </>
-      </div>
+        </div>
       </div>
     </main>
   );

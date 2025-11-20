@@ -2,11 +2,33 @@
 
 import { useEffect, useState } from "react";
 import "./globals.css";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import VoronoiDiagram from "./components/Voronoi";
 import GoogleAnalytics from "./components/GoogleAnalytics";
 
-const inter = Inter({ subsets: ["latin"] });
+const exposure = localFont({
+  src: [
+    {
+      path: "./fonts/Exposure/ExposureTrial[-10].otf",
+      style: "normal",
+    },
+    {
+      path: "./fonts/Exposure/ExposureItalicTrial[-10].otf",
+      style: "italic",
+    },
+  ],
+  variable: "--font-exposure",
+});
+
+const jslBlackletter = localFont({
+  src: [
+    {
+      path: "./fonts/jsl_blackletter/JBlack.ttf",
+      style: "normal",
+    },
+  ],
+  variable: "--font-jsl-blackletter",
+});
 
 function useWindowSize() {
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
@@ -36,7 +58,7 @@ export default function RootLayout({
       <head>
         <title>rai sur</title>
       </head>
-      <body className={`${inter.className} h-full`}>
+      <body className={`${exposure.className} ${jslBlackletter.variable} h-full`}>
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleAnalytics id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         ) : null}

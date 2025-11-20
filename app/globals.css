@@ -11,7 +11,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb));
-  font-size: 15px;
+  font-size: 18px;
 }
 
 .normal-text {
@@ -20,7 +20,7 @@ body {
   max-height: 100%;
   max-width: 600px;
   overflow: auto;
-  font-family: monospace;
+  font-family: serif;
 }
 
 .betting-state {

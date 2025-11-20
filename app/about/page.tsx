@@ -15,17 +15,17 @@ export default function About() {
     <div className="h-full flex flex-row justify-center items-center">
       <div className="full normal-text p-3">
         <p> 
-          most important thing up front: i want your honest feedback on anything! it could be something you think i could improve on, a description of what the experience of interacting with me is like, or anything else. to give me feedback anonymously, click <a href="https://www.admonymous.co/rai">here</a>.
+          most important thing up front: I want your honest feedback on anything! it could be something you think I could improve on, a description of what the experience of interacting with me is like, or anything else. to give me feedback anonymously, click <a href="https://www.admonymous.co/rai">here</a>.
         </p>
         <br />
         <br />
         <p>
-          currently, i help run <a target="_blank" href="https://sentinel-team.org/">sentinel</a>, an org that attempts to foresee large-scale/existential catastrophes and take high leverage actions during crises. please <a href="/contact">reach out</a> if you want to learn more, be involved, or support in any way.
+          currently, I help run <a target="_blank" href="https://sentinel-team.org/">sentinel</a>, an org that attempts to foresee global catastrophes and take high-leverage action during crises. please <a href="/contact">reach out</a> if you want to learn more, be involved, or support in any way.
         </p>
         <br />
         <br />
         <p>
-          i'm particularly concerned about{" "}
+          I'm particularly concerned about{" "}
           <a
             target="_blank"
             href="https://www.amazon.com/dp/0316595640/"

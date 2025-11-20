@@ -18,8 +18,8 @@ export default function BettingState() {
     return rawVal == null ? defaultVal : parseInt(rawVal);
   };
 
-  let [nameA, setNameA] = useState(defaultOrSearchParam("nameA", "alice"));
-  let [nameB, setNameB] = useState(defaultOrSearchParam("nameB", "bob"));
+  let [nameA, setNameA] = useState(defaultOrSearchParam("nameA", "Alice"));
+  let [nameB, setNameB] = useState(defaultOrSearchParam("nameB", "Bob"));
   let [event, setEvent] = useState(
     defaultOrSearchParam("event", "a spill in aisle 4")
   );
@@ -91,6 +91,7 @@ export default function BettingState() {
         <CustomInput
           type="text"
           value={nameA}
+          blackletter={true}
           onChange={handleTextChange("nameA")(setNameA)}
         ></CustomInput>{" "}
         thinks p({" "}
@@ -98,8 +99,7 @@ export default function BettingState() {
           type="text"
           value={event}
           onChange={handleTextChange("event")(setEvent)}
-        ></CustomInput>
-        ) ={" "}
+        ></CustomInput> ) ={" "}
         <CustomInput
           type="number"
           value={pA}
@@ -116,6 +116,7 @@ export default function BettingState() {
         <CustomInput
           type="text"
           value={nameB}
+          blackletter={true}
           onChange={handleTextChange("nameB")(setNameB)}
         ></CustomInput>{" "}
         thinks p( {event} ) ={" "}
