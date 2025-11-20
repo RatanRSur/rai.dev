@@ -2,6 +2,7 @@
 import { useState } from "react";
 import CustomInput from "./CustomInput";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { format } from "d3";
 const _ = require("lodash");
 
 export default function BettingState() {
@@ -18,13 +19,13 @@ export default function BettingState() {
     return rawVal == null ? defaultVal : parseInt(rawVal);
   };
 
-  let [nameA, setNameA] = useState(defaultOrSearchParam("nameA", "Alice"));
-  let [nameB, setNameB] = useState(defaultOrSearchParam("nameB", "Bob"));
+  let [nameA, setNameA] = useState(defaultOrSearchParam("nameA", "Aalis"));
+  let [nameB, setNameB] = useState(defaultOrSearchParam("nameB", "Baldwin"));
   let [event, setEvent] = useState(
-    defaultOrSearchParam("event", "a spill in aisle 4")
+    defaultOrSearchParam("event", "a successful seige")
   );
-  let [pA, setPA] = useState(defaultNumberOrSearchParam("pA", 50));
-  let [pB, setPB] = useState(defaultNumberOrSearchParam("pB", 60));
+  let [pA, setPA] = useState(defaultNumberOrSearchParam("pA", 55));
+  let [pB, setPB] = useState(defaultNumberOrSearchParam("pB", 65));
   let [maxBetA, setMaxBetA] = useState(
     defaultNumberOrSearchParam("maxBetA", 100)
   );
@@ -79,10 +80,7 @@ export default function BettingState() {
   };
 
   function maxTwoDecimals(num: number): string {
-    if (Math.floor(num) === num) {
-      return num.toString();
-    }
-    return num.toFixed(2);
+    return format(".2~f")(num);
   }
 
   return (
@@ -103,12 +101,14 @@ export default function BettingState() {
         <CustomInput
           type="number"
           value={pA}
+          blackletter={true}
           onChange={handleNumberChange("pA")(setPA)}
         ></CustomInput>
-        % and is willing to bet $
+        % and will wager up to $
         <CustomInput
           type="number"
           value={maxBetA}
+          blackletter={true}
           onChange={handleNumberChange("maxBetA")(setMaxBetA)}
         ></CustomInput>
         .
@@ -123,12 +123,14 @@ export default function BettingState() {
         <CustomInput
           type="number"
           value={pB}
+          blackletter={true}
           onChange={handleNumberChange("pB")(setPB)}
         ></CustomInput>
-        % and is willing to bet $
+        % and will wager up to $
         <CustomInput
           type="number"
           value={maxBetB}
+          blackletter={true}
           onChange={handleNumberChange("maxBetB")(setMaxBetB)}
         ></CustomInput>
         .
@@ -136,11 +138,11 @@ export default function BettingState() {
       <br />
       <br />
       <p>
-        {nameA} risks $
+        {nameA} lays down $
         {maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[0])}
         .
         <br />
-        {nameB} risks $
+        {nameB} hazards $
         {maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[1])}.
       </p>
       <br />
