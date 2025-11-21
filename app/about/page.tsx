@@ -44,7 +44,7 @@ export default function About() {
           , a Blockchain Protocols Engineer at{" "}
           <a
             target="_blank"
-            href="https://consensys.io/products#for-the-ecosystem"
+            href="https://consensys.io/ethereum-upgrade"
           >
             Consensys
           </a>
