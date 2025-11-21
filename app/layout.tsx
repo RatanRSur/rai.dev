@@ -62,7 +62,7 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS ? (
           <GoogleAnalytics id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />
         ) : null}
-        <div className="absolute -z-10 h-full">
+        <div className="absolute inset-0 -z-10 h-full w-full">
           <VoronoiDiagram width={width} height={height} />
         </div>
         {children}

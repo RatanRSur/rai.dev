@@ -11,7 +11,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background-color: rgb(var(--background-rgb));
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .normal-text {

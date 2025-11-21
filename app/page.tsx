@@ -4,21 +4,24 @@ export default function Home() {
   return (
     <main className="flex flex-row font-serif h-full items-center justify-center">
       <div className="flex flex-row items-center justify-center p-3">
-        <div className="relative">
-          <img src="/flower.svg" className="flower relative z-10" />
-          <svg className="absolute inset-0 -z-10" width="330" height="330">
-            <circle cx="130" cy="220" r="100" fill="black" stroke="black" strokeWidth="2" />
-          </svg>
-
-          <div className="absolute top-[32%] -right-2 z-20">
-            <p className="font-blackletter text-5xl">Rai</p>
+        <div className="flex flex-row items-start">
+          <div className="relative shrink-0">
+            <img src="/flower.svg" className="flower relative z-10" />
+            <svg className="absolute inset-0 -z-10" width="330" height="330">
+              <circle cx="130" cy="220" r="100" fill="black" stroke="black" strokeWidth="2" />
+            </svg>
           </div>
 
-          <div className="absolute top-[58%] -right-8 z-20">
-            <p>
-              <Link href="/about">about</Link>
-            </p>
-            <br />
+          <div className="flex flex-col h-[330px] z-20 -ml-14">
+            <div className="pt-[130px]">
+              <p className="font-blackletter text-5xl">Rai</p>
+            </div>
+
+            <div className="pt-[72px]">
+              <p>
+                <Link href="/about">about</Link>
+              </p>
+              <br />
               {/* <br />
             <p>
               <Link href="/content">content</Link>
@@ -36,6 +39,7 @@ export default function Home() {
                 <Link href="/contact">contact</Link>
               </u>
             </p>
+            </div>
           </div>
         </div>
       </div>
