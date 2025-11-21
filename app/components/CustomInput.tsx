@@ -3,6 +3,9 @@ type CustomInputProps<V> = {
   value: any;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   blackletter?: boolean;
+  min?: number | string;
+  max?: number | string;
+  pattern?: string;
 };
 
 export default function CustomInput<V>({
@@ -10,6 +13,9 @@ export default function CustomInput<V>({
   value,
   onChange,
   blackletter = false,
+  min,
+  max,
+  pattern,
 }: CustomInputProps<V>) {
   const fontStyles = blackletter
     ? { fontSize: "30px", fontFamily: "var(--font-jsl-blackletter)" }
@@ -46,6 +52,10 @@ export default function CustomInput<V>({
         type={type}
         value={value}
         onChange={onChange}
+        min={min}
+        max={max}
+        pattern={pattern}
+        className="invalid:text-red-600"
         style={{
           gridArea: "1 / 1",
           width: "100%",

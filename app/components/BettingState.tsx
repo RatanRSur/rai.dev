@@ -89,7 +89,12 @@ export default function BettingState() {
   }
 
   const [betA, betB, switched] = calculateBets(pA, pB, maxBetA, maxBetB);
-  const invalid = [betA, betB].some(bet => Number.isNaN(bet));
+  const invalid =
+    [betA, betB].some((bet) => Number.isNaN(bet)) ||
+    pA < 0 ||
+    pA > 100 ||
+    pB < 0 ||
+    pB > 100;
 
   return (
     <div className="betting-state">
@@ -110,6 +115,8 @@ export default function BettingState() {
           type="number"
           value={pA}
           blackletter={true}
+          min={0}
+          max={100}
           onChange={handleNumberChange("pA")(setPA)}
         ></CustomInput>
         % and will wager up to $
@@ -135,6 +142,8 @@ export default function BettingState() {
           type="number"
           value={pB}
           blackletter={true}
+          min={0}
+          max={100}
           onChange={handleNumberChange("pB")(setPB)}
         ></CustomInput>
         % and will wager up to $
