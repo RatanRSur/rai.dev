@@ -46,19 +46,19 @@ export default function BettingState() {
 
   const handleTextChange =
     (key: string) =>
-    (setText: (newVal: string) => void) =>
-    ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
-      setText(value);
-      updateQueryParam(key, value);
-    };
+      (setText: (newVal: string) => void) =>
+        ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
+          setText(value);
+          updateQueryParam(key, value);
+        };
 
   const handleNumberChange =
     (key: string) =>
-    (setNumber: (newVal: number) => void) =>
-    ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
-      setNumber(parseInt(value));
-      updateQueryParam(key, value);
-    };
+      (setNumber: (newVal: number) => void) =>
+        ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
+          setNumber(parseInt(value));
+          updateQueryParam(key, value);
+        };
 
   const calculateBets = (
     pA: number,
@@ -112,8 +112,10 @@ export default function BettingState() {
           onChange={handleNumberChange("maxBetA")(setMaxBetA)}
         ></CustomInput>
         .
-        <br />
-        <br className="md:hidden" />
+      </p>
+      <br />
+      <br className="md:hidden" />
+      <p>
         <CustomInput
           type="text"
           value={nameB}
@@ -139,12 +141,11 @@ export default function BettingState() {
       <br />
       <br />
       <p>
-        {nameA} lays down $
-        {maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[0])}
-        .
-        <br />
-        {nameB} hazards $
-        {maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[1])}.
+        {nameA} lays down ${maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[0])}.
+      </p>
+      <br />
+      <p>
+        {nameB} hazards ${maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[1])}.
       </p>
       <br />
       <br />
