@@ -15,7 +15,7 @@ export default function About() {
     <div className="h-full flex flex-row justify-center items-center">
       <div className="full normal-text p-3">
         <p> 
-          most important thing up front: I want your honest feedback on anything! it could be something you think I could improve on, a description of what the experience of interacting with me is like, or anything else. to give me feedback anonymously, click <a href="https://www.admonymous.co/rai">here</a>.
+          most important thing up front: honest feedback would be a gift. it could be something you think I could improve on, a description of what the experience of interacting with me is like, or anything else. you can give me feedback anonymously <a href="https://www.admonymous.co/rai">here</a>.
         </p>
         <br />
         <br />
@@ -37,7 +37,7 @@ export default function About() {
         <br />
         <br />
         <p>
-          previously, i've worked as an ai engineer for microsoft, an{" "}
+          previously, I've worked as an ai engineer for microsoft, an{" "}
           <a target="_blank" href="https://ethereum.org/gl/governance/">
             ethereum core developer
           </a>
@@ -74,7 +74,7 @@ export default function About() {
         <br></br>
         <br></br>
         <p>
-          i'm a <a target="_blank" href="https://en.wikipedia.org/wiki/Transhumanism">transhumanist</a> who enjoys <a target="_blank" href="https://www.relateful.com/">circling</a>, <a target="_blank" href="https://www.lesswrong.com/posts/yeADMcScw8EW9yxpH/a-sketch-of-good-communication">sharing beliefs productively</a>, betting on those beliefs, skillfully relating to the sensations in my body (especially through dance and breath), and endless self-improvement.
+          I'm a <a target="_blank" href="https://en.wikipedia.org/wiki/Transhumanism">transhumanist</a> who enjoys <a target="_blank" href="https://www.relateful.com/">circling</a>, <a target="_blank" href="https://www.lesswrong.com/posts/yeADMcScw8EW9yxpH/a-sketch-of-good-communication">sharing beliefs productively</a>, betting on those beliefs, skillfully relating to the sensations in my body (especially through dance and breath), and endless self-improvement.
         </p>
         <br />
         <br />
