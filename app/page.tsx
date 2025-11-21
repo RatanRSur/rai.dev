@@ -22,10 +22,10 @@ export default function Home() {
 
           <div className="flex flex-col h-[330px] z-20 -ml-14">
             <div className="pt-[130px]">
-              <p className="font-blackletter text-6xl">Rai</p>
+              <p className="font-blackletter text-7xl">Rai</p>
             </div>
 
-            <div className="pt-[60px]">
+            <div className="pt-[45px]">
               <p>
                 <Link href="/about">about</Link>
               </p>
