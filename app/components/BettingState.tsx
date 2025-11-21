@@ -22,7 +22,7 @@ export default function BettingState() {
   let [nameA, setNameA] = useState(defaultOrSearchParam("nameA", "Aalis"));
   let [nameB, setNameB] = useState(defaultOrSearchParam("nameB", "Baldwin"));
   let [event, setEvent] = useState(
-    defaultOrSearchParam("event", "a successful seige")
+    defaultOrSearchParam("event", "a successful siege")
   );
   let [pA, setPA] = useState(defaultNumberOrSearchParam("pA", 55));
   let [pB, setPB] = useState(defaultNumberOrSearchParam("pB", 65));
