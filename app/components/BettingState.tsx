@@ -119,7 +119,7 @@ export default function BettingState() {
           max={100}
           onChange={handleNumberChange("pA")(setPA)}
         ></CustomInput>
-        % and will wager up to $
+        % and would wager up to $
         <CustomInput
           type="number"
           value={maxBetA}
@@ -145,7 +145,7 @@ export default function BettingState() {
           max={100}
           onChange={handleNumberChange("pB")(setPB)}
         ></CustomInput>
-        % and will wager up to $
+        % and would wager up to $
         <CustomInput
           type="number"
           value={maxBetB}
