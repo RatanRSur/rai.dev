@@ -65,23 +65,31 @@ export default function BettingState() {
     pB: number,
     maxBetA: number,
     maxBetB: number
-  ): [number, number] => {
-    let fracA = pA / 100.0;
-    let fracB = pB / 100.0;
-    if (!(fracA + (1 - fracB) > 1)) {
+  ): [number, number, boolean] => {
+    const probabilityTruePerA = pA / 100.0;
+    const probabilityTruePerB = pB / 100.0;
+    // scott garrabrant's calculation uses p = P(true) for A and q = P(false) for B so let's convert
+    let p = probabilityTruePerA;
+    let q = 1 - probabilityTruePerB;
+    let switched = false;
+    if (!(p + q > 1)) {
       // we need the sum to be greater than 1
-      fracA = 1 - fracA;
-      fracB = 1 - fracB;
+      p = 1 - p;
+      q = 1 - q;
+      switched = true;
     }
     let maxBet = Math.min(maxBetA, maxBetB);
-    let betA = maxBet * (fracA ** 2 - fracB ** 2);
-    let betB = maxBet * ((1 - fracB) ** 2 - (1 - fracA) ** 2);
-    return [betA, betB];
+    let betA = maxBet * (p ** 2 - (1 - q) ** 2);
+    let betB = maxBet * (q ** 2 - (1 - p) ** 2);
+    return [betA, betB, switched];
   };
 
   function maxTwoDecimals(num: number): string {
     return format(".2~f")(num);
   }
+
+  const [betA, betB, switched] = calculateBets(pA, pB, maxBetA, maxBetB);
+  const invalid = [betA, betB].some(bet => Number.isNaN(bet));
 
   return (
     <div className="betting-state">
@@ -138,32 +146,18 @@ export default function BettingState() {
         ></CustomInput>
         .
       </p>
-      <br />
-      <br />
+      {!invalid && (
+        <>
+          <br />
+          <br />
       <p>
-        {nameA} lays down ${maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[0])}.
-      </p>
-      <br />
+            {nameA} bets ${maxTwoDecimals(betA)} on {event} {switched ? " NOT happening" : ""}.
+          </p>
       <p>
-        {nameB} hazards ${maxTwoDecimals(calculateBets(pA, pB, maxBetA, maxBetB)[1])}.
+            {nameB} bets ${maxTwoDecimals(betB)} on {event} {switched ? "" : " NOT happening"}.
       </p>
-      <br />
-      <br />
-      <p>
-        from <a
-          target="_blank"
-          href="https://web.archive.org/web/20190220163419/http://bywayofcontradiction.com/even-odds/"
-        >
-          <span style={{ fontStyle: "italic" }}>even odds</span>
-        </a>{" "}
-        (<a
-          target="_blank"
-          href="https://www.lesswrong.com/posts/aiz4FCKTgFBtKiWsE/even-odds#4kciXD7QMqWf5wSpG"
-        >
-          lw comments
-        </a>){" "}
-        by scott garrabrant
-      </p>
+        </>
+      )}
     </div>
   );
 }
