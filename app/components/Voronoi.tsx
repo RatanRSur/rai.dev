@@ -81,7 +81,7 @@ export default function VoronoiDiagram({
       .attr("fill", "none")
       .attr("stroke", "url(#line-gradient)")
       .attr("stroke-width", 0.85);
-  }, [mousePoint, tick]);
+  }, [mousePoint, tick, width, height]);
 
   return <svg id="voronoi"></svg>;
 }

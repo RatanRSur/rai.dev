@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -6,9 +7,16 @@ export default function Home() {
       <div className="flex flex-row items-center justify-center p-3">
         <div className="flex flex-row items-start">
           <div className="relative shrink-0">
-            <img src="/flower.svg" className="flower relative z-10" />
-            <svg className="absolute inset-0 -z-10" width="330" height="330">
-              <circle cx="130" cy="220" r="100" fill="black" stroke="black" strokeWidth="2" />
+            <Image
+              src="/flower.svg"
+              alt="flower"
+              className="flower relative z-10"
+              width={298}
+              height={426}
+              priority
+            />
+            <svg className="absolute inset-0 -z-10 w-screen h-screen" width="100vw" height="100vh">
+              <circle cx="130" cy="220" r="120" fill="black" stroke="black" strokeWidth="2" />
             </svg>
           </div>
 
