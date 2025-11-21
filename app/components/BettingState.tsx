@@ -113,6 +113,7 @@ export default function BettingState() {
         ></CustomInput>
         .
         <br />
+        <br className="md:hidden" />
         <CustomInput
           type="text"
           value={nameB}
