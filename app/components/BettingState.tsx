@@ -128,7 +128,6 @@ export default function BettingState() {
         ></CustomInput>
         .
       </p>
-      <br />
       <br className="md:hidden" />
       <p>
         <CustomInput
@@ -157,7 +156,6 @@ export default function BettingState() {
       </p>
       {!invalid && (
         <>
-          <br />
           <br />
       <p>
             {nameA} bets ${maxTwoDecimals(betA)} on {event} {switched ? " NOT happening" : ""}.

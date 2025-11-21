@@ -5,11 +5,8 @@ import Back from "../components/Back";
 export default function Bet() {
   return (
     <div className="h-full flex flex-row justify-center items-center">
-      <div className="font-serif p-3">
-        <Suspense>
-          <BettingState />
-        </Suspense>
-        <br />
+      <div className="w-fit p-3">
+        <BettingState />
         <br />
         <Back></Back>
       </div>

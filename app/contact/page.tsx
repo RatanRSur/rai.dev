@@ -28,7 +28,6 @@ export default function Contact() {
                 {item[0]}
               </a>
             </p>
-            <br />
           </React.Fragment>
         ))}
         <br />

@@ -29,19 +29,16 @@ export default function Home() {
               <p>
                 <Link href="/about">about</Link>
               </p>
-              <br />
               {/* <br />
             <p>
               <Link href="/content">content</Link>
             </p> */}
               <p>
                 <Link target="_blank" href="https://flowerpetals.substack.com">newsletter</Link>
-            </p>
-            <br />
+              </p>
             <p>
               <Link href="/bet">bet</Link>
-            </p>
-            <br />
+              </p>
               <p>
               <u>
                 <Link href="/contact">contact</Link>

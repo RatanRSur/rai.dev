@@ -18,7 +18,6 @@ export default function About() {
           Honest feedback is a great gift, especially if it's something you think I could improve on. You can give me feedback anonymously <a href="https://www.admonymous.co/rai">here</a>.
         </p>
         <br />
-        <br />
         <p>
           I'm currently running <a target="_blank" href="https://sentinel-team.org/">Sentinel</a>, an org that attempts to foresee global catastrophes and take high-leverage action during crises.
           I'm particularly concerned about{" "}
@@ -30,7 +29,6 @@ export default function About() {
           </a>
           .
         </p>
-        <br />
         <br />
         <p>
           Previously, I've worked as an AI engineer for Microsoft, an{" "}
@@ -65,17 +63,14 @@ export default function About() {
           .
         </p> */}
         <br></br>
-        <br></br>
         <p>
           I'm a <a target="_blank" href="https://en.wikipedia.org/wiki/Transhumanism">transhumanist</a> who enjoys <a target="_blank" href="https://www.relateful.com/">circling</a>, <a target="_blank" href="https://www.lesswrong.com/posts/yeADMcScw8EW9yxpH/a-sketch-of-good-communication">sharing beliefs productively</a>, betting on those beliefs, skillfully relating to the sensations in my body (especially through dance and breath), <a target="_blank" href="https://youtu.be/6ahMxTtPcQM?si=sav7IQbekjC1KUvJ&t=1620">TTRPGs</a> (e.g. Dungeons & Dragons), and endless self-improvement.
         </p>
-        <br />
         <br />
         <p>
           If you're one of the few to read this far, you can{" "}
           <a data-cal-namespace="consultation" data-cal-link="raisur/consultation" data-cal-config='{"layout":"week_view"}'>book a call with me</a> for $1.
         </p>
-        <br />
         <br />
         <Back></Back>
       </div>

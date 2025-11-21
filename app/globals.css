@@ -24,14 +24,15 @@ body {
 }
 
 .betting-state {
-  display: inline-block;
+  width: fit-content;
   color: gray;
   font-size: 22px;
 }
 
 p {
   background-color: rgb(var(--background-rgb));
-  display: inline-block;
+  width: fit-content;
+    max-width: 100%;
 }
 
 a {
