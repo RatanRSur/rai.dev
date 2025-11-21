@@ -69,9 +69,9 @@ export default function VoronoiDiagram({
       .attr("x1", 0).attr("y1", 0)
       .attr("x2", width).attr("y2", 0);
 
-    gradient.append("stop").attr("offset", "10%").attr("stop-color", "black");;
-    gradient.append("stop").attr("offset", "50%").attr("stop-color", "#A9A9A9");
-    gradient.append("stop").attr("offset", "90%").attr("stop-color", "black");;
+    gradient.append("stop").attr("offset", "10%").attr("stop-color", "rgb(var(--background-rgb))");;
+    gradient.append("stop").attr("offset", "50%").attr("stop-color", "rgb(var(--foreground-rgb))");
+    gradient.append("stop").attr("offset", "90%").attr("stop-color", "rgb(var(--background-rgb))");;
 
     svg
       .selectAll("path")
@@ -80,7 +80,7 @@ export default function VoronoiDiagram({
       .attr("d", d3.line())
       .attr("fill", "none")
       .attr("stroke", "url(#line-gradient)")
-      .attr("stroke-width", 0.85);
+      .attr("stroke-width", 0.5);
   }, [mousePoint, tick, width, height]);
 
   return <svg id="voronoi"></svg>;

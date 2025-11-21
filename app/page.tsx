@@ -16,7 +16,7 @@ export default function Home() {
               priority
             />
             <svg className="absolute inset-0 -z-10 w-screen h-screen" width="100vw" height="100vh">
-              <circle cx="130" cy="220" r="120" fill="black" stroke="black" strokeWidth="2" />
+              <circle cx="130" cy="220" r="120" fill="rgb(var(--background-rgb))" stroke="rgb(var(--background-rgb))" strokeWidth="2" />
             </svg>
           </div>
 
