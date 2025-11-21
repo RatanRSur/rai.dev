@@ -171,13 +171,12 @@ export default function BettingState() {
             >
               <span style={{ fontStyle: "italic" }}>Even Odds</span>
             </a>{" "}
-            (<a
+            by Scott Garrabrant (<a
               target="_blank"
               href="https://www.lesswrong.com/posts/aiz4FCKTgFBtKiWsE/even-odds#4kciXD7QMqWf5wSpG"
             >
-              LW comments
-            </a>){" "}
-            by Scott Garrabrant
+              LessWrong version
+            </a>)
           </p>
         </>
       )}
