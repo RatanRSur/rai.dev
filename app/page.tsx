@@ -27,22 +27,20 @@ export default function Home() {
 
             <div className="pt-[50px] z-20">
               <p>
-                <Link href="/about">about</Link>
+                <Link href="/about">About</Link>
               </p>
               {/* <br />
             <p>
               <Link href="/content">content</Link>
             </p> */}
-              <p>
+              {/* <p>
                 <Link target="_blank" href="https://flowerpetals.substack.com">newsletter</Link>
-              </p>
+              </p> */}
             <p>
-              <Link href="/bet">bet</Link>
+                <Link href="/bet">Bet</Link>
               </p>
               <p>
-              <u>
-                <Link href="/contact">contact</Link>
-              </u>
+                <Link href="/contact">Contact</Link>
             </p>
             </div>
           </div>
