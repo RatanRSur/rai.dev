@@ -20,12 +20,12 @@ export default function Home() {
             </svg>
           </div>
 
-          <div className="flex flex-col h-[330px] z-20 -ml-14">
-            <div className="pt-[130px]">
+          <div className="flex flex-col h-[330px] -ml-14">
+            <div className="pt-[120px] -ml-1">
               <p className="font-blackletter text-7xl">Rai</p>
             </div>
 
-            <div className="pt-[45px]">
+            <div className="pt-[50px] z-20">
               <p>
                 <Link href="/about">about</Link>
               </p>
