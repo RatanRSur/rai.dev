@@ -169,7 +169,7 @@ export default function BettingState() {
               target="_blank"
               href="https://web.archive.org/web/20190220163419/http://bywayofcontradiction.com/even-odds/"
             >
-              <span style={{ fontStyle: "italic" }}>even odds</span>
+              <span style={{ fontStyle: "italic" }}>Even Odds</span>
             </a>{" "}
             (<a
               target="_blank"
