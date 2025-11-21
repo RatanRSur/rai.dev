@@ -6,7 +6,9 @@ export default function Bet() {
   return (
     <div className="h-full flex flex-row justify-center items-center">
       <div className="w-fit p-3">
-        <BettingState />
+        <Suspense>
+          <BettingState />
+        </Suspense>
         <br />
         <Back></Back>
       </div>

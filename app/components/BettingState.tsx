@@ -160,7 +160,6 @@ export default function BettingState() {
           <p>
             {nameA} bets ${maxTwoDecimals(betA)} on {event}{switched ? " NOT happening" : ""}.
           </p>
-
           <p>
             {nameB} bets ${maxTwoDecimals(betB)} on {event}{switched ? "" : " NOT happening"}.
           </p>
