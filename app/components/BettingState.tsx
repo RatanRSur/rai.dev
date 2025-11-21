@@ -163,6 +163,22 @@ export default function BettingState() {
           <p>
             {nameB} bets ${maxTwoDecimals(betB)} on {event}{switched ? "" : " NOT happening"}.
           </p>
+          <br />
+          <p>
+            - <a
+              target="_blank"
+              href="https://web.archive.org/web/20190220163419/http://bywayofcontradiction.com/even-odds/"
+            >
+              <span style={{ fontStyle: "italic" }}>even odds</span>
+            </a>{" "}
+            (<a
+              target="_blank"
+              href="https://www.lesswrong.com/posts/aiz4FCKTgFBtKiWsE/even-odds#4kciXD7QMqWf5wSpG"
+            >
+              LW comments
+            </a>){" "}
+            by Scott Garrabrant
+          </p>
         </>
       )}
     </div>
