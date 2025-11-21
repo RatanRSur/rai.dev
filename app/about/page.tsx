@@ -15,12 +15,12 @@ export default function About() {
     <div className="h-full flex flex-row justify-center items-center">
       <div className="full normal-text p-3">
         <p> 
-          most important thing up front: honest feedback would be a gift. it could be something you think I could improve on, a description of what the experience of interacting with me is like, or anything else. you can give me feedback anonymously <a href="https://www.admonymous.co/rai">here</a>.
+          Honest feedback is a great gift, especially if it's something you think I could improve on. You can give me feedback anonymously <a href="https://www.admonymous.co/rai">here</a>.
         </p>
         <br />
         <br />
         <p>
-          currently, I help run <a target="_blank" href="https://sentinel-team.org/">sentinel</a>, an org that attempts to foresee global catastrophes and take high-leverage action during crises. please <a href="/contact">reach out</a> if you want to learn more, be involved, or support in any way.
+          Currently, I help run <a target="_blank" href="https://sentinel-team.org/">Sentinel</a>, an org that attempts to foresee global catastrophes and take high-leverage action during crises. Please <a href="/contact">reach out</a> if you want to learn more, be involved, or support in any way.
         </p>
         <br />
         <br />
@@ -37,22 +37,19 @@ export default function About() {
         <br />
         <br />
         <p>
-          previously, I've worked as an ai engineer for microsoft, an{" "}
+          Previously, I've worked as an AI engineer for Microsoft, an{" "}
           <a target="_blank" href="https://ethereum.org/gl/governance/">
-            ethereum core developer
+            Eth Core Dev
           </a>
-          , a blockchain protocol engineer at{" "}
+          , a Blockchain Protocols Engineer at{" "}
           <a
             target="_blank"
             href="https://consensys.io/products#for-the-ecosystem"
           >
-            consensys
+            Consensys
           </a>
-          , and cofounder/cto of{" "}
-          <a target="_blank" href="https://blockworks.co/news/universal-raise-led-by-a16z">
-            universal
-          </a>
-          .<br />
+          , and Co-Founder/CTO of <a target="_blank" href="https://alongside.xyz/">Alongside</a> (now <a target="_blank" href="https://www.universal.xyz/">Universal</a>).
+          <br />
         </p>
         {/* <p>
           i'm{" "}
@@ -79,7 +76,7 @@ export default function About() {
         <br />
         <br />
         <p>
-          if you want some advice on anything (personal or professional), you can{" "}
+          If you're one of the few that read this far, you can{" "}
           <a data-cal-namespace="consultation" data-cal-link="raisur/consultation" data-cal-config='{"layout":"week_view"}'>book a call with me</a> for $1.
         </p>
         <br />
