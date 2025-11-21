@@ -72,7 +72,7 @@ export default function About() {
         <br />
         <br />
         <p>
-          If you're one of the few that read this far, you can{" "}
+          If you're one of the few to read this far, you can{" "}
           <a data-cal-namespace="consultation" data-cal-link="raisur/consultation" data-cal-config='{"layout":"week_view"}'>book a call with me</a> for $1.
         </p>
         <br />
