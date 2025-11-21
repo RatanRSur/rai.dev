@@ -20,15 +20,11 @@ export default function About() {
         <br />
         <br />
         <p>
-          Currently, I help run <a target="_blank" href="https://sentinel-team.org/">Sentinel</a>, an org that attempts to foresee global catastrophes and take high-leverage action during crises. Please <a href="/contact">reach out</a> if you want to learn more, be involved, or support in any way.
-        </p>
-        <br />
-        <br />
-        <p>
+          I'm currently running <a target="_blank" href="https://sentinel-team.org/">Sentinel</a>, an org that attempts to foresee global catastrophes and take high-leverage action during crises.
           I'm particularly concerned about{" "}
           <a
             target="_blank"
-            href="https://www.amazon.com/dp/0316595640/"
+            href="https://superintelligence-statement.org/"
           >
             existential risk from unaligned artificial intelligence
           </a>
@@ -71,7 +67,7 @@ export default function About() {
         <br></br>
         <br></br>
         <p>
-          I'm a <a target="_blank" href="https://en.wikipedia.org/wiki/Transhumanism">transhumanist</a> who enjoys <a target="_blank" href="https://www.relateful.com/">circling</a>, <a target="_blank" href="https://www.lesswrong.com/posts/yeADMcScw8EW9yxpH/a-sketch-of-good-communication">sharing beliefs productively</a>, betting on those beliefs, skillfully relating to the sensations in my body (especially through dance and breath), and endless self-improvement.
+          I'm a <a target="_blank" href="https://en.wikipedia.org/wiki/Transhumanism">transhumanist</a> who enjoys <a target="_blank" href="https://www.relateful.com/">circling</a>, <a target="_blank" href="https://www.lesswrong.com/posts/yeADMcScw8EW9yxpH/a-sketch-of-good-communication">sharing beliefs productively</a>, betting on those beliefs, skillfully relating to the sensations in my body (especially through dance and breath), <a target="_blank" href="https://youtu.be/6ahMxTtPcQM?si=sav7IQbekjC1KUvJ&t=1620">TTRPGs</a> (e.g. Dungeons & Dragons), and endless self-improvement.
         </p>
         <br />
         <br />
