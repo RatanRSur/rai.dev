@@ -64,12 +64,12 @@ export default function About() {
         </p> */}
         <br></br>
         <p>
-          I'm a <a target="_blank" href="https://en.wikipedia.org/wiki/Transhumanism">transhumanist</a> who enjoys <a target="_blank" href="https://www.relateful.com/">circling</a>, <a target="_blank" href="https://www.lesswrong.com/posts/yeADMcScw8EW9yxpH/a-sketch-of-good-communication">sharing beliefs productively</a>, betting on those beliefs, skillfully relating to the sensations in my body (especially through <a target="_blank" href="https://www.youtube.com/results?search_query=brazilian+zouk">dance</a> and breath), <a target="_blank" href="https://youtu.be/6ahMxTtPcQM?si=sav7IQbekjC1KUvJ&t=1620">TTRPGs</a> (e.g. Dungeons & Dragons), and endless self-improvement.
+          I'm a <a target="_blank" href="https://en.wikipedia.org/wiki/Transhumanism">transhumanist</a> who enjoys <a target="_blank" href="https://www.relateful.com/">circling</a>, <a target="_blank" href="https://www.lesswrong.com/posts/yeADMcScw8EW9yxpH/a-sketch-of-good-communication">sharing beliefs productively</a>, betting on those beliefs, skillfully relating to the sensations in my body (especially through <a target="_blank" href="https://www.youtube.com/results?search_query=brazilian+zouk">dance</a> and breath), <a target="_blank" href="https://youtu.be/6ahMxTtPcQM?si=sav7IQbekjC1KUvJ&t=1620">TTRPGs</a> (e.g. Dungeons & Dragons), and neverending self-improvement.
         </p>
         <br />
         <p>
-          If you're one of the few to read this far, you can{" "}
-          <a data-cal-namespace="consultation" data-cal-link="raisur/consultation" data-cal-config='{"layout":"week_view"}'>book a call with me</a> for $1.
+          I like helping people find the critical path to their problems being solved and pointing people towards modalities that seem to help disentangle various neuroses that limit them. If either of those sound useful or you just want to meet me for whatever reason, you can{" "}
+          <a data-cal-namespace="consultation" data-cal-link="raisur/consultation" data-cal-config='{"layout":"week_view"}'>book a call with me</a>.
         </p>
         <br />
         <Back></Back>
