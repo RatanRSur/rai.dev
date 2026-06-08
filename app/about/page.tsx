@@ -42,7 +42,7 @@ export default function About() {
           >
             Consensys
           </a>
-          , and Co-Founder/CTO of <a target="_blank" href="https://alongside.xyz/">Alongside</a> (now <a target="_blank" href="https://www.universal.xyz/">Universal</a>).
+          , and Co-Founder/CTO of <a target="_blank" href="https://techcrunch.com/2023/02/15/crypto-index-platform-alongside-raises-11m-led-by-a16z/">Alongside</a> (now <a target="_blank" href="https://www.universal.xyz/">Universal</a>).
           <br />
         </p>
         {/* <p>
