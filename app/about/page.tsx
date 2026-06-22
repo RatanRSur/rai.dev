@@ -14,12 +14,12 @@ export default function About() {
   return (
     <div className="h-full flex flex-row justify-center items-center">
       <div className="full normal-text p-3">
-        <p> 
+        <p>
           Honest feedback is a great gift, especially if it's something you think I could improve on. You can give me feedback anonymously <a href="https://www.admonymous.co/rai">here</a>.
         </p>
         <br />
         <p>
-          I'm currently running <a target="_blank" href="https://sentinel-team.org/">Sentinel</a>, an org that attempts to foresee global catastrophes and take high-leverage action during crises.
+          I was most recently running <a target="_blank" href="https://sentinel-team.org/">Sentinel</a>, an org that attempts to foresee global catastrophes and take high-leverage action during crises.
           I'm particularly concerned about{" "}
           <a
             target="_blank"
@@ -31,7 +31,7 @@ export default function About() {
         </p>
         <br />
         <p>
-          Previously, I've worked as an AI engineer for Microsoft, an{" "}
+          Before that, I worked as an AI engineer for Microsoft, an{" "}
           <a target="_blank" href="https://ethereum.org/gl/governance/">
             Eth Core Dev
           </a>
