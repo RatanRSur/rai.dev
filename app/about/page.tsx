@@ -68,7 +68,7 @@ export default function About() {
         </p>
         <br />
         <p>
-          I like helping people find the critical path to their problems being solved and pointing people towards modalities that seem to help disentangle various neuroses that limit them. If either of those sound useful or you just want to meet me for whatever reason, you can{" "}
+          I like helping people find the critical path to solving their problems and meta-coachingp people (pointing them to the coaches that would most help them at their current phase of development). If either of those sound useful or you just want to meet me for whatever reason, you can{" "}
           <a data-cal-namespace="consultation" data-cal-link="raisur/consultation" data-cal-config='{"layout":"week_view"}'>book a call with me</a>.
         </p>
         <br />
