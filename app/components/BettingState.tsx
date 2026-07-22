@@ -3,6 +3,7 @@ import { useState } from "react";
 import CustomInput from "./CustomInput";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { format } from "d3";
+import { calculateBets } from "@/libs/evenOdds";
 const _ = require("lodash");
 
 export default function BettingState() {
@@ -59,30 +60,6 @@ export default function BettingState() {
           setNumber(parseInt(value));
           updateQueryParam(key, value);
         };
-
-  const calculateBets = (
-    pA: number,
-    pB: number,
-    maxBetA: number,
-    maxBetB: number
-  ): [number, number, boolean] => {
-    const probabilityTruePerA = pA / 100.0;
-    const probabilityTruePerB = pB / 100.0;
-    // scott garrabrant's calculation uses p = P(true) for A and q = P(false) for B so let's convert
-    let p = probabilityTruePerA;
-    let q = 1 - probabilityTruePerB;
-    let switched = false;
-    if (!(p + q > 1)) {
-      // we need the sum to be greater than 1
-      p = 1 - p;
-      q = 1 - q;
-      switched = true;
-    }
-    let maxBet = Math.min(maxBetA, maxBetB);
-    let betA = maxBet * (p ** 2 - (1 - q) ** 2);
-    let betB = maxBet * (q ** 2 - (1 - p) ** 2);
-    return [betA, betB, switched];
-  };
 
   function maxTwoDecimals(num: number): string {
     return format(".2~f")(num);
