@@ -19,7 +19,7 @@ export default function About() {
         </p>
         <br />
         <p>
-          I most recently was CEO of <a target="_blank" href="https://sentinel-team.org/">Sentinel</a>, an org that attempts to foresee global catastrophes and take high-leverage action during crises.
+          I was most recently CEO of <a target="_blank" href="https://sentinel-team.org/">Sentinel</a>, an org that attempts to foresee global catastrophes and take high-leverage action during crises.
           I'm particularly concerned about{" "}
           <a
             target="_blank"
