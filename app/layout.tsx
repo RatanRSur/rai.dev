@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html className="h-full" lang="en">
       <head>
-        <title>rai sur</title>
+        <title>Rai Sur</title>
       </head>
       <body className={`${exposure.className} ${jslBlackletter.variable} h-full`}>
         <GoogleAnalyticsWrapper id={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS} />

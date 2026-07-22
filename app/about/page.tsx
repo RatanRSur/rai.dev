@@ -15,11 +15,11 @@ export default function About() {
     <div className="h-full flex flex-row justify-center items-center">
       <div className="full normal-text p-3">
         <p>
-          Honest feedback is a great gift, especially if it's something you think I could improve on. You can give me feedback anonymously <a href="https://www.admonymous.co/rai">here</a>.
+          Honest feedback is a great gift, especially when it points to something you think I could improve on. You can give me feedback anonymously <a href="https://www.admonymous.co/rai">here</a>.
         </p>
         <br />
         <p>
-          I was most recently running <a target="_blank" href="https://sentinel-team.org/">Sentinel</a>, an org that attempts to foresee global catastrophes and take high-leverage action during crises.
+          I most recently was CEO of <a target="_blank" href="https://sentinel-team.org/">Sentinel</a>, an org that attempts to foresee global catastrophes and take high-leverage action during crises.
           I'm particularly concerned about{" "}
           <a
             target="_blank"
@@ -31,11 +31,11 @@ export default function About() {
         </p>
         <br />
         <p>
-          Before that, I worked as an AI engineer for Microsoft, an{" "}
+          Before that, I worked as an AI engineer at Microsoft, an{" "}
           <a target="_blank" href="https://ethereum.org/gl/governance/">
-            Eth Core Dev
+            Eth core dev
           </a>
-          , a Blockchain Protocols Engineer at{" "}
+          , a blockchain protocols engineer at{" "}
           <a
             target="_blank"
             href="https://consensys.io/ethereum-upgrade"
@@ -68,7 +68,7 @@ export default function About() {
         </p>
         <br />
         <p>
-          I like helping people find the critical path to solving their problems and meta-coachingp people (pointing them to the coaches that would most help them at their current phase of development). If either of those sound useful or you just want to meet me for whatever reason, you can{" "}
+          I like helping people find the critical path to solving their problems and meta-coaching people (pointing them to the coaches that would most help them at their current phase of development). If either of those sounds useful or you just want to meet me for whatever reason, you can{" "}
           <a data-cal-namespace="consultation" data-cal-link="raisur/consultation" data-cal-config='{"layout":"week_view"}'>book a call with me</a>.
         </p>
         <br />
